@@ -11,8 +11,8 @@ public class FormularioRespondido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long corrigido;
+    private Long Id;
+    private Long Corrigido;
 
     @ManyToOne
     private Usuario usuario;
@@ -24,25 +24,25 @@ public class FormularioRespondido {
     }
 
     public FormularioRespondido(Long corrigido, Usuario usuario, Pergunta pergunta) {
-        this.corrigido = corrigido;
+        this.Corrigido = corrigido;
         this.usuario = usuario;
         this.pergunta = pergunta;
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public Long getCorrigido() {
-        return corrigido;
+        return Corrigido;
     }
 
     public void setCorrigido(Long corrigido) {
-        this.corrigido = corrigido;
+        this.Corrigido = corrigido;
     }
 
     public Usuario getUsuario() {
