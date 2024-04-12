@@ -16,7 +16,7 @@
 	padding: 10px;
 	margin: 20px;
 	width: 295px;
-    height: 521px;
+    height: 570px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -66,19 +66,72 @@
         background-color: #D9D9D9;
 	border-radius: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	padding: 10px;
-	margin: 20px;
+	padding: 1px;
+	margin: 5px;
 	width: 245px;
     height: 47px;
+	flex-direction: column;
+
+	text-align: left;
+    font-family: Inter;
+    font-size: 18px;
+    color: black;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    .quantquestcont{
+        display: flex;
+  flex-direction: row;
+  align-items: left;
+    }
+    .hrquantquest{
+        align-items: right;
+        border-color: #243A69;
+        background-color: #243A69;
+        width: 2px; /* Largura da linha vertical */
+  height: 40px; /* Altura da linha vertical */
+  border: none;
+  border-left: 1px solid black; /* Ajuste a cor e estilo da linha vertical */
+  margin: 0 10px; /* Espaçamento entre o texto e a linha vertical */
+  position: absolute;
+    }
+    .status{
+        background-color: #148502;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 1px;
+	margin: 5px;
+	width: 181px;
+    height: 46px;
+	flex-direction: column;
+
+	text-align: left;
+    font-family: Inter;
+    font-size: 18px;
+    color: white;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    .variado{
+        background-color: #243A69;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 5px;
+	width: 96px;
+    height: 76px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
+        font-size: 20px;
 	text-align: center;
     font-family: Inter;
-    font-size: 18px;
-    color: black;
+    color: white;
     }
 }
     </style>
@@ -92,9 +145,18 @@
                 B1
             </div>
             <p class="cardhora">Tempo de prova: <br> 1h e 30min</p>
-            Acertos
+            <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
-                teste
+                <p class="quantquestcont">Questões difíceis</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões moderadas</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões fáceis</p>
+                <hr class="hrquantquest">
             </div>
         </div>
         <div class="card">LISTENING
@@ -103,7 +165,19 @@
                 B1
             </div>
             <p class="cardhora">Tempo de prova: <br> 1h e 30min</p>
-            Acertos
+            <p style="font-size: 25px;">ACERTOS</p>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões difíceis</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões moderadas</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões fáceis</p>
+                <hr class="hrquantquest">
+            </div>
         </div>
         <div class="card">WRITING
             <hr class="hrcard">
@@ -111,6 +185,14 @@
                 B1
             </div>
             <p class="cardhora">Tempo de prova: <br> 1h e 30min</p>
+            <div class="status">Corrigido</div>
+            <p style="font-size: 18px;">QUANTIDADE DE PALAVRAS</p>
+            <div class="variado">
+                345/500
+            </div>
+            <div class="variado">
+                VER TEXTO
+            </div>
         </div>
         <div class="card">SPEAKING
             <hr class="hrcard">
@@ -118,6 +200,7 @@
                 B1
             </div>
             <p class="cardhora">Tempo de prova: <br> 1h e 30min</p>
+            <div class="status">Realizado</div>
         </div>
     </div>
 </body>
