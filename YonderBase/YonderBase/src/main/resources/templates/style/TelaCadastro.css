@@ -1,0 +1,42 @@
+.linha{
+    display: grid;
+}
+
+.botaoVoltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1;
+    color: black;
+    border-radius: 30%;
+    margin: 12px 12px;
+    background-color: rgb(91, 136, 165);
+    padding: 15px 32px;
+    max-width: 146px;
+    max-height: 46px;
+}   
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(91, 136, 165);
+    text-decoration-thickness: 1px;
+    font-family: in;
+}
+
+.planilha {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.planilha th, .planilha td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+.planilha th {
+    background-color: #f2f2f2;
+}
