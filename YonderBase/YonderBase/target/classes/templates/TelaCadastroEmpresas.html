@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/TelaCadastro.css">
     <title>Cadastro de Empresas</title>
 </head>
 <body>
+
+    <div class="linha">
+        <button type="button" class="botaoVoltar"> Voltar </button>
+        <h2 class="titulo"> Gerenciar Empresas </h2>
+    </div>
+
     
+        
+    <form action="/submitForm" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="company_name">Nome da Empresa</label>
+            <input type="text" id="company_name" name="company_name">
+        </div>
+        <div>
+            <label for="company_cnpj">CNPJ da Empresa</label>
+            <input type="text" id="company_cnpj" name="company_cnpj">
+        </div>
+        <div>
+            <label for="company_CEP">CEP</label>
+            <input type="text" id="company_CEP" name="company_CEP">
+        </div>
+        <div>
+            <label for="city">Cidade</label>
+            <input type="text" id="city" name="city">
+        </div>
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" name="uf">
+        </div>
+        <div>
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="uf">
+        </div>
+        <div>
+            <label for="logradouro">Numero</label>
+            <input type="text" id="numero" name="uf">
+        </div>
+        <div>
+            <label for="logradouro">Complemento</label>
+            <input type="text" id="complemento" name="uf">
+        </div>
+        <div>
+            <label for="excel">Importar planilha EXCEL de Usuários e CPFs:</label>
+            <input type="file" id="excel" name="excel" accept=".xls,.xlsx">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
