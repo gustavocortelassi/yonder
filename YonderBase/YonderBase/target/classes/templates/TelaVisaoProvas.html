@@ -5,20 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style  type="text/css">
-        #card{
-            border: 2px;
-            border-color: #5B88A5;
-        }
-    </style>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Inter">
 
+    <style>
+        .card{
+            background-color: #5B88A5;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 20px;
+	width: 295px;
+    height: 570px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    color: white;
+        }
+
+        .secao4-div-card {
+            display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+
+    .nota{
+        background-color: #243A69;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 20px;
+	width: 96px;
+    height: 76px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+    font-family: Inter;
+    color: white;
+    }
+    .hrcard{
+        width: 261px;
+        height: 2px;
+        align-items: center;
+        border-color: #243A69;
+        background-color: #243A69;
+    }
+    .cardhora{
+        font-size: 24px;
+    }
+    .quantquest{
+        background-color: #D9D9D9;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 1px;
+	margin: 5px;
+	width: 245px;
+    height: 47px;
+	flex-direction: column;
+
+	text-align: left;
+    font-family: Inter;
+    font-size: 18px;
+    color: black;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    .quantquestcont{
+        display: flex;
+  flex-direction: row;
+  align-items: left;
+    }
+    .hrquantquest{
+        align-items: right;
+        border-color: #243A69;
+        background-color: #243A69;
+        width: 2px; /* Largura da linha vertical */
+  height: 40px; /* Altura da linha vertical */
+  border: none;
+  border-left: 1px solid black; /* Ajuste a cor e estilo da linha vertical */
+  margin: 0 10px; /* Espaçamento entre o texto e a linha vertical */
+  position: absolute;
+    }
+    .status{
+        background-color: #148502;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 1px;
+	margin: 5px;
+	width: 181px;
+    height: 46px;
+	flex-direction: column;
+
+	text-align: left;
+    font-family: Inter;
+    font-size: 18px;
+    color: white;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    .variado{
+        background-color: #243A69;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 5px;
+	width: 96px;
+    height: 70px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+        font-size: 20px;
+	text-align: center;
+    font-family: Inter;
+    color: white;
+    }
+}
+    </style>
+    
 </head>
 <body>
-    <div>
-        <div class="card">Reading</div>
-        <div class="card">Listening</div>
-        <div class="card">Writing</div>
-        <div class="card">Speaking</div>
+    <div class="secao4-div-card">
+        <div class="card">READING
+            <hr class="hrcard">
+            <div class="nota">
+                B1
+            </div>
+            <p style="font-size: 25px;">ACERTOS</p>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões difíceis</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões moderadas</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões fáceis</p>
+                <hr class="hrquantquest">
+            </div>
+        </div>
+        <div class="card">LISTENING
+            <hr class="hrcard">
+            <div class="nota">
+                B1
+            </div>
+            <p style="font-size: 25px;">ACERTOS</p>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões difíceis</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões moderadas</p>
+                <hr class="hrquantquest">
+            </div>
+            <div class="quantquest">
+                <p class="quantquestcont">Questões fáceis</p>
+                <hr class="hrquantquest">
+            </div>
+        </div>
+        <div class="card">WRITING
+            <hr class="hrcard">
+            <div class="nota">
+                B1
+            </div>
+            <div class="status">Corrigido</div>
+            <p style="font-size: 18px;">QUANTIDADE DE PALAVRAS</p>
+            <div class="variado">
+                345/500
+            </div>
+            <div class="variado">
+                VER TEXTO
+            </div>
+        </div>
+        <div class="card">SPEAKING
+            <hr class="hrcard">
+            <div class="nota">
+                B1
+            </div>
+            <div class="status">Realizado</div>
+        </div>
     </div>
+
+
+<!-- 
+    Retirar as notas de cada tipo: 
+    select niveis from nivelamento_usuario
+    where tipo_prova_id is (num id de acordo)
+    fazer isso pra cada uma das 4
+
+    verificar correção write:
+    if corrigido = 1 -> corrigido
+    if corrigido = 2 -> não corrigido
+    if corrigido = 3 -> em analise
+
+    quantidade de palavras write:
+    pego o resposta longtext
+    coloco em uma array e separo pelos espaços
+    ou pegar do banco se colocarem
+
+    pego o formulario-respondido
+    filtro pelo usuario x
+    a partir das perguntas_id vejo a dificuldade dela
+    faço uma contagem de facil,medil,dificil 
+    a quantidade de correto
+    fazer pro listening e writing
+
+    pro speaking
+    if null, não foi realizado
+    se exsitir foi realizado
+
+-->
+
 </body>
 </html>
