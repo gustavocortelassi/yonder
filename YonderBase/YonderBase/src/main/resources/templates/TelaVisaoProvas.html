@@ -140,8 +140,8 @@
     <div class="secao4-div-card">
         <div class="card">READING
             <hr class="hrcard">
-            <div class="nota">
-                B1
+            <div class="nota" th:each="nota : ${mostraNota}">
+                <p th:text="${nota.NiveisId}"></p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
