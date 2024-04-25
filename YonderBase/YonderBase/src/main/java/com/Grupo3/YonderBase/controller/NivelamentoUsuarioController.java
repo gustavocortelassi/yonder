@@ -17,9 +17,9 @@ public class NivelamentoUsuarioController {
 
     @GetMapping("/notas")
     public String mostraNota(NivelamentoUsuario nivelamentoUsuario) {
-        Long Id = (long) 1;
-        Long TipoProvaId =(long) 1;
-        nivelamentoUsuario.addAttribute("NiveisId", nivelamentoUsuarioRepository.findByIdandTipoProva(Id,TipoProvaId));
+        Long user = (long) 1;
+        Long tipoProvaId =(long) 1;
+        nivelamentoUsuario.addAttribute("niveisId", nivelamentoUsuarioRepository.findByUserIdandTipoProva(user,tipoProvaId));
         return "TelaVisaoProvas";
     }
 

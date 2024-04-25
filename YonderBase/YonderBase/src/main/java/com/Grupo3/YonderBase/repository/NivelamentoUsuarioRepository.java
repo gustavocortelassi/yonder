@@ -8,6 +8,6 @@ import com.Grupo3.YonderBase.model.NivelamentoUsuario;
 
 public interface NivelamentoUsuarioRepository extends JpaRepository<NivelamentoUsuario, Long>{
 
-    Optional<NivelamentoUsuario> findByIdandTipoProva (Long Id,Long TipoProvaId);
+    Optional<NivelamentoUsuario> findByUserIdandTipoProva (Long user,Long TipoProvaId);
     
 }
