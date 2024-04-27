@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -21,10 +22,10 @@ public class Usuario {
         public Usuario() {
         }
     
-        public Usuario(Long id, String nome, String CPF, Empresa emp) {
+        public Usuario(Long id, String nome, String cpf, Empresa emp) {
             Id = id;
             Nome = nome;
-            this.CPF = CPF;
+            this.CPF = cpf;
             Emp = emp;
         }
     
@@ -48,8 +49,8 @@ public class Usuario {
             return CPF;
         }
     
-        public void setCPF(String CPF) {
-            this.CPF = CPF;
+        public void setCPF(String cpf) {
+            this.CPF = cpf;
         }
     
         public Empresa getEmp() {

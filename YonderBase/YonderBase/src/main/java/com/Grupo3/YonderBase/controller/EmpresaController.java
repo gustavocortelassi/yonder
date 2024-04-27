@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Grupo3.YonderBase.model.Empresa;
+import com.Grupo3.YonderBase.model.Usuario;
 import com.Grupo3.YonderBase.service.EmpresaService;
+import com.Grupo3.YonderBase.service.UsuarioService;
 
 
 @Controller
@@ -19,9 +21,15 @@ public class EmpresaController {
     @Autowired
     private EmpresaService empresaService;
 
+    // @GetMapping("/")
+    // public String index(){
+    //     return "index";
+    // }
+
     @GetMapping("/")
-    public String index(){
-        return "index";
+        public String index(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "registro";
     }
 
     @GetMapping("/empresas")
