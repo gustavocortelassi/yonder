@@ -140,8 +140,8 @@
     <div class="secao4-div-card">
         <div class="card">READING
             <hr class="hrcard">
-            <div class="nota" th:each="nota : ${mostraNota}">
-                <p th:text="${nota.NiveisId}"></p>
+            <div class="nota" th:each="nota1 : ${mostraNota1}">
+                <p th:text="${nota1.NiveisId}"></p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
@@ -157,8 +157,8 @@
         </div>
         <div class="card">LISTENING
             <hr class="hrcard">
-            <div class="nota">
-                B1
+            <div class="nota"  th:each="nota2 : ${mostraNota2}">
+                <p th:text="${not2.NiveisId}"></p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
@@ -173,8 +173,8 @@
         </div>
         <div class="card">WRITING
             <hr class="hrcard">
-            <div class="nota">
-                B1
+            <div class="nota"  th:each="nota3 : ${mostraNota3}">
+                <p th:text="${nota3.NiveisId}"></p>
             </div>
             <div class="status">Corrigido</div>
             <p style="font-size: 18px;">QUANTIDADE DE PALAVRAS</p>
@@ -187,8 +187,8 @@
         </div>
         <div class="card">SPEAKING
             <hr class="hrcard">
-            <div class="nota">
-                B1
+            <div class="nota"  th:each="nota4 : ${mostraNota4}">
+                <p th:text="${nota4.NiveisId}"></p>
             </div>
             <div class="status">Realizado</div>
         </div>

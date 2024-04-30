@@ -16,12 +16,44 @@ public class NivelamentoUsuarioController {
     private NivelamentoUsuarioRepository nivelamentoUsuarioRepository;
 
     @GetMapping("/notas")
-    public String mostraNota(NivelamentoUsuario nivelamentoUsuario) {
+    public String mostraNota1(NivelamentoUsuario nivelamentoUsuario) {
         Long user = (long) 1;
         Long tipoProvaId =(long) 1;
         nivelamentoUsuario.addAttribute("niveisId", nivelamentoUsuarioRepository.findByUserIdandTipoProva(user,tipoProvaId));
         return "TelaVisaoProvas";
     }
+    @GetMapping("/notas")
+    public String mostraNota2(NivelamentoUsuario nivelamentoUsuario) {
+        Long user = (long) 1;
+        Long tipoProvaId =(long) 2;
+        nivelamentoUsuario.addAttribute("niveisId", nivelamentoUsuarioRepository.findByUserIdandTipoProva(user,tipoProvaId));
+        return "TelaVisaoProvas";
+    }
+    @GetMapping("/notas")
+    public String mostraNota3(NivelamentoUsuario nivelamentoUsuario) {
+        Long user = (long) 1;
+        Long tipoProvaId =(long) 3;
+        nivelamentoUsuario.addAttribute("niveisId", nivelamentoUsuarioRepository.findByUserIdandTipoProva(user,tipoProvaId));
+        return "TelaVisaoProvas";
+    }
+    @GetMapping("/notas")
+    public String mostraNota4(NivelamentoUsuario nivelamentoUsuario) {
+        Long user = (long) 1;
+        Long tipoProvaId =(long) 4;
+        nivelamentoUsuario.addAttribute("niveisId", nivelamentoUsuarioRepository.findByUserIdandTipoProva(user,tipoProvaId));
+        return "TelaVisaoProvas";
+    }
+
+    @GetMapping("/notas")
+    public String verificaCorrecao(NivelamentoUsuario nivelamentoUsuario){
+        nivelamentoUsuario.addAttribute("corrigido",nivelamentoUsuarioRepository.findBy)
+    }
+
+
+     //verificar correção write:
+ //   if corrigido = 1 -> corrigido
+   // if corrigido = 2 -> não corrigido
+    //if corrigido = 3 -> em analise
 
     
 }
