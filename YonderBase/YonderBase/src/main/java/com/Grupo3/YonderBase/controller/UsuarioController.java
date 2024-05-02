@@ -1,33 +1,42 @@
 package com.Grupo3.YonderBase.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.Grupo3.YonderBase.model.Empresa;
 import com.Grupo3.YonderBase.model.Usuario;
 import com.Grupo3.YonderBase.service.UsuarioService;
 
 @Controller
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
-    @PostMapping("/cadastrarUsuario")
-    public ModelAndView cadastrarUsuario(@ModelAttribute Usuario usuario, @RequestParam Long empresaId) {
-    ModelAndView modelAndView = new ModelAndView();
-    usuarioService.saveUsuario(usuario, empresaId);
-    modelAndView.setViewName("registroSucesso");
-    return modelAndView;
-}
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
+
+    @GetMapping("/novo")
+    public String exibirFormularioNovoUsuario(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "registroUsuario";
+    }
+
+    @PostMapping("/salvar")
+    public String salvarUsuario(@ModelAttribute Usuario usuario, @RequestParam Long empresaId) {
+        Empresa empresa = new Empresa();
+        empresa.setId(empresaId);
+        usuario.setEmpresa(empresa);
+        usuarioService.salvarUsuario(usuario);
+        return "redirect:/registroSucesso";
+    }    
 
     @GetMapping("/registroSucesso")
-    public String getRegistroSucesso() {
-    return "registroSucesso";
-}
+    public String exibirRegistroSucesso() {
+        return "registroSucesso";
+    }
 }
