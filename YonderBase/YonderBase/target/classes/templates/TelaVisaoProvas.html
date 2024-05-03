@@ -141,7 +141,7 @@
         <div class="card">READING
             <hr class="hrcard">
             <div class="nota" th:each="nota1 : ${mostraNota1}">
-                <p th:text="${nota1.NiveisId}"></p>
+                <p th:text="${nota1.niveisId}"></p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
@@ -158,7 +158,7 @@
         <div class="card">LISTENING
             <hr class="hrcard">
             <div class="nota"  th:each="nota2 : ${mostraNota2}">
-                <p th:text="${not2.NiveisId}"></p>
+                <p th:text="${nota2.niveisId}"></p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
@@ -174,13 +174,13 @@
         <div class="card">WRITING
             <hr class="hrcard">
             <div class="nota"  th:each="nota3 : ${mostraNota3}">
-                <p th:text="${nota3.NiveisId}"></p>
+                <p th:text="${nota3.niveisId}"></p>
             </div>
-            <div class="status">Corrigido</div>
-            <p style="font-size: 18px;">QUANTIDADE DE PALAVRAS</p>
+            <div class="status" th:each="statu : ${verificaCorrecao}"><p th:text = "${statu.corrigido}"></p></div>
+            <!-- <p style="font-size: 18px;">QUANTIDADE DE PALAVRAS</p>
             <div class="variado">
                 345/500
-            </div>
+            </div> -->
             <div class="variado">
                 VER TEXTO
             </div>
@@ -190,37 +190,23 @@
             <div class="nota"  th:each="nota4 : ${mostraNota4}">
                 <p th:text="${nota4.NiveisId}"></p>
             </div>
-            <div class="status">Realizado</div>
+            <div class="status" ><p th:text="${mensagem}"></p></div>
         </div>
     </div>
 
 
 <!-- 
-    Retirar as notas de cada tipo: 
-    select niveis from nivelamento_usuario
-    where tipo_prova_id is (num id de acordo)
-    fazer isso pra cada uma das 4
 
-    verificar correção write:
-    if corrigido = 1 -> corrigido
-    if corrigido = 2 -> não corrigido
-    if corrigido = 3 -> em analise
 
-    quantidade de palavras write:
-    pego o resposta longtext
-    coloco em uma array e separo pelos espaços
-    ou pegar do banco se colocarem
 
     pego o formulario-respondido
     filtro pelo usuario x
     a partir das perguntas_id vejo a dificuldade dela
-    faço uma contagem de facil,medil,dificil 
+    faço uma contagem de facil,medio,dificil 
     a quantidade de correto
     fazer pro listening e writing
 
-    pro speaking
-    if null, não foi realizado
-    se exsitir foi realizado
+    a ser implementado, ficara pro final pra nao atrasar o todo
 
 -->
 

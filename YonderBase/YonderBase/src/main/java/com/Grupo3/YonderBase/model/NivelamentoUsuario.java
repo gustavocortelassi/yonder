@@ -67,4 +67,9 @@ public class NivelamentoUsuario {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
     }
+
+    public void addAttribute(String string, String string2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
+    }
 }
