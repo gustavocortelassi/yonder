@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -13,50 +14,44 @@ public class Usuario {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long Id;
         private String Nome;
-        private String CPF;
+        private String Cpf;
     
         @ManyToOne
-        private Empresa Emp;
-    
-        public Usuario() {
-        }
-    
-        public Usuario(Long id, String nome, String CPF, Empresa emp) {
-            Id = id;
-            Nome = nome;
-            this.CPF = CPF;
-            Emp = emp;
-        }
-    
+        @JoinColumn(name = "emp_id", nullable = true)
+        private Empresa empresa;
+
         public Long getId() {
             return Id;
         }
-    
+
         public void setId(Long id) {
             Id = id;
         }
-    
+
         public String getNome() {
             return Nome;
         }
-    
+
         public void setNome(String nome) {
             Nome = nome;
         }
-    
-        public String getCPF() {
-            return CPF;
+
+        public String getCpf() {
+            return Cpf;
         }
-    
-        public void setCPF(String CPF) {
-            this.CPF = CPF;
+
+        public void setCpf(String cpf) {
+            Cpf = cpf;
         }
-    
-        public Empresa getEmp() {
-            return Emp;
+
+        public Empresa getEmpresa() {
+            return empresa;
         }
-    
-        public void setEmp(Empresa emp) {
-            Emp = emp;
+
+        public void setEmpresa(Empresa empresa) {
+            this.empresa = empresa;
         }
+
+        
+        
 }

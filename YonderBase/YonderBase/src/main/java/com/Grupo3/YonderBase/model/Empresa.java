@@ -22,7 +22,8 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(String razaoSocial, String cnpj, String cep, String logradouro, String bairro, Long numero, String complemento) {
+    public Empresa(String razaoSocial, String cnpj, String cep, String logradouro, String bairro, Long numero,
+            String complemento) {
         this.RazaoSocial = razaoSocial;
         this.CNPJ = cnpj;
         this.CEP = cep;
