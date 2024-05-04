@@ -1,5 +1,7 @@
 package com.Grupo3.YonderBase.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,25 +10,19 @@ import com.Grupo3.YonderBase.repository.EmpresaRepository;
 
 @Service
 public class EmpresaService {
-    
-    @Autowired
+
     private EmpresaRepository empresaRepository;
-    
-    // public void cadastrarEmpresa(Empresa empresa){
-    //     empresaRepository.save(empresa);
-    // }
 
-    public void cadastrarEmpresaComValoresPadrao() {
-        Empresa empresa = new Empresa();
-        empresa.setRazaoSocial("Empresa Teste");
-        empresa.setCNPJ("12345678901234");
-        empresa.setCEP("12345678");
-        empresa.setLogradouro("Rua Teste");
-        empresa.setBairro("Bairro Teste");
-        empresa.setNumero(123L);
-        empresa.setComplemento("Complemento Teste");
+    @Autowired
+    public EmpresaService(EmpresaRepository empresaRepository) {
+        this.empresaRepository = empresaRepository;
+    }
 
-        
-        empresaRepository.save(empresa);
+    public Empresa save(Empresa empresa){
+        return empresaRepository.save(empresa);
+    }
+
+    public List<Empresa> findAll(){
+        return empresaRepository.findAll();
     }
 }
