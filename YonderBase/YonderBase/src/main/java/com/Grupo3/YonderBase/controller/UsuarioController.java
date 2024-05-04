@@ -16,21 +16,21 @@ public class UsuarioController {
 
     @PersistenceContext
     private EntityManager entityManager;
-    
+
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-        Query query = entityManager.createNativeQuery("SELECT * FROM Usuario WHERE Nome = ? AND CPF = ?", Usuario.class);
+    public String login(@RequestParam("username") String username, @RequestParam("password") String password,
+            Model model) {
+        Query query = entityManager.createNativeQuery("SELECT * FROM Usuario WHERE Nome = ? AND CPF = ?",
+                Usuario.class);
         query.setParameter(1, username);
         query.setParameter(2, password);
-
         try {
             Usuario usuario = (Usuario) query.getSingleResult();
-            // Usuário autenticado
-            return "redirect:/home"; // Redirecionar para a página de home
+            return "redirect:/home";
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", "Usuário ou senha inválidos");
-            return "login"; // Retornar para a página de login com mensagem de erro
+            return "login";
         }
     }
 }
