@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Regras </title>
+    <link rel="stylesheet" href="./style/regrasProvasStyle.css">
+</head>
+<body>
+    <div class="container"> 
+        <div class="instrucoes">
+            Regras para realização das provas
+        </div>
+        <div class="titulo"> Instruções
+            <div>
+                <ul>
+                    <li> Regra 1 </li>
+                    <li> Regra 2 </li>
+                    <li> Regra 3 </li>
+                    <li> ... </li>
+                    <li> ... </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- COLOCAR AQUI A PAGINA QUE VAI REDIRECIONAR DEPOIS DESSA -->
+        <div>
+            <button class="botao" th:href="@{/pagina}">Começar</button>
+        </div>
+    </div>
+</body>
+</html>
