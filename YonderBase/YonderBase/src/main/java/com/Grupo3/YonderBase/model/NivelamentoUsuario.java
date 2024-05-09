@@ -1,6 +1,5 @@
 package com.Grupo3.YonderBase.model;
 
-import java.util.Optional;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -63,13 +62,4 @@ public class NivelamentoUsuario {
         User = user;
     }
 
-    public void addAttribute(String string, Optional<NivelamentoUsuario> byId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
-    }
-
-    public void addAttribute(String string, String string2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
-    }
 }
