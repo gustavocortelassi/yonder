@@ -28,7 +28,7 @@ public class EmpresaController {
     @PostMapping("/cadastrarEmpresa")
     public String cadastrarEmpresa(@RequestParam("razaoSocial") String razaoSocial,
             @RequestParam("cnpj") String cnpj,
-            @RequestParam("cep") String cep,
+            @RequestParam("cep") String cep,    
             @RequestParam("logradouro") String logradouro,
             @RequestParam("bairro") String bairro,
             @RequestParam("numero") Long numero,
@@ -38,5 +38,12 @@ public class EmpresaController {
         empresaService.save(empresa);
 
         return "/empresas";
+    }
+
+    @GetMapping("/TelaListarEmpresas")
+    public String listarEmpresas(Model model) {
+        List<Empresa> empresas = empresaService.findAll();        
+        model.addAttribute("empresas", empresas);
+        return "TelaListarEmpresas"; 
     }
 }
