@@ -1,11 +1,16 @@
 package com.Grupo3.YonderBase.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Grupo3.YonderBase.model.Usuario;
+import com.Grupo3.YonderBase.service.UsuarioService;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -16,6 +21,13 @@ public class UsuarioController {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
+
+    private final UsuarioService usuarioService;
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password,
@@ -32,5 +44,12 @@ public class UsuarioController {
             model.addAttribute("error", "Usuário ou senha inválidos");
             return "login";
         }
+    }
+
+    @GetMapping("/usuarios")
+    public String listarUsuarios(Model model) {
+        List<Usuario> usuarios = usuarioService.listarUsuarios();
+        model.addAttribute("usuarios", usuarios);
+        return "listaUsuarios";
     }
 }
