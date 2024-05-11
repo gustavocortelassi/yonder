@@ -40,10 +40,16 @@ public class EmpresaController {
         return "/empresas";
     }
 
-    @GetMapping("/TelaListarEmpresas")
-    public String listarEmpresas(Model model) {
-        List<Empresa> empresas = empresaService.findAll();        
-        model.addAttribute("empresas", empresas);
-        return "TelaListarEmpresas"; 
+    // Excluir empresa
+    @PostMapping("/excluirEmpresa")
+    public String excluirEmpresa(@RequestParam("empresaId") Long empresaId) {
+        empresaService.delete(empresaId);
+        return "redirect:/empresas"; // Redirecionar para a página de listagem de empresas após a exclusão
+    }
+
+    // Redirecionar para o formulário de cadastro de empresa
+    @GetMapping("/adicionarEmpresa")
+    public String adicionarEmpresaForm(Model model) {
+        return "empresas"; // Redirecionar para a página de listagem de empresas
     }
 }

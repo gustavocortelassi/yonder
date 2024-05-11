@@ -1,6 +1,7 @@
 package com.Grupo3.YonderBase.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,15 @@ public class EmpresaService {
 
     public List<Empresa> findAll() {
         return empresaRepository.findAll();
+    }
+
+    public void delete(Long id) {
+        empresaRepository.deleteById(id);
+    }
+
+    //  buscar uma empresa por ID
+    public Empresa findById(Long id) {
+        Optional<Empresa> optionalEmpresa = empresaRepository.findById(id);
+        return optionalEmpresa.orElse(null);
     }
 }
