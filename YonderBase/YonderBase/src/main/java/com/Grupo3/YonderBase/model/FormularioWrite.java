@@ -59,8 +59,4 @@ public class FormularioWrite {
         this.FormResp = formResp;
     }
 
-    public void addAttribute(String string, Object findByIdFormres2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addAttribute'");
-    }
 }
