@@ -39,4 +39,9 @@ public class EmpresaController {
 
         return "/empresas";
     }
+
+    @GetMapping("/listaEmpresas")
+    public String empresaCoisas(Model model) {
+        return "TelaVisaoEmpresas";
+    }
 }

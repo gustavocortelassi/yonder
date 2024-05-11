@@ -10,6 +10,8 @@ import com.Grupo3.YonderBase.model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @Controller
 public class UsuarioController {
@@ -33,4 +35,15 @@ public class UsuarioController {
             return "login";
         }
     }
+
+
+
+
+
+
+    @GetMapping("/usuariosEmpresa")
+    public String usersCarac(Model model) {
+        return "TelaVisaoUsersEmpresa";
+    }
+    
 }
