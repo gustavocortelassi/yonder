@@ -28,7 +28,7 @@ public class EmpresaController {
     @PostMapping("/cadastrarEmpresa")
     public String cadastrarEmpresa(@RequestParam("razaoSocial") String razaoSocial,
             @RequestParam("cnpj") String cnpj,
-            @RequestParam("cep") String cep,
+            @RequestParam("cep") String cep,    
             @RequestParam("logradouro") String logradouro,
             @RequestParam("bairro") String bairro,
             @RequestParam("numero") Long numero,
@@ -38,5 +38,18 @@ public class EmpresaController {
         empresaService.save(empresa);
 
         return "/empresas";
+    }
+
+    // Excluir empresa
+    @PostMapping("/excluirEmpresa")
+    public String excluirEmpresa(@RequestParam("empresaId") Long empresaId) {
+        empresaService.delete(empresaId);
+        return "redirect:/empresas"; // Redirecionar para a página de listagem de empresas após a exclusão
+    }
+
+    // Redirecionar para o formulário de cadastro de empresa
+    @GetMapping("/adicionarEmpresa")
+    public String adicionarEmpresaForm(Model model) {
+        return "empresas"; // Redirecionar para a página de listagem de empresas
     }
 }
