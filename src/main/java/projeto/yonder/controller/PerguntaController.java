@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.Grupo3.YonderBase.model.Pergunta;
-import com.Grupo3.YonderBase.service.PerguntaService;
+import projeto.yonder.model.Pergunta;
+import projeto.yonder.service.PerguntaService;
 
 @Controller
 public class PerguntaController {
