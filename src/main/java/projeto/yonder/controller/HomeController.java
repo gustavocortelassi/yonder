@@ -9,6 +9,6 @@ public class HomeController {
     // Modificar aqui para acessar as paginas
     @GetMapping("/")
     public String index() {
-        return "empresas";
+        return "listaEmpresas";
     }
 }

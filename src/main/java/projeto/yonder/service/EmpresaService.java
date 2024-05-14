@@ -1,7 +1,6 @@
 package projeto.yonder.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import projeto.yonder.repository.EmpresaRepository;
 import org.springframework.stereotype.Service;
@@ -29,9 +28,4 @@ public class EmpresaService {
         empresaRepository.deleteById(id);
     }
 
-    //  buscar uma empresa por ID
-    public Empresa findById(Long id) {
-        Optional<Empresa> optionalEmpresa = empresaRepository.findById(id);
-        return optionalEmpresa.orElse(null);
-    }
 }
