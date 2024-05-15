@@ -112,6 +112,26 @@
             cursor: pointer;
         }
 
+        .botFiltrar{
+            background-color: #243A69;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin: 20px;
+	width: 100px;
+    height: 25px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: right;
+
+
+    font-size: 20px;
+	text-align: center;
+    font-family: Inter;
+    color: white;
+    cursor: pointer;
+    margin-left: 5%; 
+        }
 
 
     </style>
@@ -122,6 +142,8 @@
     <!--Colocar o nome conforme a empresa selecionada-->
     <h1>EMPRESA X</h1>
     
+
+    <!-- #campos q vão receber os dados para serem pesquisados no banco e filtrar-->
 <div id="filtro">
     <div class="verProvas"><img src="/YonderBase/YonderBase/src/main/resources/static/img/provaFeita.png" alt="feito"></div>
 
@@ -135,7 +157,8 @@
 
 </div>
 
-
+<!-- botao par mostrar os usuarios de acordo com o filtro-->
+<div class="botFiltrar">FILTRAR</div>
 
 <!--para o back: replicar essa div conforme existir usuario no banco da tal empresa-->
 <div class="func">
