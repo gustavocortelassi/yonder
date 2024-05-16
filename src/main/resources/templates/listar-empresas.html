@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Empresas</title>
+</head>
+<body>
+    <h1>Lista de Empresas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Razão Social</th>
+                <th>CNPJ</th>
+                <th>CEP</th>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Número</th>
+                <th>Complemento</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="empresa : ${empresas}">
+                <td th:text="${empresa.id}">ID</td>
+                <td th:text="${empresa.razaoSocial}">Razão Social</td>
+                <td th:text="${empresa.cnpj}">CNPJ</td>
+                <td th:text="${empresa.cep}">CEP</td>
+                <td th:text="${empresa.logradouro}">Logradouro</td>
+                <td th:text="${empresa.bairro}">Bairro</td>
+                <td th:text="${empresa.numero}">Número</td>
+                <td th:text="${empresa.complemento}">Complemento</td>
+                <td>
+                    <form th:action="@{/deletar-empresa}" method="post">
+                        <input type="hidden" th:name="id" th:value="${empresa.id}" />
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
