@@ -19,13 +19,14 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
 @Controller
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     private final UsuarioService usuarioService;
-
+    
     @Autowired
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -48,7 +49,7 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/exibirCandidatos")
+    @GetMapping
     public String listarUsuarios(Model model) {
         List<Usuario> usuarios = usuarioService.getAllUsuarios();
         model.addAttribute("usuarios", usuarios);
