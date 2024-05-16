@@ -1,12 +1,19 @@
 package projeto.yonder.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import projeto.yonder.model.Usuario;
-
+import projeto.yonder.service.UsuarioService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -16,6 +23,13 @@ public class UsuarioController {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    private final UsuarioService usuarioService;
+
+    @Autowired
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password,
@@ -32,5 +46,12 @@ public class UsuarioController {
             model.addAttribute("error", "Usuário ou senha inválidos");
             return "login";
         }
+    }
+
+    @GetMapping("/exibirCandidatos")
+    public String listarUsuarios(Model model) {
+        List<Usuario> usuarios = usuarioService.getAllUsuarios();
+        model.addAttribute("usuarios", usuarios);
+        return "exibirCandidatos";
     }
 }
