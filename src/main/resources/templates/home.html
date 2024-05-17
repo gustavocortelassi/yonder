@@ -24,20 +24,6 @@
     </style>
 </head>
 <body>
-    <h1>Bem-vindo!</h1>
-    <div>
-        <button onclick="location.href='/gerenciar-empresas'">Gerenciar Empresas</button>
-    </div>
-    <div>
-        <button onclick="location.href='/aprovar-correcoes'">Aprovar Correções</button>
-    </div>
-    <div>
-        <button onclick="location.href='/gerenciar-corretores'">Gerenciar Corretores</button>
-    </div>
-    <div>
-        <button onclick="location.href='/gerenciar-questoes'">Gerenciar Questões</button>
-    </div>
-
     <h2>Empresas Cadastradas</h2>
     <div class="card-container">
         <div class="card" th:each="empresa : ${empresas}">
@@ -52,5 +38,20 @@
             </div>
         </div>
     </div>
+    <h1>Bem-vindo!</h1>
+    <div>
+        <button onclick="location.href='/gerenciar-empresas'">Gerenciar Empresas</button>
+    </div>
+    <div>
+        <button onclick="location.href='/aprovar-correcoes'">Aprovar Correções</button>
+    </div>
+    <div>
+        <button onclick="location.href='/gerenciar-corretores'">Gerenciar Corretores</button>
+    </div>
+    <div>
+        <button onclick="location.href='/gerenciar-questoes'">Gerenciar Questões</button>
+    </div>
+
+    
 </body>
 </html>

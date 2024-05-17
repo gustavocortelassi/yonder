@@ -26,7 +26,7 @@ public class HomeController {
         this.empresaRepository = empresaRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
         model.addAttribute("empresas", empresas);
