@@ -1,9 +1,6 @@
 package projeto.yonder.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -14,14 +11,14 @@ public class Pergunta {
     private Long Id;
     private String Cabecalho;
     private Long Dificuldade;
-    private Long TipoProvaId;
+    private String TipoProvaId;
     private Long NiveisId;
     private String Audio;
 
     public Pergunta() {
     }
 
-    public Pergunta(Long id, String cabecalho, Long dificuldade, Long tipoProvaId, Long niveisId, String audio) {
+    public Pergunta(Long id, String cabecalho, Long dificuldade, String tipoProvaId, Long niveisId, String audio) {
         Id = id;
         Cabecalho = cabecalho;
         Dificuldade = dificuldade;
@@ -54,11 +51,11 @@ public class Pergunta {
         Dificuldade = dificuldade;
     }
 
-    public Long getTipoProvaId() {
+    public String getTipoProvaId() {
         return TipoProvaId;
     }
 
-    public void setTipoProvaId(Long tipoProvaId) {
+    public void setTipoProvaId(String tipoProvaId) {
         TipoProvaId = tipoProvaId;
     }
 
