@@ -16,16 +16,19 @@ public class EmpresaService {
         this.empresaRepository = empresaRepository;
     }
 
+    // metodo para salvar
     public Empresa save(Empresa empresa) {
         return empresaRepository.save(empresa);
     }
 
-    public List<Empresa> findAll() {
-        return empresaRepository.findAll();
+    // metodo para excluir
+    public void excluirEmpresa(Long id) {
+        empresaRepository.deleteById(id);
     }
 
-    public void delete(Long id) {
-        empresaRepository.deleteById(id);
+    // metodo para listar
+    public List<Empresa> getAllEmpresas(){
+        return empresaRepository.findAll();
     }
 
 }

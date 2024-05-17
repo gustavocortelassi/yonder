@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import projeto.yonder.model.Pergunta;
 import projeto.yonder.repository.PerguntaRepository;
 
 @Service
@@ -15,7 +16,7 @@ public class PerguntaService {
         this.perguntaRepository = perguntaRepository;
     }
 
-    public List<projeto.yonder.model.Pergunta> listarPerguntas() {
+    public List<Pergunta> listarPerguntas() {
         return perguntaRepository.findAll();
     }
 }
