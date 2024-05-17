@@ -16,7 +16,6 @@ import projeto.yonder.repository.EmpresaRepository;
 import projeto.yonder.service.EmpresaService;
 
 @Controller
-@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired
