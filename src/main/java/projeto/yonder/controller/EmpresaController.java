@@ -65,4 +65,10 @@ public class EmpresaController {
         empresaRepository.save(empresa);
         return "redirect:/empresas";
     }
+
+    @GetMapping("/gerenciar-empresas")
+    public String gerenciarEmpresas() {
+        return "gerenciarEmpresas"; //falta criar essa pagina
+    }
+    
 }
