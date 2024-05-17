@@ -2,6 +2,7 @@ package projeto.yonder.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,6 +18,11 @@ public class UsuarioController {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @GetMapping("/")
+    public String showLoginForm(Model model) {
+        return "TelaLogin";
+    }
+
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password,
             Model model) {
@@ -30,7 +36,7 @@ public class UsuarioController {
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", "Usuário ou senha inválidos");
-            return "login";
+            return "TelaLogin";
         }
     }
 }

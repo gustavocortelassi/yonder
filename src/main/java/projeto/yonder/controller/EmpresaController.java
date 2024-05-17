@@ -22,10 +22,10 @@ public class EmpresaController {
     public String getEmpresas(Model model) {
         List<Empresa> empresas = empresaService.findAll();
         model.addAttribute("empresas", empresas);
-        return "empresas";
+        return "TelaCadastroEmpresas";
     }
 
-    @PostMapping("/cadastrarEmpresa")
+    @PostMapping("/cadastro")
     public String cadastrarEmpresa(@RequestParam("razaoSocial") String razaoSocial,
             @RequestParam("cnpj") String cnpj,
             @RequestParam("cep") String cep,
@@ -37,6 +37,6 @@ public class EmpresaController {
         Empresa empresa = new Empresa(razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
         empresaService.save(empresa);
 
-        return "/empresas";
+        return "TelaCadastroEmpresas";
     }
 }
