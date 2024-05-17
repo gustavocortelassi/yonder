@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import projeto.yonder.model.Empresa;
 import projeto.yonder.model.Usuario;
 import projeto.yonder.service.EmpresaService;
 import projeto.yonder.service.UsuarioService;
@@ -25,6 +23,11 @@ public class UsuarioController {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @GetMapping("/")
+    public String showLoginForm(Model model) {
+        return "TelaLogin";
+    }
 
     @Autowired
     private UsuarioService usuarioService;
@@ -51,11 +54,6 @@ public class UsuarioController {
         return "redirect:/usuarios";
     }
 
-    @GetMapping("/formlogin")
-    public String showLoginForm() {
-        return "login"; 
-    }
-
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         Query query = entityManager.createNativeQuery("SELECT * FROM Usuario WHERE Nome = ? AND CPF = ?", Usuario.class);
@@ -69,8 +67,7 @@ public class UsuarioController {
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", "Usuário ou senha inválidos");
-            return "login"; // Retornar para a página de login com mensagem de erro
+            return "TelaLogin"; // Retornar para a página de login com mensagem de erro
         }
     }
-
 }

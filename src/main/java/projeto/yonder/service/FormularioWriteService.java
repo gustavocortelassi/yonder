@@ -8,6 +8,7 @@ import projeto.yonder.repository.FormularioWriteRepository;
 @Service
 public class FormularioWriteService {
 
+    @Autowired
     private FormularioWriteRepository formularioWriteRepository;
 
     @Autowired
@@ -23,3 +24,4 @@ public class FormularioWriteService {
         formularioWriteRepository.save(formularioWrite);
     }
 }
+

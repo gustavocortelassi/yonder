@@ -15,12 +15,6 @@ public class HomeController {
     
      private final EmpresaRepository empresaRepository;
 
-    // Modificar aqui para acessar as paginas
-    // @GetMapping("/")
-    // public String home() {
-    //     return "home";
-    // }
-
     @Autowired
     public HomeController(EmpresaRepository empresaRepository) {
         this.empresaRepository = empresaRepository;
