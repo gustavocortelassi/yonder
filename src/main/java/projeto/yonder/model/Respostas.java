@@ -13,7 +13,7 @@ public class Respostas {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private Long Id;
     private String Titulo;
     private boolean Correto;
     private int Ordem;
@@ -26,7 +26,7 @@ public class Respostas {
     }
 
 
-    public Respostas(int id, String titulo, boolean correto, int ordem) {
+    public Respostas(Long id, String titulo, boolean correto, int ordem) {
         Id = id;
         Titulo = titulo;
         Correto = correto;
@@ -34,12 +34,12 @@ public class Respostas {
     }
 
 
-    public int getId() {
+    public Long getId() {
         return Id;
     }
 
 
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 
