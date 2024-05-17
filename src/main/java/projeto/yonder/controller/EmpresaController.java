@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,43 +25,42 @@ public class EmpresaController {
     @Autowired
     private EmpresaRepository empresaRepository;
 
+    @GetMapping("/cadastrarEmpresas")
+    public String showCadastroForm() {
+        return "cadastrar-empresas";
+    }
+
     @GetMapping
     public String listarEmpresas(Model model) {
-        List<Empresa> empresas = empresaRepository.findAll();
+        List<Empresa> empresas = empresaService.getAllEmpresas();
         model.addAttribute("empresas", empresas);
-        return "listaEmpresas";
+        return "listar-empresas";
     }
 
     @PostMapping("/cadastrarEmpresa")
     public String cadastrarEmpresa(@RequestParam("razaoSocial") String razaoSocial,
             @RequestParam("cnpj") String cnpj,
-            @RequestParam("cep") String cep,    
+            @RequestParam("cep") String cep,
             @RequestParam("logradouro") String logradouro,
             @RequestParam("bairro") String bairro,
             @RequestParam("numero") Long numero,
             @RequestParam("complemento") String complemento) {
 
-        Empresa empresa = new Empresa(razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
+        Empresa empresa = new Empresa(numero, razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
         empresaService.save(empresa);
 
-        return "/empresas";
+        return "redirect:/empresas";
     }
 
     @PostMapping("/excluir/{id}")
     public String excluirEmpresa(@PathVariable("id") Long id) {
-        empresaRepository.deleteById(id);
+        empresaService.excluirEmpresa(id);
         return "redirect:/empresas";
     }
 
-    @GetMapping("/adicionar")
-    public String exibirFormularioAdicionar(Model model) {
-        model.addAttribute("empresa", new Empresa());
-        return "index";
+    @GetMapping("/gerenciar-empresas")
+    public String gerenciarEmpresas() {
+        return "gerenciarEmpresas"; //falta criar essa pagina
     }
-
-    @PostMapping("/adicionar")
-    public String adicionarEmpresa(@ModelAttribute("empresa") Empresa empresa) {
-        empresaRepository.save(empresa);
-        return "redirect:/empresas";
-    }
+    
 }

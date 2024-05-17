@@ -3,6 +3,8 @@ package projeto.yonder.service;
 import java.util.List;
 
 import projeto.yonder.repository.EmpresaRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import projeto.yonder.model.Empresa;
@@ -10,22 +12,31 @@ import projeto.yonder.model.Empresa;
 @Service
 public class EmpresaService {
 
+    @Autowired
     private EmpresaRepository empresaRepository;
 
     public EmpresaService(EmpresaRepository empresaRepository) {
         this.empresaRepository = empresaRepository;
     }
 
+    // metodo para salvar
     public Empresa save(Empresa empresa) {
         return empresaRepository.save(empresa);
     }
 
-    public List<Empresa> findAll() {
+    // metodo para excluir
+    public void excluirEmpresa(Long id) {
+        empresaRepository.deleteById(id);
+    }
+
+    // metodo para listar
+    public List<Empresa> getAllEmpresas(){
         return empresaRepository.findAll();
     }
 
-    public void delete(Long id) {
-        empresaRepository.deleteById(id);
+    // metodo para cadastrar quando for cadastrar usuario
+    public Empresa getEmpresaById(Long id) {
+        return empresaRepository.findById(id).orElse(null);
     }
 
 }
