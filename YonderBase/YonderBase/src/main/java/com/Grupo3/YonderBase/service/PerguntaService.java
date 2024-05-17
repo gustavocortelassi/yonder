@@ -2,13 +2,7 @@ package com.Grupo3.YonderBase.service;
 
 import com.Grupo3.YonderBase.model.Pergunta;
 import com.Grupo3.YonderBase.repository.PerguntaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class PerguntaService {
