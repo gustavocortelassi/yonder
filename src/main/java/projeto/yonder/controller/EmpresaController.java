@@ -17,7 +17,6 @@ import projeto.yonder.repository.EmpresaRepository;
 import projeto.yonder.service.EmpresaService;
 
 @Controller
-@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired
@@ -26,11 +25,11 @@ public class EmpresaController {
     @Autowired
     private EmpresaRepository empresaRepository;
 
-    @GetMapping
+    @GetMapping("/empresas")
     public String listarEmpresas(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
         model.addAttribute("empresas", empresas);
-        return "listaEmpresas";
+        return "listar-empresas"; 
     }
 
     @PostMapping("/cadastrarEmpresa")
@@ -54,15 +53,4 @@ public class EmpresaController {
         return "redirect:/empresas";
     }
 
-    @GetMapping("/adicionar")
-    public String exibirFormularioAdicionar(Model model) {
-        model.addAttribute("empresa", new Empresa());
-        return "index";
-    }
-
-    @PostMapping("/adicionar")
-    public String adicionarEmpresa(@ModelAttribute("empresa") Empresa empresa) {
-        empresaRepository.save(empresa);
-        return "redirect:/empresas";
-    }
 }
