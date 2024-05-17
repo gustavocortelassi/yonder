@@ -10,90 +10,92 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    private String RazaoSocial;
-    private String CNPJ;
-    private String CEP;
-    private String Logradouro;
-    private String Bairro;
-    private Long Numero;
-    private String Complemento;
+    private Long id;
+    private String razaoSocial;
+    private String cnpj;
+    private String cep;
+    private String logradouro;
+    private String bairro;
+    private Long numero;
+    private String complemento;
 
     public Empresa() {
     }
 
-    public Empresa(String razaoSocial, String cnpj, String cep, String logradouro, String bairro, Long numero,
+    public Empresa(Long id, String razaoSocial, String cnpj, String cep, String logradouro, String bairro, Long numero,
             String complemento) {
-        this.RazaoSocial = razaoSocial;
-        this.CNPJ = cnpj;
-        this.CEP = cep;
-        this.Logradouro = logradouro;
-        this.Bairro = bairro;
-        this.Numero = numero;
-        this.Complemento = complemento;
+        this.id = id;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.bairro = bairro;
+        this.numero = numero;
+        this.complemento = complemento;
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        this.Id = id;
+        this.id = id;
     }
 
     public String getRazaoSocial() {
-        return RazaoSocial;
+        return razaoSocial;
     }
 
     public void setRazaoSocial(String razaoSocial) {
-        this.RazaoSocial = razaoSocial;
+        this.razaoSocial = razaoSocial;
     }
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCNPJ(String cnpj) {
-        this.CNPJ = cnpj;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
-    public String getCEP() {
-        return CEP;
+    public String getCep() {
+        return cep;
     }
 
-    public void setCEP(String cep) {
-        this.CEP = cep;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getLogradouro() {
-        return Logradouro;
+        return logradouro;
     }
 
     public void setLogradouro(String logradouro) {
-        this.Logradouro = logradouro;
+        this.logradouro = logradouro;
     }
 
     public String getBairro() {
-        return Bairro;
+        return bairro;
     }
 
     public void setBairro(String bairro) {
-        this.Bairro = bairro;
+        this.bairro = bairro;
     }
 
     public Long getNumero() {
-        return Numero;
+        return numero;
     }
 
     public void setNumero(Long numero) {
-        this.Numero = numero;
+        this.numero = numero;
     }
 
     public String getComplemento() {
-        return Complemento;
+        return complemento;
     }
 
     public void setComplemento(String complemento) {
-        this.Complemento = complemento;
+        this.complemento = complemento;
     }
+
 }
