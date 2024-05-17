@@ -22,4 +22,9 @@ public class PerguntaController {
         model.addAttribute("perguntas", perguntas);
         return "/lista-perguntas";
     }
+
+    @GetMapping("/gerenciar-perguntas")
+    public String gerenciarQuestoes() {
+        return "gerenciarPerguntas"; //falta criar
+    }
 }
