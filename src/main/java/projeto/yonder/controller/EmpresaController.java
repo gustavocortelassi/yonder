@@ -6,23 +6,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import projeto.yonder.model.Empresa;
+import projeto.yonder.repository.EmpresaRepository;
 import projeto.yonder.service.EmpresaService;
 
 @Controller
+@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired
     private EmpresaService empresaService;
 
-    @GetMapping("/empresas")
-    public String getEmpresas(Model model) {
-        List<Empresa> empresas = empresaService.findAll();
+    @Autowired
+    private EmpresaRepository empresaRepository;
+
+    @GetMapping("/cadastrarEmpresas")
+    public String showCadastroForm() {
+        return "cadastrar-empresas";
+    }
+
+    @GetMapping
+    public String listarEmpresas(Model model) {
+        List<Empresa> empresas = empresaService.getAllEmpresas();
         model.addAttribute("empresas", empresas);
-        return "TelaCadastroEmpresas";
+        return "listar-empresas";
     }
 
     @PostMapping("/cadastro")
@@ -34,9 +46,19 @@ public class EmpresaController {
             @RequestParam("numero") Long numero,
             @RequestParam("complemento") String complemento) {
 
-        Empresa empresa = new Empresa(razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
+        Empresa empresa = new Empresa(numero, razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
         empresaService.save(empresa);
-
         return "TelaCadastroEmpresas";
+    }
+
+    @PostMapping("/excluir/{id}")
+    public String excluirEmpresa(@PathVariable("id") Long id) {
+        empresaService.excluirEmpresa(id);
+        return "redirect:/empresas";
+    }
+
+    @GetMapping("/gerenciar-empresas")
+    public String gerenciarEmpresas() {
+        return "gerenciarEmpresas"; //falta criar essa pagina
     }
 }

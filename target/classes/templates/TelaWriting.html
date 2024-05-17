@@ -29,7 +29,6 @@
 </html>
 =======
     <link rel="stylesheet" href="../src/css/writing.css">
-    <script src="/script/writing.js"></script>
 </head>
 
 <body>
@@ -44,6 +43,15 @@
         <div class="botao" type="submit">CONCLUIR</div>
     </form>
 </div>
+<script th:inline="javascript">
+    document.getElementById("resposta").oninput = function() {
+        var words = this.value.split(/\s+/).filter(function(word) {
+            return word.length > 0;
+        });
+        var count = words.length;
+        document.getElementById("wordCount").textContent = count + "/500 palavras";
+    };
+</script>
 </body>
 
 </html>
