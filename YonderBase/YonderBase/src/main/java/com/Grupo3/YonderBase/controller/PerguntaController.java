@@ -4,8 +4,7 @@ import com.Grupo3.YonderBase.model.Pergunta;
 import com.Grupo3.YonderBase.repository.PerguntaRepository;
 import com.Grupo3.YonderBase.service.PerguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
-import org.springframework.data.crossstore.ChangeSetPersister;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -13,12 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
-import java.util.List;
-import java.util.Optional;
 
 
 @Controller
@@ -35,6 +29,13 @@ public class PerguntaController {
                 Sort.Order.asc("id")))));
         model.addAttribute("currentPage", page);
         return "visualizarPerguntas";
+    }
+
+    @GetMapping("/pergunta/{id}")
+    public String showPergunta(@PathVariable Long id, Model model) {
+        Pergunta pergunta = perguntaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pergunta inválida"));
+        model.addAttribute("pergunta", pergunta);
+        return "pergunta(:";
     }
 
     @PostMapping("/savePergunta")
@@ -54,17 +55,19 @@ public class PerguntaController {
         }
     }
 
-    @PutMapping("/pergunta/editar/{id}")
+    @PostMapping("/pergunta/editar/{id}")
     @ResponseBody
-    public String editarPergunta(@PathVariable("id") Long perguntaId,
-                                 @RequestParam("cabecalho") String cabecalho,
-                                 @RequestParam("dificuldade") long dificuldade,
-                                 @RequestParam("tipoProvaId") String tipoProvaId,
-                                 @RequestParam("niveisId") long niveisId,
-                                 @RequestParam("audio") String audio) {
-        perguntaService.editarPergunta(perguntaId, cabecalho, dificuldade, tipoProvaId, niveisId, audio);
-        return "Pergunta editada com sucesso!";
+    public String editarPergunta(@PathVariable("id") Long perguntaId, @RequestBody Pergunta pergunta) {
+        try {
+            perguntaService.editarPergunta(perguntaId, pergunta);
+            return "redirect:/pergunta";
+        } catch (Exception e) {
+            return "redirect:/pergunta";
+        }
     }
+
+
+
 
 }
 
