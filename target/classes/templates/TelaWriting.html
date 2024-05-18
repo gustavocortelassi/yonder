@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-=======
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-
->>>>>>> main
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="../static/css/writing.css" th:href="@{/css/writing.css}">
 </head>
 <body>
@@ -27,32 +21,3 @@
 <script src="../static/script/writing.js" th:src="@{/script/writing.js}"></script>
 </body>
 </html>
-=======
-    <link rel="stylesheet" href="../src/css/writing.css">
-</head>
-
-<body>
-<div class="container">
-    <div class="enunciado">
-        <p>O primeiro grande título do Vasco foi o Campeonato Carioca de 1923, conquistado pelo time conhecido como "Camisas Negras", um elenco com a maioria dos jogadores sendo negros e de classes operárias. O clube se orgulha de sua luta antirracista, marcada pela Resposta Histórica, carta na qual o cruzmaltino recusou-se a dispensar doze de seus atletas negros contra a vontade da liga carioca, que alegava tratarem-se de pessoas com "profissão duvidosa". O clube ainda tem, dentre o seu plantel de ídolos, alguns dos maiores artilheiros do Campeonato Brasileiro, tendo como Roberto Dinamite, o maior, com a marca de 190 gols, seguido por Romário e Edmundo, com 154 e 153 gols respectivamente.[17] O primeiro grande ídolo do clube foi o atacante Ademir de Menezes, que liderou o Expresso da Vitória, tornando-se o maior artilheiro do Vasco com 301 gols marcados, número só superado por Dinamite e Romário décadas mais tarde.</p>
-    </div>
-    <br>
-    <form action="#" th:action="@{/writing/{id}/writing}" th:object="${formularioWrite}" method="post">
-        <textarea id="resposta" class="textarea" th:field="*{resposta}" placeholder="Máximum 500 words." maxlength=""></textarea>
-        <div class="word-count" id="wordCount">0/500 palavras</div>
-        <div class="botao" type="submit">CONCLUIR</div>
-    </form>
-</div>
-<script th:inline="javascript">
-    document.getElementById("resposta").oninput = function() {
-        var words = this.value.split(/\s+/).filter(function(word) {
-            return word.length > 0;
-        });
-        var count = words.length;
-        document.getElementById("wordCount").textContent = count + "/500 palavras";
-    };
-</script>
-</body>
-
-</html>
->>>>>>> main

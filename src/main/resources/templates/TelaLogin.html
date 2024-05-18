@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 <body>
-<h2>Login</h2>
-<form action="#" th:action="@{/login}" method="post">
-    <div>
-        <label for="username">Nome:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-        <label for="password">CPF:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-    <div th:if="${error}" style="color: red">
-        <span th:text="${error}"></span>
-    </div>
-</form>
+<div class="login-container">
+    <img th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+    <h2>Nivelamento de Inglês</h2>
+    <form action="#" th:action="@{/login}" method="post">
+        <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Usuário:" required>
+            <input type="password" id="password" name="password" placeholder="Senha:" required>
+            <button type="submit">Login</button>
+        </div>
+        <div th:if="${error}" class="error-message">
+            <span th:text="${error}"></span>
+        </div>
+    </form>
+        <a href="#" th:href="@{/usuario/cadastro}"><button type="submit">Cadastrar Usuário</button></a>
+</div>
 </body>
 </html>
