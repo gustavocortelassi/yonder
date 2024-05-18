@@ -1,13 +1,11 @@
-**/target/
-/target/
-*/target/*
-.classpath
-.project
-.settings
+application.properties
 
-*.jar
-*.war
-*.ear
-
+.idea/
+out/
 *.iml
-*.idea
+*.ipr
+*.iws
+.idea_modules/
+
+.vscode/
+*.code-workspace
