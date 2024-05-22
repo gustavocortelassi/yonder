@@ -37,7 +37,7 @@ public class EmpresaController {
         return "listar-empresas";
     }
 
-    @PostMapping("/cadastrarEmpresa")
+    @PostMapping("/cadastro")
     public String cadastrarEmpresa(@RequestParam("razaoSocial") String razaoSocial,
             @RequestParam("cnpj") String cnpj,
             @RequestParam("cep") String cep,
@@ -48,8 +48,7 @@ public class EmpresaController {
 
         Empresa empresa = new Empresa(numero, razaoSocial, cnpj, cep, logradouro, bairro, numero, complemento);
         empresaService.save(empresa);
-
-        return "redirect:/empresas";
+        return "TelaCadastroEmpresas";
     }
 
     @PostMapping("/excluir/{id}")
@@ -62,5 +61,11 @@ public class EmpresaController {
     public String gerenciarEmpresas() {
         return "gerenciarEmpresas"; //falta criar essa pagina
     }
-    
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        List<Empresa> empresas = empresaRepository.findAll();
+        model.addAttribute("empresas", empresas);
+        return "home";
+    }
 }

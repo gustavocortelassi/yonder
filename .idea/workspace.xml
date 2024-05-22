@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/script/pergunta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisualisarPerguntas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/PerguntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/PerguntaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="34-tela-de-prova-de-listening-front" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2evdPT8EMNdTqH51ujfnWObTCLO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.YonderBaseApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "33-tela-de-correo-do-texto-front",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/igorale/Documents/yonder",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/src" />
+      <recent name="C:\Users\vitor\OneDrive - Biopark Educação\Terceiro Periodo\projeto_yonder\yonder\YonderBase\YonderBase\src\main\resources\static" />
+      <recent name="C:\Users\vitor\OneDrive - Biopark Educação\Terceiro Periodo\projeto_yonder\yonder\YonderBase\YonderBase\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="yonder" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="projeto.yonder.YonderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="yonder" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="projeto.yonder.YonderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="" />
+      <created>1712788964446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712788964446</updated>
+      <workItem from="1712788966025" duration="2869000" />
+      <workItem from="1712860452173" duration="273000" />
+      <workItem from="1712873714507" duration="617000" />
+      <workItem from="1712877116592" duration="1141000" />
+      <workItem from="1712947004641" duration="674000" />
+      <workItem from="1712948760386" duration="1359000" />
+      <workItem from="1712950361537" duration="9488000" />
+      <workItem from="1713307535173" duration="3970000" />
+      <workItem from="1713359291559" duration="1576000" />
+      <workItem from="1713373968421" duration="4106000" />
+      <workItem from="1713392739982" duration="57000" />
+      <workItem from="1713399861821" duration="1486000" />
+      <workItem from="1713453993616" duration="599000" />
+      <workItem from="1713460947451" duration="1738000" />
+      <workItem from="1713493275881" duration="2884000" />
+      <workItem from="1713535833952" duration="17178000" />
+      <workItem from="1713563541490" duration="3916000" />
+      <workItem from="1713568861420" duration="1164000" />
+      <workItem from="1713996985339" duration="5698000" />
+      <workItem from="1714146236248" duration="15634000" />
+      <workItem from="1714173288706" duration="4091000" />
+      <workItem from="1714676882238" duration="3032000" />
+      <workItem from="1714688379229" duration="5568000" />
+      <workItem from="1714705764525" duration="114000" />
+      <workItem from="1714705902035" duration="4150000" />
+      <workItem from="1714744862694" duration="8529000" />
+      <workItem from="1714766148543" duration="1452000" />
+      <workItem from="1714767622436" duration="2509000" />
+      <workItem from="1714773583986" duration="1641000" />
+      <workItem from="1715968798021" duration="328000" />
+      <workItem from="1716039267089" duration="8938000" />
+    </task>
+    <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
+      <option name="closed" value="true" />
+      <created>1714767341840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714767341840</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Tela para gerenciamento de questões">
+      <option name="closed" value="true" />
+      <created>1714767505778</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714767505778</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/12-tela-de-cadastro-de-novas-empresas" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tela para gerenciamento de questões" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tela para gerenciamento de questões" />
+  </component>
+</project>
