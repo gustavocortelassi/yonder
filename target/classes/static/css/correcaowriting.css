@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5em 1em 1em;
+}
+
+.textarea {
+    resize: none;
+    height: 25em;
+    border-radius: 5px;
+    border: 2px solid #003366;
+    margin-bottom: 10px;
+    padding: 0.9em 1.5em 0.9em 1.5em;
+}
+
+.contador {
+    margin-bottom: 10px;
+}
+
+.buttons {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.botao {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right;
+}
+
+.botao:hover {
+    background-color: #003366;
+}

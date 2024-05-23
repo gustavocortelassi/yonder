@@ -34,14 +34,14 @@ public class FormularioWriteController {
         return "TelaCandidatoRespostas";
     }
 
-    @GetMapping("/correcao")
+    @GetMapping("/correcaowriting")
     public String corrigir(@RequestParam("id") Long id, Model model) {
         FormularioWrite formularioWrite = formularioWriteService.findById(id);
         model.addAttribute("formularioWrite", formularioWrite);
-        return "TelaRespostas";
+        return "TelaCorrecaoWriting";
     }
 
-    @PostMapping("/correcao")
+    @PostMapping("/correcaowriting")
     public String corrigir(@ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
         formularioWrite.setCorrigido(true);
         formularioWriteService.save(formularioWrite);
