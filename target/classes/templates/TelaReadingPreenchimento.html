@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preencher</title>
+    <link rel="stylesheet" href="../static/css/writing.css" th:href="@{/css/writing.css}">
+
+    <style>
+        .botaores {
+    background-color: #5B88A5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: center;
+    margin-left: 10px;
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+.botaores:hover {
+    background-color: #25517d;
+}
+
+.cloze {
+        border-bottom: 1px dashed black;
+        padding-bottom: 2px;
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div style="font-size: 20px;"  class="enunciado">
+            <p>Preencha as lacunas:</p>
+<p>
+    A  <span class="cloze" id="cloze1" data-placeholder="1">________</span> é a estrela que ilumina a <span class="cloze" id="cloze2" data-placeholder="2">________</span> durante o dia.
+</p>
+<button onclick="verificarRespostas()">Verificar Respostas</button>
+
+      </div>
+
+      <div id="opcoes">
+        <button class="botaores" onclick="inserirOpcao('A resposta',this)">A- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('B resposta',this)">B- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('C resposta',this)">C- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('D resposta',this)">D- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('E resposta',this)">E- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('F resposta',this)">F- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('G resposta',this)">G- resposta</button>
+        <button class="botaores" onclick="inserirOpcao('H resposta',this)">H- resposta</button>
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+    <button style="margin-right: 15%;" type="submit" class="botao">PRÓXIMO</button>
+
+    <script>
+        const respostas = ["sol", "terra"]; // Respostas corretas
+        let respostasUsuario = {}; // Respostas do usuário por lacuna
+    
+        function inserirOpcao(opcao, botao) {
+            const preenchimento = botao.parentNode.previousElementSibling.querySelector('.cloze');
+    
+            if (respostasUsuario[preenchimento.id]) {
+                alert("Você já preencheu esta lacuna. Clique na opção dentro do texto para selecioná-la novamente.");
+                return;
+            }
+    
+            preenchimento.textContent = opcao;
+            respostasUsuario[preenchimento.id] = opcao.toLowerCase();
+            botao.style.display = "none"; // Esconde o botão após ser clicado
+    
+            // Verifica se todas as lacunas foram preenchidas para ativar o botão de verificação
+            const todasPreenchidas = Object.keys(respostasUsuario).length === respostas.length;
+            if (todasPreenchidas) {
+                document.getElementById('verificar-btn').disabled = false;
+            }
+        }
+    
+        document.querySelectorAll('.cloze').forEach(span => {
+            span.addEventListener('click', function() {
+                const placeholder = span.getAttribute('data-placeholder');
+                const opcao = respostasUsuario[span.id];
+                if (placeholder && opcao) {
+                    span.textContent = "________"; // Volta a exibir a linha pontilhada
+                    const opcaoRemovida = document.createElement('button');
+                    opcaoRemovida.textContent = opcao.charAt(0).toUpperCase() + opcao.slice(1); // Capitaliza a primeira letra da opção
+                    opcaoRemovida.className = "opcao-button"; // Adiciona a classe de estilo ao botão reexibido
+                    opcaoRemovida.onclick = function() {
+                        inserirOpcao(opcao, opcaoRemovida);
+                        this.remove(); // Remove a opção reexibida quando clicada
+                    };
+                    const opcoesDiv = document.getElementById('opcoes');
+                    const botaoExistente = opcoesDiv.querySelector(`button[data-opcao="${opcao}"]`);
+                    if (botaoExistente) {
+                        botaoExistente.style.display = "inline-block";
+                    } else {
+                        opcaoRemovida.setAttribute("data-opcao", opcao); // Atribui um data-opcao para identificação
+                        opcoesDiv.appendChild(opcaoRemovida); // Adiciona o botão de opção removido de volta às opções
+                    }
+                    delete respostasUsuario[span.id]; // Remove a resposta da lacuna
+                }
+            });
+        });
+    
+        function verificarRespostas() {
+            const lacunas = document.querySelectorAll('.cloze');
+            const lacunasPreenchidas = Object.keys(respostasUsuario);
+    
+            if (lacunasPreenchidas.length !== lacunas.length) {
+                alert("Por favor, preencha todas as lacunas antes de verificar as respostas.");
+                return;
+            }
+    
+            const respostasUsuarioArray = lacunasPreenchidas.map(lacunaId => respostasUsuario[lacunaId]);
+    
+            const todasCorretas = respostas.every((resposta, index) => resposta === respostasUsuarioArray[index]);
+    
+            if (todasCorretas) {
+                alert("Todas as respostas estão corretas!");
+            } else {
+                alert("Algumas respostas estão incorretas. Por favor, verifique novamente.");
+            }
+        }
+    </script>
+    
+</body>
+</html>
