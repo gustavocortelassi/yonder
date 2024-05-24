@@ -33,13 +33,21 @@
 
 </head>
 <body>
-    <div class="container">
-        <div style="font-size: 20px;"  class="enunciado">
-            <p>Preencha as lacunas:</p>
-<p>
-    A  <span class="cloze" id="cloze1" data-placeholder="1">________</span> é a estrela que ilumina a <span class="cloze" id="cloze2" data-placeholder="2">________</span> durante o dia.
-</p>
-<button onclick="verificarRespostas()">Verificar Respostas</button>
+    <div class="container"> 
+<div class="question">
+    <div class="enunciado">  
+    <p>Preencha as lacunas no texto abaixo:</p>
+    <p>O Brasil é o país mais <span class="lacuna" id="lacuna1" onclick="removerPreenchimento('lacuna1')">_________</span> do mundo.</p>
+    <p>Os Estados Unidos estão localizados na <span class="lacuna" id="lacuna2" onclick="removerPreenchimento('lacuna2')">_________</span>.</p>
+    <br><br>
+    </div>  
+    <div class="opcoes">
+      <button  class="botaores" class="opcao" onclick="preencherLacuna('populoso')">A- Populoso</button>
+      <button class="botaores"  class="opcao" onclick="preencherLacuna('norte')">B- Norte</button>
+    </div>
+    <br><br>
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+  </div>
 
       </div>
 
@@ -52,6 +60,10 @@
         <button class="botaores" onclick="inserirOpcao('F resposta',this)">F- resposta</button>
         <button class="botaores" onclick="inserirOpcao('G resposta',this)">G- resposta</button>
         <button class="botaores" onclick="inserirOpcao('H resposta',this)">H- resposta</button>
+
+        <button class="opcao" onclick="preencherLacuna('populoso')">A</button>
+        <button class="opcao" onclick="preencherLacuna('norte')">B</button>
+  
     </div>
 
 
@@ -65,73 +77,32 @@
     <button style="margin-right: 15%;" type="submit" class="botao">PRÓXIMO</button>
 
     <script>
-        const respostas = ["sol", "terra"]; // Respostas corretas
-        let respostasUsuario = {}; // Respostas do usuário por lacuna
-    
-        function inserirOpcao(opcao, botao) {
-            const preenchimento = botao.parentNode.previousElementSibling.querySelector('.cloze');
-    
-            if (respostasUsuario[preenchimento.id]) {
-                alert("Você já preencheu esta lacuna. Clique na opção dentro do texto para selecioná-la novamente.");
-                return;
-            }
-    
-            preenchimento.textContent = opcao;
-            respostasUsuario[preenchimento.id] = opcao.toLowerCase();
-            botao.style.display = "none"; // Esconde o botão após ser clicado
-    
-            // Verifica se todas as lacunas foram preenchidas para ativar o botão de verificação
-            const todasPreenchidas = Object.keys(respostasUsuario).length === respostas.length;
-            if (todasPreenchidas) {
-                document.getElementById('verificar-btn').disabled = false;
-            }
-        }
-    
-        document.querySelectorAll('.cloze').forEach(span => {
-            span.addEventListener('click', function() {
-                const placeholder = span.getAttribute('data-placeholder');
-                const opcao = respostasUsuario[span.id];
-                if (placeholder && opcao) {
-                    span.textContent = "________"; // Volta a exibir a linha pontilhada
-                    const opcaoRemovida = document.createElement('button');
-                    opcaoRemovida.textContent = opcao.charAt(0).toUpperCase() + opcao.slice(1); // Capitaliza a primeira letra da opção
-                    opcaoRemovida.className = "opcao-button"; // Adiciona a classe de estilo ao botão reexibido
-                    opcaoRemovida.onclick = function() {
-                        inserirOpcao(opcao, opcaoRemovida);
-                        this.remove(); // Remove a opção reexibida quando clicada
-                    };
-                    const opcoesDiv = document.getElementById('opcoes');
-                    const botaoExistente = opcoesDiv.querySelector(`button[data-opcao="${opcao}"]`);
-                    if (botaoExistente) {
-                        botaoExistente.style.display = "inline-block";
-                    } else {
-                        opcaoRemovida.setAttribute("data-opcao", opcao); // Atribui um data-opcao para identificação
-                        opcoesDiv.appendChild(opcaoRemovida); // Adiciona o botão de opção removido de volta às opções
-                    }
-                    delete respostasUsuario[span.id]; // Remove a resposta da lacuna
-                }
-            });
-        });
-    
-        function verificarRespostas() {
-            const lacunas = document.querySelectorAll('.cloze');
-            const lacunasPreenchidas = Object.keys(respostasUsuario);
-    
-            if (lacunasPreenchidas.length !== lacunas.length) {
-                alert("Por favor, preencha todas as lacunas antes de verificar as respostas.");
-                return;
-            }
-    
-            const respostasUsuarioArray = lacunasPreenchidas.map(lacunaId => respostasUsuario[lacunaId]);
-    
-            const todasCorretas = respostas.every((resposta, index) => resposta === respostasUsuarioArray[index]);
-    
-            if (todasCorretas) {
-                alert("Todas as respostas estão corretas!");
-            } else {
-                alert("Algumas respostas estão incorretas. Por favor, verifique novamente.");
-            }
-        }
+        function preencherLacuna(palavra) {
+  var lacunaVazia = document.querySelector('.lacuna:not(.preenchida)');
+  if (lacunaVazia) {
+    lacunaVazia.innerText = palavra;
+    lacunaVazia.classList.add('preenchida');
+  }
+}
+
+function removerPreenchimento(lacunaId) {
+  var lacuna = document.getElementById(lacunaId);
+  lacuna.innerText = '_________';
+  lacuna.classList.remove('preenchida');
+}
+
+function verificarRespostas() {
+  var lacuna1Resposta = document.getElementById('lacuna1').innerText.trim().toLowerCase();
+  var lacuna2Resposta = document.getElementById('lacuna2').innerText.trim().toLowerCase();
+
+  var resultado = document.getElementById('resultado');
+
+  if (lacuna1Resposta === 'populoso' && lacuna2Resposta === 'norte') {
+    resultado.innerHTML = '<p>Parabéns! Todas as respostas estão corretas.</p>';
+  } else {
+    resultado.innerHTML = '<p>Algumas respostas estão incorretas. Tente novamente.</p>';
+  }
+}
     </script>
     
 </body>
