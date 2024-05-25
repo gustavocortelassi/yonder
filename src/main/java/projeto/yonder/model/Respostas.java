@@ -19,12 +19,11 @@ public class Respostas {
     private int Ordem;
     
     @ManyToOne
-    @JoinColumn(name = "perguntas_id")
+    @JoinColumn(name = "pergunta_id")
     private Pergunta pergunta;
     
     public Respostas() {
     }
-
 
     public Respostas(Long id, String titulo, boolean correto, int ordem) {
         Id = id;
@@ -72,6 +71,15 @@ public class Respostas {
     public void setOrdem(int ordem) {
         Ordem = ordem;
     }
-   
+
+
+    public Pergunta getPergunta() {
+        return pergunta;
+    }
+
+
+    public void setPergunta(Pergunta pergunta) {
+        this.pergunta = pergunta;
+    } 
     
 }

@@ -17,7 +17,7 @@ public class Pergunta {
     private Long NiveisId;
     private String Audio;
 
-    @OneToMany(mappedBy = "pergunta")
+    @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL)
     private List<Respostas> respostas;
 
     public Pergunta() {
