@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaLogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/writing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/writing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/confirmarbutton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/writing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/writing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/correcaowriting.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/correcaowriting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/writing.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/writing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/confirmarbutton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaCorrecaoWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaCorrecaoWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaWriting.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +81,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "proofread",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -158,6 +165,7 @@
       <workItem from="1714773583986" duration="1641000" />
       <workItem from="1715968798021" duration="328000" />
       <workItem from="1716039267089" duration="8938000" />
+      <workItem from="1716661167475" duration="9964000" />
     </task>
     <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
       <option name="closed" value="true" />
