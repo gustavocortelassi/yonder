@@ -2,13 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
-    <link rel="stylesheet" href="../static/css/cadastrousuario.css" th:href="@{/css/cadastrousuario.css}">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/cadastrousuario.css}">
 </head>
 <body>
 <div class="container">
-    <img src="../static/img/yonderlogo.png" th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+    <img th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
     <h2>Cadastro de Usuário</h2>
     <form th:action="@{/usuario/cadastro}" method="post">
         <div class="form-group">
@@ -18,7 +17,7 @@
             <button type="submit">Cadastrar</button>
         </div>
     </form>
-    <a href="TelaLogin.html" th:href="@{/}"><button type="submit">Voltar</button></a>
+    <a href="#" th:href="@{/}"><button type="submit">Voltar</button></a>
 </div>
 </body>
 </html>

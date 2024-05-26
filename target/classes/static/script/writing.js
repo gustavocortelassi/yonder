@@ -5,7 +5,3 @@ document.getElementById("resposta").oninput = function() {
     var count = words.length;
     document.getElementById("contador").textContent = count + "/500 palavras";
 };
-
-function chooseOption(option) {
-    document.querySelector('.dropbtn').textContent = option;
-}

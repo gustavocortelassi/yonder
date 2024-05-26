@@ -1,34 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
 .container {
     max-width: 60em;
     margin: 2em auto;
 }
 
-.statement{
-    background-color: var(--blue);
-    color: var(--white);
+.enunciado{
+    background-color: #243A69;
+    color: white;
     width: 100%;
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: block;
-    margin: 2em auto;
-    padding: 1em 1.5em 1em 1.5em;
+    padding: 0.6em 1.5em 0.6em 1.5em;
 }
 
 .textarea {
     width: 100%;
     height: 25em;
-    border-radius: 20px;
-    background-color: var(--beige);
-    padding: 1em 1.5em 1em 1.5em;
-    font-size: var(--fs-20);
+    border-radius: 5px;
+    border: 2px solid #003366;
+    margin-bottom: 10px;
+    padding: 0.9em 1.5em 0.9em 1.5em;
 }
 
-.accountant {
-    padding: 0.5em 0.5em 0.5em;
+.contador {
+    margin-bottom: 10px;
 }
 
-.next-button:hover {
-    background-color: var(--skye-blue);
+.botao {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right;
+    margin-left: 10px;
+}
+
+.botao:hover {
+    background-color: #003366;
 }
