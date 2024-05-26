@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de Reading</title>
+</head>
+<body>
+    <h1>Prova de Reading</h1>
+    <div>
+        <h2>Questão 1:</h2>
+        <p>Leia o texto a seguir e escolha a alternativa correta:</p>
+        <p>Texto para leitura...</p>
+    </div>
+    <div>
+        <form method="post" action="/responder">
+            <input type="radio" id="alternativa1" name="resposta" value="alternativa1">
+            <label for="alternativa1">Alternativa 1</label><br>
+            <input type="radio" id="alternativa2" name="resposta" value="alternativa2">
+            <label for="alternativa2">Alternativa 2</label><br>
+            <input type="radio" id="alternativa3" name="resposta" value="alternativa3">
+            <label for="alternativa3">Alternativa 3</label><br>
+            <input type="radio" id="alternativa4" name="resposta" value="alternativa4">
+            <label for="alternativa4">Alternativa 4</label><br><br>
+            <button type="submit">Próxima Questão</button>
+        </form>
+    </div>
+</body>
+</html>
