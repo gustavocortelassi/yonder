@@ -1,19 +1,35 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
+    margin: 2em 2em 2em 2em;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.back-button-box {
+    align-self: flex-start;
+}
+
+.back-button {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    width: auto;
+    height: auto;
+    font-size: var(--fs-20);
+    margin-bottom: 1em;
+    align-self: flex-start;
 }
 
 .writing {
-    flex-basis: 45%;
+    display: flex;
+    gap: 8em;
 }
 
 .textarea {
@@ -21,22 +37,20 @@ body {
     height: 25em;
     border-radius: 20px;
     background-color: var(--beige);
-    padding: 1em;
-    font-size: 16px;
-    resize: vertical;
-    margin-bottom: 1em;
+    padding: 1em 1.5em 1em 1.5em;
+    font-size: var(--fs-20);
 }
 
 .accountant {
     padding: 0.5em;
-    font-size: 14px;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 1em;
+    gap: 1em;
 }
 
 .next-button {
