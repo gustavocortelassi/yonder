@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/script/pergunta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisualisarPerguntas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/PerguntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/PerguntaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/cadastrousuario.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/cadastrousuario.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/listarusuarios.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/listarusuarios.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/regras.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/regras.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastroUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastroUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaListarUsuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaListarUsuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaRegras.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaRegras.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/regrasProvas.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +31,9 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -57,24 +65,32 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.YonderApplication.executor": "Run",
     "Spring Boot.YonderBaseApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "33-tela-de-correo-do-texto-front",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/igorale/Documents/yonder",
+    "last_opened_file_path": "C:/Users/igorg/Documents/ojdbc11.jar",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "proofread",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -115,7 +131,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -158,6 +174,7 @@
       <workItem from="1714773583986" duration="1641000" />
       <workItem from="1715968798021" duration="328000" />
       <workItem from="1716039267089" duration="8938000" />
+      <workItem from="1716661167475" duration="10027000" />
     </task>
     <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
       <option name="closed" value="true" />

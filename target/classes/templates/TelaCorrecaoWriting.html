@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção</title>
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
+    <link rel="stylesheet" href="../static/css/correcaowriting.css" th:href="@{/css/correcaowriting.css}">
+</head>
+<body>
+<form th:action="@{/prova}" method="get">
+    <button type="submit" class="next-button">Voltar</button>
+</form>
+<div class="container">
+    <div class="writing">
+        <form th:action="@{/prova}" th:object="${formularioWrite}" method="get">
+            <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
+            <div class="accountant">0/500 Palavras</div>
+        </form>
+    </div>
+    <form th:action="@{/prova}" th:object="${formularioWrite}" method="post">
+        <textarea cols="50" id="resposta-correcao" class="textarea" th:field="*{resposta}" placeholder="Correção"></textarea>
+        <div class="accountant">0/500 Palavras</div>
+    </form>
+</div>
+<div class="buttons">
+    <div class="dropdown">
+        <button class="next-button dropbtn">NOTA</button>
+        <div class="dropdown-content">
+            <a href="#" class="option" onclick="chooseOption('A1')">A1</a>
+            <a href="#" class="option" onclick="chooseOption('A2')">A2</a>
+            <a href="#" class="option" onclick="chooseOption('B1')">B1</a>
+            <a href="#" class="option" onclick="chooseOption('B2')">B2</a>
+            <a href="#" class="option" onclick="chooseOption('C1')">C1</a>
+            <a href="#" class="option" onclick="chooseOption('C2')">C2</a>
+        </div>
+    </div>
+    <button type="submit" class="submit-button">CONFIRMAR</button>
+</div>
+
+<script src="../static/script/writing.js" th:src="@{/script/writing.js}"></script>
+</body>
+</html>

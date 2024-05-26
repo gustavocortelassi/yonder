@@ -16,6 +16,7 @@ public class UsuarioService {
     @Autowired
     private final UsuarioRepository usuarioRepository;
 
+    @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
@@ -28,6 +29,11 @@ public class UsuarioService {
     // lista
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();
+    }
+
+    // lista apenas os 50 por conta do tamanho do banco
+    public List<Usuario> getTop50Usuarios() {
+        return usuarioRepository.findTop50ByOrderByIdAsc();
     }
 
     // busca por id

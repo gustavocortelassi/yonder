@@ -57,15 +57,10 @@ public class EmpresaController {
         return "redirect:/empresas";
     }
 
-    @GetMapping("/gerenciar-empresas")
-    public String gerenciarEmpresas() {
-        return "gerenciarEmpresas"; //falta criar essa pagina
-    }
-
-    @GetMapping("/home")
+    @GetMapping("/telaDaniel")
     public String home(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
         model.addAttribute("empresas", empresas);
-        return "home";
+        return "TelaDaniel";
     }
 }
