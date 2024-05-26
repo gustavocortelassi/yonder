@@ -35,6 +35,10 @@
 <body>
     <div class="container"> 
 <div class="question">
+
+  <!--<span class="lacuna" id="lacuna1" onclick="removerPreenchimento('lacuna1')">_________</span>
+      comando pra fazer os espaço de opções\lacuna x vai ser lido por uma array pra armazenar
+    as respostas-->
     <div class="enunciado">  
     <p>Preencha as lacunas no texto abaixo:</p>
     <p>O Brasil é o país mais <span class="lacuna" id="lacuna1" onclick="removerPreenchimento('lacuna1')">_________</span> do mundo.</p>
@@ -42,6 +46,8 @@
     <br><br>
     </div>  
     <div class="opcoes">
+      <!-- onclick="preencherLacuna('populoso')    aqui recebe a opção de resposta dentro do ()
+      q vai ser lido na array-->
       <button  class="botaores" class="opcao" onclick="preencherLacuna('populoso')">A- Populoso</button>
       <button class="botaores"  class="opcao" onclick="preencherLacuna('norte')">B- Norte</button>
       <button  class="botaores" class="opcao" onclick="preencherLacuna('populoso')">C- Populoso</button>
