@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="../static/css/correcaowriting.css" th:href="@{/css/correcaowriting.css}">
 </head>
 <body>
-<form th:action="@{/prova}" method="get">
-    <button type="submit" class="next-button">Voltar</button>
-</form>
+
 <div class="container">
+    <div class="back-button-box">
+        <a href="TelaLogin.html" th:href="@{/}"><button class="back-button" type="submit">Voltar</button></a>
+    </div>
     <div class="writing">
         <form th:action="@{/prova}" th:object="${formularioWrite}" method="get">
             <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
             <div class="accountant">0/500 Palavras</div>
         </form>
+        <form th:action="@{/prova}" th:object="${formularioWrite}" method="post">
+            <textarea cols="50" id="correcao" class="textarea" th:field="*{correcao}" placeholder="Correção"></textarea>
+            <div class="accountant">0/500 Palavras</div>
+        </form>
     </div>
-    <form th:action="@{/prova}" th:object="${formularioWrite}" method="post">
-        <textarea cols="50" id="resposta-correcao" class="textarea" th:field="*{resposta}" placeholder="Correção"></textarea>
-        <div class="accountant">0/500 Palavras</div>
-    </form>
 </div>
 <div class="buttons">
     <div class="dropdown">
@@ -37,6 +38,7 @@
     </div>
     <button type="submit" class="submit-button">CONFIRMAR</button>
 </div>
+
 
 <script src="../static/script/writing.js" th:src="@{/script/writing.js}"></script>
 </body>

@@ -47,4 +47,10 @@ public class FormularioWriteController {
         formularioWriteService.save(formularioWrite);
         return "redirect:/respostas/writing";
     }
+
+    @GetMapping("/correcaowriting")
+    public String formularioCorrecaoWrite(Model model) {
+        model.addAttribute("formularioWrite", new FormularioWrite());
+        return "TelaCorrecaoWriting";
+    }
 }
