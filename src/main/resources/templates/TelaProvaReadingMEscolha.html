@@ -42,7 +42,7 @@
 </head>
 <body>
     <h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
-    <form action="/formulario" method="post" class="options">
+    <form action="/TelaProvaReadingMEscolha" method="post" class="options">
         <div th:each="resposta : ${respostas}">
             <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}" th:text="${resposta.titulo}">Opção</button>
         </div>

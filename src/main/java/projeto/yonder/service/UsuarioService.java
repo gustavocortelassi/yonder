@@ -31,6 +31,11 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    // lista apenas os 50 por conta do tamanho do banco
+    public List<Usuario> getTop50Usuarios() {
+        return usuarioRepository.findTop50ByOrderByIdAsc();
+    }
+
     // busca por id
     public Usuario getUsuarioById(Long id) {
         Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);

@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <style>
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 8px;
-            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .card-header {
-            font-size: 1.5em;
-            margin-bottom: 8px;
-        }
-        .card-body {
-            margin-bottom: 8px;
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
-    <h2>Empresas Cadastradas</h2>
-    <div class="card-container">
-        <div class="card" th:each="empresa : ${empresas}">
-            <div class="card-header" th:text="${empresa.razaoSocial}">Razão Social</div>
-            <div class="card-body">
-                <p><strong>CNPJ:</strong> <span th:text="${empresa.cnpj}">CNPJ</span></p>
-                <p><strong>CEP:</strong> <span th:text="${empresa.cep}">CEP</span></p>
-                <p><strong>Logradouro:</strong> <span th:text="${empresa.logradouro}">Logradouro</span></p>
-                <p><strong>Bairro:</strong> <span th:text="${empresa.bairro}">Bairro</span></p>
-                <p><strong>Número:</strong> <span th:text="${empresa.numero}">Número</span></p>
-                <p><strong>Complemento:</strong> <span th:text="${empresa.complemento}">Complemento</span></p>
-            </div>
-        </div>
+    <div class="container">
+        <h2>Bem-vindo ao Sistema</h2>
+        <button onclick="window.location.href='/usuario/cadastro'">Ir para Cadastro de Usuários</button>
+        <br>
+        <button onclick="window.location.href='/usuario/listar'">Ir para Listagem de Usuários</button>
+        <br>
+        <button onclick="window.location.href='/login'">Ir para Login de Usuários</button>
+        <br>
+        <button onclick="window.location.href='/empresas/cadastrarEmpresas'">Ir para Cadastro de Empresas</button>
+        <br>
+        <button onclick="window.location.href='/empresas'">Ir para Listagem de Empresas</button>
+        <br>
+        <button onclick="window.location.href='/prova'">Ir para Prova de Reading - (texto)</button>
+        <br>
+        <button onclick="window.location.href='/multEscolha'">Ir para Prova de Reading - (múltipla escolha)</button>
+        <br>
     </div>
-    <h1>Bem-vindo!</h1>
-    <div>
-        <button onclick="location.href='/gerenciar-empresas'">Gerenciar Empresas</button>
-    </div>
-    <div>
-        <button onclick="location.href='/aprovar-correcoes'">Aprovar Correções</button>
-    </div>
-    <div>
-        <button onclick="location.href='/gerenciar-corretores'">Gerenciar Corretores</button>
-    </div>
-    <div>
-        <button onclick="location.href='/gerenciar-questoes'">Gerenciar Questões</button>
-    </div>
-
-    
 </body>
 </html>

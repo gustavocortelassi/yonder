@@ -20,19 +20,21 @@ public class FormularioReadMEscolhaController {
     @Autowired
     private RespostasRepository respostasRepository;
 
-    @GetMapping("/formulario")
+    // mostrar a pergunta e resposta
+    @GetMapping("/multEscolha")
     public String exibirFormulario(Model model) {
-        Pergunta pergunta = perguntaRepository.findById(10L).orElse(null);
+        Pergunta pergunta = perguntaRepository.findById(1L).orElse(null);
 
         if (pergunta != null) {
             model.addAttribute("pergunta", pergunta);
             model.addAttribute("respostas", pergunta.getRespostas());
         }
 
-        return "formulario";
+        return "TelaProvaReadingMEscolha";
     }
 
-    @PostMapping("/formulario")
+    // metodo post para enviar a resposta e verificar
+    @PostMapping("/multEscolha")
     public String processarFormulario(@RequestParam("resposta") Long respostaId, Model model) {
         Respostas resposta = respostasRepository.findById(respostaId).orElse(null);
 
@@ -47,13 +49,14 @@ public class FormularioReadMEscolhaController {
 
     @GetMapping("/nova-pergunta")
     public String exibirNovaPergunta(Model model) {
-        Pergunta novaPergunta = perguntaRepository.findById(3L).orElse(null);
+        
+        Pergunta novaPergunta = perguntaRepository.findById(2L).orElse(null);
 
         if (novaPergunta != null) {
             model.addAttribute("pergunta", novaPergunta);
             model.addAttribute("respostas", novaPergunta.getRespostas());
         }
 
-        return "formulario";
+        return "TelaProvaReadingMEscolha";
     }
 }
