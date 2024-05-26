@@ -6,10 +6,10 @@ body {
 }
 
 .container {
-    background-color: #5B88A5;
+    background-color: var(--cyan);
     padding: 3em;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
     max-width: 800px;
     width: 100%;
     margin: 2em auto;  /* Ajustar a margem superior e inferior */
@@ -17,8 +17,8 @@ body {
 }
 
 h2 {
-    margin-bottom: 2em;
-    color: white;
+    margin: 0.4em 0 2em 0;
+    color: var(--white);
 }
 
 table {
@@ -29,38 +29,38 @@ table {
 
 th, td {
     padding: 10px;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid var(--white);
+    color: var(--white);
 }
 
 th {
-    background-color: #243a69;
+    background-color: var(--dark-blue);
 }
 
 td {
-    background-color: #3c5c9f;
+    background-color: var(--blue);
 }
 
 tr:nth-child(even) td {
-    background-color: #476da6;
+    background-color: var(--skye-blue);
 }
 
 tr:hover td {
-    background-color: #4e79ab;
+    background-color: var(--cyan);
 }
 
 button {
     width: 20%;
     padding: 1em;
-    background-color: #243a69;
+    background-color: var(--dark-blue);
     border: none;
     border-radius: 20px;
-    color: white;
-    font-size: 16px;
+    color: var(--white);
+    font-size: var(--fs-18);
     cursor: pointer;
     margin-top: 3em;
 }
 
 button:hover {
-    background-color: #3c5c9f;
+    background-color: var(--skye-blue);
 }
