@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -185,6 +186,16 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoUsersEmpresa.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/regras.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/regras.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaVisaoUsersEmpresa.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoWritingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoWritingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaWriting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaWriting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaMenu.html" afterDir="false" />
+>>>>>>> 5e083befd82b102c55281f680bc1b67feb48850b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,11 +205,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Enum" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -227,6 +238,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -249,6 +261,38 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.YonderApplication.executor": "Run",
+    "Spring Boot.YonderBaseApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "37-tela-de-correo-de-uma-prova-front",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/igorg/Documents/yonder",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "proofread",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> 5e083befd82b102c55281f680bc1b67feb48850b
   }
 }</component>
   <component name="RecentsManager">
@@ -269,6 +313,8 @@
   </component>
   <component name="RunManager">
     <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="yonder" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="projeto.yonder.YonderApplication" />
@@ -284,13 +330,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -331,7 +370,13 @@
       <workItem from="1714773583986" duration="1641000" />
       <workItem from="1715968798021" duration="328000" />
       <workItem from="1716039267089" duration="8938000" />
+<<<<<<< HEAD
       <workItem from="1716807799418" duration="986000" />
+=======
+      <workItem from="1716661167475" duration="10027000" />
+      <workItem from="1716756841189" duration="8326000" />
+      <workItem from="1716766519429" duration="4972000" />
+>>>>>>> 5e083befd82b102c55281f680bc1b67feb48850b
     </task>
     <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
       <option name="closed" value="true" />

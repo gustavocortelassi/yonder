@@ -67,10 +67,10 @@ public class EmpresaController {
         return "TelaVisaoUsersEmpresa";
     }
 
-    @GetMapping("/home")
+    @GetMapping("/telaDaniel")
     public String home(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
         model.addAttribute("empresas", empresas);
-        return "home";
+        return "TelaDaniel";
     }
 }

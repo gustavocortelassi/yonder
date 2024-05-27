@@ -9,14 +9,17 @@ import projeto.yonder.model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import org.springframework.web.bind.annotation.GetMapping;
-
 
 @Controller
 public class LoginController {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "TelaLogin";
+    }
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
