@@ -14,12 +14,12 @@
         <a href="TelaLogin.html" th:href="@{/}"><button class="back-button" type="submit">Voltar</button></a>
     </div>
     <div class="writing">
-        <form th:action="@{/correcaowriting/{id}(id=${formularioWrite.id})}" th:object="${formularioWrite}" method="get">
-            <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
+        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="get">
+        <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
             <div class="accountant">0/500 Palavras</div>
         </form>
-        <form th:action="@{/correcaowriting/{id}(id=${formularioWrite.id})}" th:object="${formularioWrite}" method="post">
-            <textarea cols="50" id="correcao" class="textarea" th:field="*{correcao}" placeholder="Correção"></textarea>
+        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="post">
+        <textarea cols="50" id="correcao" class="textarea" th:field="*{correcao}" placeholder="Correção"></textarea>
             <div class="accountant">0/500 Palavras</div>
             <!-- teste -->
             <button type="submit" class="submit-button">CONFIRMAR</button>

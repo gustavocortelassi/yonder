@@ -1,6 +1,6 @@
 application.properties
 
-.idea/
+.idea/*
 out/
 *.iml
 *.ipr
@@ -9,3 +9,4 @@ out/
 
 .vscode/
 *.code-workspace
+target/*

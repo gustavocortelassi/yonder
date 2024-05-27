@@ -11,5 +11,11 @@ public class MenuController {
     public String home(Model model){
         return "TelaMenu";
     }
+
+    @GetMapping("/preencher")
+    public String prencher() {
+
+        return "TelaReadingPreenchimento";
+    }
 }
 
