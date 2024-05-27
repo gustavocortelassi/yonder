@@ -57,6 +57,16 @@ public class EmpresaController {
         return "redirect:/empresas";
     }
 
+    @GetMapping("/gerenciar-empresas")
+    public String gerenciarEmpresas() {
+        return "gerenciarEmpresas"; //falta criar essa pagina
+    }
+
+    @GetMapping("/usuariosEmpresa")
+    public String usersCarac(Model model) {
+        return "TelaVisaoUsersEmpresa";
+    }
+
     @GetMapping("/telaDaniel")
     public String home(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
