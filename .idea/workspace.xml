@@ -5,12 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="385350a1-51a2-4d4d-ae1b-bfe7d7a4b00a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/EmpresaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/EmpresaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioReadMEscolhaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioReadMEscolhaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaProvaReadingMEscolha.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaProvaReadingMescolha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cadastrar-empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastrarEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listar-empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaListarEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/resultado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaResultado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioReadMEscolhaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioReadMEscolhaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cadastrar-empresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/listar-empresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/resultado.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,19 +73,29 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2h452QToBWQoDlI5fqre9Y8M1Ch" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/igorale/Documents/yonder&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "37-tela-de-correo-de-uma-prova-front",
+    "last_opened_file_path": "/Users/igorale/Documents/yonder",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -54,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716840301552</updated>
       <workItem from="1716840302575" duration="14000" />
+      <workItem from="1716849627689" duration="1211000" />
     </task>
     <servers />
   </component>
