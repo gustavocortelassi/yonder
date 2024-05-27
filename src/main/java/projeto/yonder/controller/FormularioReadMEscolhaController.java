@@ -30,7 +30,7 @@ public class FormularioReadMEscolhaController {
             model.addAttribute("respostas", pergunta.getRespostas());
         }
 
-        return "TelaProvaReadingMEscolha";
+        return "TelaProvaReadingMescolha";
     }
 
     // metodo post para enviar a resposta e verificar
@@ -44,7 +44,7 @@ public class FormularioReadMEscolhaController {
             model.addAttribute("mensagem", "Que pena! Você errou.");
         }
 
-        return "resultado";
+        return "TelaResultado";
     }
 
     @GetMapping("/nova-pergunta")
@@ -57,6 +57,6 @@ public class FormularioReadMEscolhaController {
             model.addAttribute("respostas", novaPergunta.getRespostas());
         }
 
-        return "TelaProvaReadingMEscolha";
+        return "TelaProvaReadingMescolha";
     }
 }
