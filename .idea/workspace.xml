@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/script/pergunta.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisualisarPerguntas.html" afterDir="false" />
@@ -12,12 +13,17 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
+=======
+    <list default="true" id="385350a1-51a2-4d4d-ae1b-bfe7d7a4b00a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -29,33 +35,24 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> main
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="34-tela-de-prova-de-listening-front" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2evdPT8EMNdTqH51ujfnWObTCLO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2h452QToBWQoDlI5fqre9Y8M1Ch" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -119,13 +116,24 @@
       </set>
     </attachedChunks>
   </component>
+=======
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/igorale/Documents/yonder",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+>>>>>>> main
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="" />
-      <created>1712788964446</created>
+      <changelist id="385350a1-51a2-4d4d-ae1b-bfe7d7a4b00a" name="Changes" comment="" />
+      <created>1716840301552</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1712788964446</updated>
       <workItem from="1712788966025" duration="2869000" />
       <workItem from="1712860452173" duration="273000" />
@@ -158,54 +166,14 @@
       <workItem from="1714773583986" duration="1641000" />
       <workItem from="1715968798021" duration="328000" />
       <workItem from="1716039267089" duration="8938000" />
+=======
+      <updated>1716840301552</updated>
+      <workItem from="1716840302575" duration="14000" />
+>>>>>>> main
     </task>
-    <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
-      <option name="closed" value="true" />
-      <created>1714767341840</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1714767341840</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Tela para gerenciamento de questões">
-      <option name="closed" value="true" />
-      <created>1714767505778</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1714767505778</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/12-tela-de-cadastro-de-novas-empresas" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tela para gerenciamento de questões" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tela para gerenciamento de questões" />
   </component>
 </project>
