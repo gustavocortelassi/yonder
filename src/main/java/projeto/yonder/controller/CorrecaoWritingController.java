@@ -13,20 +13,20 @@ public class CorrecaoWritingController {
     @Autowired
     private FormularioWriteService formularioWriteService;
 
-    @GetMapping("/correcaotexto/{id}")
+    @GetMapping("/correcaowriting/{id}")
     public String getCorrecao(@PathVariable Long id, Model model) {
         FormularioWrite formularioWrite = formularioWriteService.findById(id);
         model.addAttribute("formularioWrite", formularioWrite);
         return "TelaCorrecaoWriting";
     }
 
-    @PostMapping("/correcaotexto/{id}")
+    @PostMapping("/correcaowriting/{id}")
     public String salvarCorrecao(@PathVariable Long id, @ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
         FormularioWrite existingFormularioWrite = formularioWriteService.findById(id);
         existingFormularioWrite.setCorrecao(formularioWrite.getCorrecao());
         existingFormularioWrite.setCorrigido(true);
         formularioWriteService.save(existingFormularioWrite);
-        return "redirect:/respostas";
+        return "redirect:/";
     }
-}
 
+}

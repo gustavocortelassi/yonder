@@ -19,7 +19,7 @@ public class FormularioWriteController {
     private UsuarioService usuarioService;
 
     @GetMapping("/writing/{id}")
-    public String formularioWrite(@PathVariable Long id, Model model) {
+    public String formularioWriteParaUsuario(@PathVariable Long id, Model model) {
         Usuario usuario = usuarioService.getUsuarioById(id);
         FormularioWrite formularioWrite = new FormularioWrite();
         formularioWrite.setUsuario(usuario);
@@ -27,10 +27,13 @@ public class FormularioWriteController {
         return "TelaWriting";
     }
 
-    @PostMapping("/writing")
-    public String salvar(@ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
+    @PostMapping("/writing/{id}")
+    public String salvar(@PathVariable Long id, @ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
+        Usuario usuario = usuarioService.getUsuarioById(id);
+        formularioWrite.setUsuario(usuario);
         formularioWrite.setCorrigido(false);
         formularioWriteService.save(formularioWrite);
-        return "redirect:/writing/" + formularioWrite.getUsuario().getId();
+        return "redirect:/correcaowriting/" + usuario.getId();
     }
+
 }
