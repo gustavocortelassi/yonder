@@ -1,5 +1,7 @@
 package projeto.yonder.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 
@@ -14,6 +16,9 @@ public class Pergunta {
     private String TipoProvaId;
     private Long NiveisId;
     private String Audio;
+
+    @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL)
+    private List<Respostas> respostas;
 
     public Pergunta() {
     }
@@ -74,4 +79,13 @@ public class Pergunta {
     public void setAudio(String audio) {
         Audio = audio;
     }
+
+    public List<Respostas> getRespostas() {
+        return respostas;
+    }
+
+    public void setRespostas(List<Respostas> respostas) {
+        this.respostas = respostas;
+    }
+
 }
