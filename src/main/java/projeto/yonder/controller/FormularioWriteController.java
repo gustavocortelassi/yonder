@@ -36,4 +36,27 @@ public class FormularioWriteController {
         return "redirect:/correcaowriting/" + usuario.getId();
     }
 
+<<<<<<< HEAD
+    @GetMapping("/respostas")
+    public String writeningCorrecao(@RequestParam("id") Long id, Model model) {
+        FormularioWrite formularioWrite = formularioWriteService.findById(id);
+        model.addAttribute("formularioWrite", formularioWrite);
+        return "TelaCandidatoRespostas";
+    }
+
+    @GetMapping("/correcao")
+    public String corrigir(@RequestParam("id") Long id, Model model) {
+        FormularioWrite formularioWrite = formularioWriteService.findById(id);
+        model.addAttribute("formularioWrite", formularioWrite);
+        return "TelaRespostas";
+    }
+
+    @PostMapping("/correcao")
+    public String corrigir(@ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
+        formularioWrite.setCorrigido(true);
+        formularioWriteService.save(formularioWrite);
+        return "redirect:/respostas/writing";
+    }
+=======
+>>>>>>> main
 }

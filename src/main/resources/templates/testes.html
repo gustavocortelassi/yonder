@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.text p {
-  margin: 0;
-}
-
-.text hr {
-    width: 2px; /* Largura da linha vertical */
-  height: 50px; /* Altura da linha vertical */
-  border: none;
-  border-left: 1px solid black; /* Ajuste a cor e estilo da linha vertical */
-  margin: 0 10px; /* Espaçamento entre o texto e a linha vertical */
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão de Preenchimento de Lacunas</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .lacuna {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    padding: 0 5px;
+    cursor: pointer;
+  }
+  .opcao {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="text">
-          <p>Texto 1</p>
-          <hr>
-          <p>Texto 2</p>
-          <hr>
-          <p>Texto 3</p>
-        </div>
-      </div>
 
-      <div class="quantquest">
-        <p class="quantquestcont">test</p>
-        <hr>
-    </div>
-    
+<div class="question">
+  <p>Preencha as lacunas no texto abaixo:</p>
+  <p>O Brasil é o país mais <span class="lacuna" id="lacuna1" onclick="removerPreenchimento('lacuna1')">_________</span> do mundo.</p>
+  <p>Os Estados Unidos estão localizados na <span class="lacuna" id="lacuna2" onclick="removerPreenchimento('lacuna2')">_________</span>.</p>
+  <br><br>
+  <div class="opcoes">
+    <button class="opcao" onclick="preencherLacuna('populoso')">A</button>
+    <button class="opcao" onclick="preencherLacuna('norte')">B</button>
+  </div>
+  <br><br>
+  <button onclick="verificarRespostas()">Verificar Respostas</button>
+</div>
+
+<div id="resultado"></div>
+
+<script>
+function preencherLacuna(palavra) {
+  var lacunaVazia = document.querySelector('.lacuna:not(.preenchida)');
+  if (lacunaVazia) {
+    lacunaVazia.innerText = palavra;
+    lacunaVazia.classList.add('preenchida');
+  }
+}
+
+function removerPreenchimento(lacunaId) {
+  var lacuna = document.getElementById(lacunaId);
+  lacuna.innerText = '_________';
+  lacuna.classList.remove('preenchida');
+}
+
+function verificarRespostas() {
+  var lacuna1Resposta = document.getElementById('lacuna1').innerText.trim().toLowerCase();
+  var lacuna2Resposta = document.getElementById('lacuna2').innerText.trim().toLowerCase();
+
+  var resultado = document.getElementById('resultado');
+
+  if (lacuna1Resposta === 'populoso' && lacuna2Resposta === 'norte') {
+    resultado.innerHTML = '<p>Parabéns! Todas as respostas estão corretas.</p>';
+  } else {
+    resultado.innerHTML = '<p>Algumas respostas estão incorretas. Tente novamente.</p>';
+  }
+}
+</script>
+
 </body>
 </html>

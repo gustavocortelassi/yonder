@@ -16,7 +16,7 @@ public class LoginController {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String showLoginForm() {
         return "TelaLogin";
     }

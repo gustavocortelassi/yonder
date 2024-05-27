@@ -33,7 +33,7 @@ public class UsuarioController {
 
     @GetMapping("/listar")
     public String listarUsuarios(Model model) {
-        List<Usuario> usuarios = usuarioService.getTop50Usuarios();
+        List<Usuario> usuarios = usuarioService.getAllUsuarios();
         model.addAttribute("usuarios", usuarios);
         return "TelaListarUsuarios";
     }
