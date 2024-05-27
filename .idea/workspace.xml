@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="Tela para gerenciamento de questões">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/yonder.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/YonderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorretorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/EmpresaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioWriteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/PerguntaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/Empresa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/EmpresaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/FormularioWriteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/PerguntaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/cadastrousuario.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/listarusuarios.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/writing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/yonderlogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/script/writing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastroUsuario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaListarUsuarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaRegras.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaWriting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cadastrar-empresas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/exibirCandidatos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/lista-perguntas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/listar-empresas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/cadastrousuario.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/listarusuarios.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/writing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/yonderlogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/script/writing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/TelaCadastroUsuario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/TelaListarUsuarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/TelaLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/TelaRegras.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/TelaWriting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/cadastrar-empresas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/exibirCandidatos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/lista-perguntas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/listar-empresas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/template-issue.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/YonderBaseApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/EmpresaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/FormularioRespondidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioRespondidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/FormularioWriteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/NivelamentoUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/NivelamentoUsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/PerguntaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/controller/UsuarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/Empresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/FormularioRespondido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/FormularioRespondido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/FormularioWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/FormularioWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/NivelamentoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/NivelamentoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/Pergunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/Pergunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/EmpresaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/EmpresaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/FormularioRespondidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/FormularioRespondidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/FormularioWriteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/FormularioWriteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/NivelamentoUsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/NivelamentoUsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/PerguntaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/PerguntaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/EmpresaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/FormularioRespondidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/FormularioRespondidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/FormularioWriteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/NivelamentoUsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/service/NivelamentoUsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/PerguntaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/java/com/Grupo3/YonderBase/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/static/css/regrasProvasStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/static/img/provaFeita.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/provaFeita.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/static/img/provaNaoFeita.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/img/provaNaoFeita.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/TelaVisaoEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/TelaVisaoProvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoProvas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/TelaWriting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastroEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/registro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/registroSucesso.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/registroUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/regrasProvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/regrasProvas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/main/resources/templates/testes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/testes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/src/test/java/com/Grupo3/YonderBase/YonderBaseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/YonderBaseApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/EmpresaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/FormularioRespondidoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/FormularioWriteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/NivelamentoUsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/PerguntaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/Empresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/FormularioRespondido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/FormularioWrite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/NivelamentoUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/Pergunta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/EmpresaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/FormularioRespondidoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/FormularioWriteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/NivelamentoUsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/PerguntaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/EmpresaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/FormularioRespondidoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/FormularioWriteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/NivelamentoUsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/PerguntaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/com/Grupo3/YonderBase/service/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/static/css/regrasProvasStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/static/img/provaFeita.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/static/img/provaNaoFeita.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/TelaVisaoEmpresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaVisaoEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/TelaVisaoProvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaVisaoProvas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/TelaWriting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaCadastroEmpresas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/registro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/registroSucesso.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/registroUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/regrasProvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/regrasProvas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/classes/templates/testes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/testes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YonderBase/YonderBase/target/test-classes/com/Grupo3/YonderBase/YonderBaseApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/regras.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/regras.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaVisaoUsersEmpresa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/regras.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/regras.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/TelaVisaoUsersEmpresa.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="34-tela-de-prova-de-listening-front" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2evdPT8EMNdTqH51ujfnWObTCLO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.YonderBaseApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging 50-tela-exibio-dos-candidatos-de-uma-empresa-front&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/igorale/Documents/yonder&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/src" />
+      <recent name="C:\Users\vitor\OneDrive - Biopark Educação\Terceiro Periodo\projeto_yonder\yonder\YonderBase\YonderBase\src\main\resources\static" />
+      <recent name="C:\Users\vitor\OneDrive - Biopark Educação\Terceiro Periodo\projeto_yonder\yonder\YonderBase\YonderBase\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="yonder" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="projeto.yonder.YonderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YonderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="yonder" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="projeto.yonder.YonderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e71565b2-77ae-45d7-8e5d-e9b7c374a37a" name="Changes" comment="" />
+      <created>1712788964446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712788964446</updated>
+      <workItem from="1712788966025" duration="2869000" />
+      <workItem from="1712860452173" duration="273000" />
+      <workItem from="1712873714507" duration="617000" />
+      <workItem from="1712877116592" duration="1141000" />
+      <workItem from="1712947004641" duration="674000" />
+      <workItem from="1712948760386" duration="1359000" />
+      <workItem from="1712950361537" duration="9488000" />
+      <workItem from="1713307535173" duration="3970000" />
+      <workItem from="1713359291559" duration="1576000" />
+      <workItem from="1713373968421" duration="4106000" />
+      <workItem from="1713392739982" duration="57000" />
+      <workItem from="1713399861821" duration="1486000" />
+      <workItem from="1713453993616" duration="599000" />
+      <workItem from="1713460947451" duration="1738000" />
+      <workItem from="1713493275881" duration="2884000" />
+      <workItem from="1713535833952" duration="17178000" />
+      <workItem from="1713563541490" duration="3916000" />
+      <workItem from="1713568861420" duration="1164000" />
+      <workItem from="1713996985339" duration="5698000" />
+      <workItem from="1714146236248" duration="15634000" />
+      <workItem from="1714173288706" duration="4091000" />
+      <workItem from="1714676882238" duration="3032000" />
+      <workItem from="1714688379229" duration="5568000" />
+      <workItem from="1714705764525" duration="114000" />
+      <workItem from="1714705902035" duration="4150000" />
+      <workItem from="1714744862694" duration="8529000" />
+      <workItem from="1714766148543" duration="1452000" />
+      <workItem from="1714767622436" duration="2509000" />
+      <workItem from="1714773583986" duration="1641000" />
+      <workItem from="1715968798021" duration="328000" />
+      <workItem from="1716039267089" duration="8938000" />
+      <workItem from="1716807799418" duration="986000" />
+    </task>
+    <task id="LOCAL-00001" summary="Tela para gerenciamento de questões">
+      <option name="closed" value="true" />
+      <created>1714767341840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714767341840</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Tela para gerenciamento de questões">
+      <option name="closed" value="true" />
+      <created>1714767505778</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714767505778</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/12-tela-de-cadastro-de-novas-empresas" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tela para gerenciamento de questões" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tela para gerenciamento de questões" />
+  </component>
+</project>

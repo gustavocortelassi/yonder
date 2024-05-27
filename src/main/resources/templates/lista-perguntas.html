@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Perguntas</title>
+</head>
+
+<body>
+    <h1>Lista de Perguntas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Áudio</th>
+                <th>Cabeçalho</th>
+                <th>Dificuldade</th>
+                <th>Nível</th>
+                <th>Tipo de Prova</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pergunta : ${perguntas}">
+                <td th:text="${pergunta.id}"></td>
+                <td th:text="${pergunta.audio}"></td>
+                <td th:text="${pergunta.cabecalho}"></td>
+                <td th:text="${pergunta.dificuldade}"></td>
+                <td th:text="${pergunta.niveis_id}"></td>
+                <td th:text="${pergunta.tipo_prova_id}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
