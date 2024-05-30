@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="../static/css/global.css" rel="stylesheet" th:href="@{/css/global.css}">
+    <link href="../static/css/login.css" rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="login-container">
+    <img src="../static/img/yonderlogo.png" th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+    <h2>Nivelamento de Inglês</h2>
+    <form action="#" th:action="@{/login}" method="post">
+        <div class="form">
+            <input type="text" id="username" name="username" placeholder="Usuário:" required>
+            <input type="password" id="password" name="password" placeholder="Senha:" required>
+            <button type="submit">Login</button>
+        </div>
+        <div th:if="${error}" class="error-message">
+            <span th:text="${error}"></span>
+        </div>
+    </form>
+        <a href="TelaCadastroUsuario.html" th:href="@{/usuario/cadastro}"><button type="submit">Cadastrar Usuário</button></a>
+</div>
+</body>
+</html>
