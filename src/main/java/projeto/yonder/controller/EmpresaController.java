@@ -33,6 +33,9 @@ public class EmpresaController {
     @GetMapping
     public String listarEmpresas(Model model) {
         List<Empresa> empresas = empresaService.getAllEmpresas();
+        if (empresas.size() > 50) {
+            empresas = empresas.subList(0, 50);
+        }
         model.addAttribute("empresas", empresas);
         return "TelaListarEmpresas";
     }
