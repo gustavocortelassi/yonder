@@ -27,14 +27,14 @@ public class EmpresaController {
 
     @GetMapping("/cadastrarEmpresas")
     public String showCadastroForm() {
-        return "cadastrar-empresas";
+        return "TelaCadastrarEmpresas";
     }
 
     @GetMapping
     public String listarEmpresas(Model model) {
         List<Empresa> empresas = empresaService.getAllEmpresas();
         model.addAttribute("empresas", empresas);
-        return "listar-empresas";
+        return "TelaListarEmpresas";
     }
 
     @PostMapping("/cadastro")
@@ -55,6 +55,16 @@ public class EmpresaController {
     public String excluirEmpresa(@PathVariable("id") Long id) {
         empresaService.excluirEmpresa(id);
         return "redirect:/empresas";
+    }
+
+    @GetMapping("/gerenciar-empresas")
+    public String gerenciarEmpresas() {
+        return "gerenciarEmpresas"; //falta criar essa pagina
+    }
+
+    @GetMapping("/usuariosEmpresa")
+    public String usersCarac(Model model) {
+        return "TelaVisaoUsersEmpresa";
     }
 
     @GetMapping("/telaDaniel")
