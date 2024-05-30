@@ -8,8 +8,11 @@
 <body>
     <h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
     <form action="/TelaProvaReadingMEscolha" method="post" class="options">
-        <div th:each="resposta : ${respostas}">
-            <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}" th:text="${resposta.titulo}">Opção</button>
+        <div th:each="resposta, iterStat : ${respostas}">
+            <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">
+                <span th:text="${iterStat.index == 0 ? '1. ' : iterStat.index == 1 ? '2. ' : iterStat.index == 2 ? '3. ' : '4. '}"></span>
+                <span th:text="${resposta.titulo}">Opção</span>
+            </button>
         </div>
     </form>
     <form action="/nova-pergunta" method="get">
