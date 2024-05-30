@@ -2,43 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Prova de Leitura com Múltipla Escolha</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        .options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .option-button {
-            display: block;
-            width: 200px;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 16px;
-            text-decoration: none;
-            color: #333;
-        }
-        .option-button:hover {
-            background-color: #ddd;
-        }
-        .submit-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
+    <link rel="stylesheet" href="../static/css/TelaReadingMultiplaEscolha.css" th:href="@{/css/TelaReadingMultiplaEscolha.css}">
 </head>
 <body>
     <h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
