@@ -5,50 +5,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="385350a1-51a2-4d4d-ae1b-bfe7d7a4b00a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/EmpresaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/EmpresaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioReadMEscolhaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/FormularioReadMEscolhaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/projeto/yonder/controller/CorrecaoWritingController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaProvaReadingMEscolha.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaProvaReadingMescolha.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cadastrar-empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastrarEmpresas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listar-empresas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaListarEmpresas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/resultado.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaResultado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioReadMEscolhaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioReadMEscolhaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/correcaoprova.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/correcaoprova.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/correcaowriting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCadastroEmpresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoProva.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaCorrecaoProva.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/TelaMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/TelaResultado.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/exibirCandidatos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lista-perguntas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/provaReading.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/testes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/YonderApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorrecaoWritingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/CorretorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/EmpresaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioReadMEscolhaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioRespondidoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/FormularioWriteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/NivelamentoUsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/PerguntaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/RespostasController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Empresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioReadMEscolha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioRespondido.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/FormularioWrite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/NivelamentoUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Pergunta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Respostas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/model/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/EmpresaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioRespondidoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/FormularioWriteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/NivelamentoUsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/PerguntaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/RespostasRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/EmpresaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioRespondidoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/FormularioWriteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/NivelamentoUsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/PerguntaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/RespostasService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projeto/yonder/service/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/cadastrousuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/correcaowriting.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/global.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/listarusuarios.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/regras.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/writing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yonderlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/script/pergunta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/script/writing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaCadastroEmpresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaCadastroUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaCorrecaoWriting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaDaniel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaListarUsuarios.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaLogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaMenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaProvaReadingMEscolha.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaReadingPreenchimento.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaRegras.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisaoEmpresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisaoProvas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisaoUsersEmpresa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaVisualisarPerguntas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/TelaWriting.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/cadastrar-empresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/exibirCandidatos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/lista-perguntas.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/listar-empresas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/provaReading.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/resultado.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/testes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/projeto/Grupo3/YonderBase/YonderBaseApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +103,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,6 +126,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",

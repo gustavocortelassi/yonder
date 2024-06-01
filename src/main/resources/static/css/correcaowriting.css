@@ -27,6 +27,10 @@ body {
     align-self: flex-start;
 }
 
+.back-button:hover {
+    background-color: var(--skye-blue);
+}
+
 .writing {
     display: flex;
     gap: 8em;

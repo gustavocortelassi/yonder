@@ -1,0 +1,133 @@
+body {
+    margin: 1rem 0 1em 0;
+    gap: 1rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(13, auto);
+    grid-template-areas:
+        "rp lg"
+        "us lg"
+        "us lg"
+        "sc wr"
+        "sc wr"
+        "sc wr"
+        "sc wr"
+        "sc wr"
+        "fb wr"
+        "fb wr"
+        "fb sb"
+        "fb sb"
+        "fb sb";
+}
+
+.return-page {
+    grid-area: rp;
+}
+
+.back-button {
+    background-color: var(--cyan);
+    color: var(--black);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.5em 1em;
+    font-size: var(--fs-20);
+}
+
+.back-button:hover {
+    background-color: var(--skye-blue);
+}
+
+.left-button {
+    justify-self: start;
+    padding-left: 1em;
+}
+
+.user-status {
+    grid-area: us;
+    background-color: var(--cyan);
+    color: var(--white);
+    border-radius: 0 20px 20px 0;
+    padding: 0.5em 1em;
+    font-size: var(--fs-40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.score {
+    grid-area: sc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+    border-radius: 15px;
+    padding: 1em;
+    gap: 1rem;
+    width: auto;
+}
+
+.score-child {
+    background-color: var(--cyan);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 1em;
+    font-size: var(--fs-18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bluebutton {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.5em 1em;
+    font-size: var(--fs-20);
+}
+
+.feedback {
+    text-align: center;
+    grid-area: fb;
+}
+
+#feedback {
+    height: 15em;
+    border-radius: 20px;
+    text-align: center;
+    background-color: var(--grey);
+    padding: 1em 1.5em;
+    font-size: var(--fs-20);
+}
+
+.logo {
+    grid-area: lg;
+    justify-self: end;
+}
+
+.writing {
+    grid-area: wr;
+    display: flex;
+    flex-direction: column;
+    gap: 8em;
+}
+
+#resposta {
+    width: 100%;
+    height: 25em;
+    border-radius: 20px;
+    background-color: var(--beige);
+    padding: 1em 1.5em;
+    font-size: var(--fs-20);
+}
+
+.submit-button {
+    grid-area: sb;
+    float: none;
+}
