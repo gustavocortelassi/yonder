@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Correção</title>
     <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
-    <link rel="stylesheet" href="../static/css/correcaowriting.css" th:href="@{/css/correcaoprova.css}">
+    <link rel="stylesheet" href="../static/css/correcaoprova.css" th:href="@{/css/correcaoprova.css}">
 </head>
 <body>
+<div class="return-page left-button">
+    <a href="TelaLogin.html" th:href="@{/}"><button class="back-button" type="submit">◄ Voltar</button></a>
+</div>
 
+<div class="user-status">
+    Nome do Candidato | B1
+</div>
+
+<div class="score">
+    <div class="score-child">
+        Listening | A2
+    </div>
+    <div class="score-child">
+        Reading | B1
+    </div>
+    <div class="score-child">
+        Writing | B2
+    </div>
+    <div class="score-child">
+        Speaking | A1
+    </div>
+    <a href="TelaLogin.html" th:href="@{/}"><button class="bluebutton" type="submit">Ver Mais</button></a>
+</div>
+
+<div class="feedback">
+    <form method="get">
+        <textarea cols="50" id="feedback" class="textarea" placeholder="FEEDBACK"></textarea>
+    </form>
+</div>
+
+<div class="logo">
+    <img src="../static/img/yonderlogo.png" th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+</div>
+
+<div class="writing">
+    <form th:action="@{/correcao/{id}(id=${id})}" th:object="${formularioWrite}" method="get">
+        <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
+        <button type="submit" class="bluebutton">Corrigir</button>
+    </form>
+</div>
+
+<div class="submit-button">SALVAR</div>
 </body>
 </html>
