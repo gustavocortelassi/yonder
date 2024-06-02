@@ -24,15 +24,23 @@ public class CorrecaoController {
     public String getCorrecaoWriting(@PathVariable Long id, Model model) {
         FormularioWrite formularioWrite = formularioWriteService.findById(id);
         model.addAttribute("formularioWrite", formularioWrite);
+        model.addAttribute("id", id);
         return "TelaCorrecaoWriting";
     }
 
     @PostMapping("/correcaowriting/{id}")
-    public String postCorrecao(@PathVariable Long id, @ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
+    public String putCorrecao(
+            @PathVariable Long id,
+            @ModelAttribute("formularioWrite") FormularioWrite formularioWrite,
+            @RequestParam("notaSelecionada") String notaSelecionada
+    ) {
         FormularioWrite existingFormularioWrite = formularioWriteService.findById(id);
-        existingFormularioWrite.setCorrecao(formularioWrite.getCorrecao());
-        existingFormularioWrite.setCorrigido(true);
-        formularioWriteService.save(existingFormularioWrite);
+        if (existingFormularioWrite != null) {
+            existingFormularioWrite.setCorrecao(formularioWrite.getCorrecao());
+            existingFormularioWrite.setNota(notaSelecionada);
+            existingFormularioWrite.setCorrigido(true);
+            formularioWriteService.save(existingFormularioWrite);
+        }
         return "redirect:/";
     }
 
@@ -40,5 +48,4 @@ public class CorrecaoController {
     public String aprovarCorrecoes() {
         return "aprovarCorrecoes"; // falta criar
     }
-
 }
