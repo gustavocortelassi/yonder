@@ -33,7 +33,7 @@ public class FormularioWriteController {
         formularioWrite.setUsuario(usuario);
         formularioWrite.setCorrigido(false);
         formularioWrite.setCorrecao("");
-        formularioWrite.setNota("");
+        formularioWrite.setNotaWriting("");
         formularioWriteService.save(formularioWrite);
         return "redirect:/correcaowriting/" + usuario.getId();
     }

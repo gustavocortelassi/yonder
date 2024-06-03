@@ -15,7 +15,7 @@ public class FormularioWrite {
 
     private String resposta;
     private String correcao;
-    private String nota;
+    private String notaWriting;
     private boolean corrigido;
 
     // getters e setters
@@ -52,12 +52,12 @@ public class FormularioWrite {
         this.correcao = correcao;
     }
 
-    public String getNota() {
-        return nota;
+    public String getNotaWriting() {
+        return notaWriting;
     }
 
-    public void setNota(String nota) {
-        this.nota = nota;
+    public void setNotaWriting(String notaWriting) {
+        this.notaWriting = notaWriting;
     }
 
     public boolean isCorrigido() {
