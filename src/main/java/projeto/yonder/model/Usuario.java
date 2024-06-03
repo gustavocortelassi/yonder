@@ -10,46 +10,55 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Usuario {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long Id;
-        private String Nome;
-        private String Cpf;
-    
-        @ManyToOne
-        @JoinColumn(name = "emp_id", nullable = true)
-        private Empresa empresa;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String cpf;
 
-        public Long getId() {
-            return Id;
-        }
+    @ManyToOne
+    @JoinColumn(name = "emp_id", nullable = true)
+    private Empresa empresa;
 
-        public void setId(Long id) {
-            Id = id;
-        }
+    private String feedback;
 
-        public String getNome() {
-            return Nome;
-        }
+    public Long getId() {
+        return id;
+    }
 
-        public void setNome(String nome) {
-            Nome = nome;
-        }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-        public String getCpf() {
-            return Cpf;
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        public void setCpf(String cpf) {
-            Cpf = cpf;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        public Empresa getEmpresa() {
-            return empresa;
-        }
+    public String getCpf() {
+        return cpf;
+    }
 
-        public void setEmpresa(Empresa empresa) {
-            this.empresa = empresa;
-        }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
 }

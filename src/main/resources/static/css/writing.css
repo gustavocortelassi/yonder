@@ -3,30 +3,31 @@
     margin: 2em auto;
 }
 
-.statement{
+.statement {
+    display: block;
+    width: 100%;
+    margin: 1em auto;
+    padding: 1em 1.5em 1em 1.5em;
     background-color: var(--blue);
     color: var(--white);
-    width: 100%;
     border-radius: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: block;
-    margin: 2em auto;
-    padding: 1em 1.5em 1em 1.5em;
 }
 
 .textarea {
     width: 100%;
     height: 25em;
-    border-radius: 20px;
-    background-color: var(--beige);
     padding: 1em 1.5em 1em 1.5em;
+    background-color: var(--beige);
+    border-radius: 20px;
     font-size: var(--fs-20);
 }
 
 .accountant {
     padding: 0.5em 0.5em 0.5em;
+}
+
+.next-button {
+    margin-bottom: 2em;
 }
 
 .next-button:hover {
