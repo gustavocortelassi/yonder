@@ -2,21 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Prova de Leitura com Múltipla Escolha</title>
-    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
-    <link rel="stylesheet" href="../static/css/readingMultiplaEscolha.css" th:href="@{/css/readingMultiplaEscolha.css}">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/readingMultiplaEscolha.css}">
 </head>
 <body>
     <h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
-    <form action="/TelaProvaReadingMEscolha" method="post" class="options">
+    <form th:action="@{/MultiplaEscolha/{userId}/multEscolha/{proximaPerguntaId}(userId=${userId}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
         <div th:each="resposta, iterStat : ${respostas}">
             <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">
-                <span th:text="${iterStat.index == 0 ? '1. ' : iterStat.index == 1 ? '2. ' : iterStat.index == 2 ? '3. ' : '4. '}"></span>
+                <span th:text="${iterStat.index + 1} + '. '"></span>
                 <span th:text="${resposta.titulo}">Opção</span>
             </button>
         </div>
-    </form>
-    <form action="/nova-pergunta" method="get">
-        <button type="submit" class="submit-btn">Próxima Pergunta</button>
+        <input type="hidden" name="contador" th:value="${contador}">
     </form>
 </body>
 </html>
