@@ -13,12 +13,12 @@ public class FormularioWrite {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
+    @Column(columnDefinition = "TEXT")
     private String resposta;
+    @Column(columnDefinition = "TEXT")
     private String correcao;
     private String notaWriting;
     private boolean corrigido;
-
-    // getters e setters
 
     public Long getId() {
         return id;
