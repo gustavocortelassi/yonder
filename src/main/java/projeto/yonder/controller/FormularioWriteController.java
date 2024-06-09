@@ -35,6 +35,6 @@ public class FormularioWriteController {
         formularioWrite.setCorrecao("");
         formularioWrite.setNotaWriting("");
         formularioWriteService.save(formularioWrite);
-        return "redirect:/correcaowriting/" + usuario.getId();
+        return "redirect:/correcao/" + usuario.getId();
     }
 }
