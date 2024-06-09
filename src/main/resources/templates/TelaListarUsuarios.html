@@ -21,11 +21,10 @@
         </thead>
         <tbody>
         <tr th:each="usuario : ${usuarios}">
-            <td onclick="window.location.href='/notas'" th:text="${usuario.id}">ID</td>
-            <td onclick="window.location.href='/notas'" th:text="${usuario.nome}">Nome</td>
-            <td onclick="window.location.href='/notas'" th:text="${usuario.cpf}">CPF</td>
-            <td onclick="window.location.href='/notas'" th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
-            <!--<td onclick="window.location.href='/notas'"></td>-->
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.id}">ID</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.nome}">Nome</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.cpf}">CPF</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
         </tr>
         </tbody>
     </table>
