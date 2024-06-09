@@ -34,7 +34,7 @@ public class FormularioReadMEscolhaController {
             model.addAttribute("pergunta", pergunta);
             model.addAttribute("respostas", pergunta.getRespostas());
             model.addAttribute("userId", userId);
-            model.addAttribute("proximaPerguntaId", perguntaId + 1);
+            model.addAttribute("proximaPerguntaId", perguntaId);
             model.addAttribute("contador", contador);
         } else {
             model.addAttribute("mensagem", "Não há mais perguntas disponíveis.");
@@ -43,7 +43,6 @@ public class FormularioReadMEscolhaController {
 
         return "TelaProvaReadingMescolha";
     }
-
 
     @PostMapping("/multEscolha/{perguntaId}")
     public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId, @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
