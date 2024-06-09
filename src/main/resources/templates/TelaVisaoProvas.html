@@ -12,7 +12,7 @@
         <div class="card">READING
             <hr class="hrcard">
             <div class="nota" th:each="nota1 : ${mostraNota1}">
-                <p th:text="${nota1.niveisId}"></p>
+                <p th:text="${nota1.niveisId}">3</p>
             </div>
             <p style="font-size: 25px;">ACERTOS</p>
             <div class="quantquest">
@@ -52,7 +52,7 @@
             <div class="variado">
                 345/500
             </div> -->
-            <div class="variado">
+            <div onclick="window.location.href='/correcaowriting/1'" class="variado">
                 VER TEXTO
             </div>
         </div>
