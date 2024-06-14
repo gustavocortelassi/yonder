@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multipla Escolha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefefe;
+      display: flex;
+      justify-content: flex-start; /* Alinha o conteúdo para o início da página */
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+      padding-top: 20px; /* Reduzido de 50px para 20px para mover o conteúdo para cima */
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 1350px;
+      height: 321px;
+      border-radius: 30px;
+      padding: 30px; /* Adiciona um pouco de padding interno */
+      box-sizing: border-box; /* Inclui o padding na largura definida */
+      margin-left: -20px; /* Novo: Reduz a margem esquerda do contêiner inteiro */
+    }
+  
+    .text-container {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 30px;
+      font-size: 24px;
+      width: 100%; /* Ocupa toda a largura disponível */
+      margin-bottom: 40px; /* Espaço entre elementos */
+      background-color: #243A69;
+      color: #ecf0f1;
+      padding: 40px;
+    }
+  
+    .answers-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Ocupa toda a largura disponível */
+      padding: 20px;
+    }
+  
+    .answer-button {
+      background-color: #5B88A5;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-size: 48px;
+      padding: 10px;
+      cursor: pointer;
+      text-align: left;
+      margin-bottom: 20px;
+      height: 70px;
+      width: 739px; /* Botões ocupam metade da largura do contêiner */
+    }
+  
+    .answer-button:hover {
+      background-color: #3a6691;
+    }
+  
+    .next-button {
+      background-color: #243A69;
+      color: white;
+      border: none;
+      border-radius: 35px;
+      font-size: 40px;
+      padding: 10px 25px;
+      text-align: center;
+      height: 66px;
+      width: 270px;
+      align-self: flex-end; /* Alinha o botão à direita */
+      margin-top: -15px; /* Ajusta o espaçamento vertical conforme necessário */
+    }
+  
+    .next-button:hover {
+      background-color: #1B2A41;
+    }
+  
+    @media (max-width: 1024px) {
+      .container {
+        width: 95%; /* Ajusta a largura para telas menores */
+        padding: 20px; /* Reduz o padding para espaço adicional */
+      }
+  
+      .text-container, .answers-container {
+        padding: 10px; /* Reduz o padding */
+      }
+  
+      .answer-button, .next-button {
+        width: 100%; /* Ajusta a largura dos botões para ocupar o contêiner */
+        font-size: 36px; /* Reduz o tamanho da fonte para melhor visualização */
+      }
+  
+      .next-button {
+        width: 100%; /* Ajusta a largura para ocupar o contêiner */
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .text-container, .answers-container {
+        font-size: 18px; /* Reduz o tamanho da fonte */
+      }
+  
+      .answer-button, .next-button {
+        font-size: 28px; /* Reduz o tamanho da fonte */
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .text-container, .answers-container {
+        font-size: 16px; /* Reduz ainda mais o tamanho da fonte */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="text-container">
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+  </div>
+  <div class="answers-container">
+    <button class="answer-button" onclick="selectAnswer(this)">A</button>
+    <button class="answer-button" onclick="selectAnswer(this)">B</button>
+    <button class="answer-button" onclick="selectAnswer(this)">C</button>
+    <button class="answer-button" onclick="selectAnswer(this)">D</button>
+  </div>
+  <button class="next-button" onclick="nextQuestion()">Próxima</button>
+</div>
+
+<script>
+function selectAnswer(button) {
+  // Reset the color of all buttons
+  document.querySelectorAll('.answer-button').forEach(btn => {
+    btn.style.backgroundColor = '#5B88A5'; // Original color
+  });
+  
+  // Change the background color of the clicked button to indicate selection
+  button.style.backgroundColor = '#3a6691'; // Selected color
+  console.log('Você escolheu a resposta ' + button.textContent + '.');
+}
+
+function nextQuestion() {
+  // Logic to go to the next question
+  console.log('Ir para a próxima pergunta.');
+}
+</script>
+
+</body>
+</html>
