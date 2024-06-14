@@ -11,37 +11,39 @@
 
 <div class="container">
     <div class="back-button-box">
-        <a href="TelaLogin.html" th:href="@{/}"><button class="back-button" type="submit">Voltar</button></a>
+        <a href="TelaLogin.html" th:href="@{/}">
+            <button class="back-button"><span class="triangle-back">&#9664;</span> Voltar</button>
+        </a>
     </div>
     <div class="writing">
-        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="get">
-        <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}"></textarea>
-            <div class="accountant">0/500 Palavras</div>
-        </form>
         <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="post">
-        <textarea cols="50" id="correcao" class="textarea" th:field="*{correcao}" placeholder="Correção"></textarea>
-            <div class="accountant">0/500 Palavras</div>
-            <!-- teste -->
-            <button type="submit" class="submit-button">CONFIRMAR</button>
+            <div class="wrapper">
+                <div class="wrapped">
+                    <label for="resposta"></label><textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}" readonly></textarea>
+                </div>
+                <div class="wrapped">
+                    <label for="correcao"></label><textarea cols="50" id="correcao" class="textarea" th:field="*{correcao}" placeholder="Campo para Correção de Writing"></textarea>
+                    <input type="hidden" id="notaSelecionada" name="notaSelecionada" th:value="${notaWriting}" />
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button type="button" class="next-button dropbtn">NOTA<span class="triangle-down">&#9662;</span></button>
+                    <div class="dropdown-content">
+                        <a class="option" onclick="chooseOption('A1')">A1</a>
+                        <a class="option" onclick="chooseOption('A2')">A2</a>
+                        <a class="option" onclick="chooseOption('B1')">B1</a>
+                        <a class="option" onclick="chooseOption('B2')">B2</a>
+                        <a class="option" onclick="chooseOption('C1')">C1</a>
+                        <a class="option" onclick="chooseOption('C2')">C2</a>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">CONCLUIR</button>
+            </div>
         </form>
     </div>
 </div>
-<div class="buttons">
-    <div class="dropdown">
-        <button class="next-button dropbtn">NOTA</button>
-        <div class="dropdown-content">
-            <a href="#" class="option" onclick="chooseOption('A1')">A1</a>
-            <a href="#" class="option" onclick="chooseOption('A2')">A2</a>
-            <a href="#" class="option" onclick="chooseOption('B1')">B1</a>
-            <a href="#" class="option" onclick="chooseOption('B2')">B2</a>
-            <a href="#" class="option" onclick="chooseOption('C1')">C1</a>
-            <a href="#" class="option" onclick="chooseOption('C2')">C2</a>
-        </div>
-    </div>
-    <button type="submit" class="submit-button">CONFIRMAR</button>
-</div>
 
-
-<script src="../static/script/writing.js" th:src="@{/script/writing.js}"></script>
+<script src="../static/script/correcaowriting.js" th:src="@{/script/correcaowriting.js}"></script>
 </body>
 </html>

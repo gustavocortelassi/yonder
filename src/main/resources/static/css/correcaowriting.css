@@ -1,5 +1,5 @@
 body {
-    margin: 2em 2em 2em 2em;
+    margin: 1em 2em 1em 2em;
 }
 
 .container {
@@ -13,23 +13,37 @@ body {
     align-self: flex-start;
 }
 
+.triangle-back {
+    margin-right: 8px;
+    color: var(--black);
+}
+
 .back-button {
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: var(--cyan);
+    color: var(--black);
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    padding: 12px 24px;
+    padding: 6px 24px 6px 8px;
     width: auto;
     height: auto;
-    font-size: var(--fs-20);
+    font-size: var(--fs-24);
     margin-bottom: 1em;
-    align-self: flex-start;
+}
+
+.back-button:hover {
+    background-color: var(--skye-blue);
 }
 
 .writing {
     display: flex;
-    gap: 8em;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.wrapper {
+    display: flex;
+    gap: 2em;
 }
 
 .textarea {
@@ -41,20 +55,27 @@ body {
     font-size: var(--fs-20);
 }
 
-.accountant {
-    padding: 0.5em;
-}
-
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1em;
-    gap: 1em;
 }
 
 .next-button {
+    font-size: var(--fs-24);
     border-radius: 10px;
+    margin-right: 0.5em;
+}
+
+.submit-button {
+    font-size: var(--fs-24);
+    margin-left: 0.5em;
+}
+
+.triangle-down {
+    margin-left: 12px;
+    color: var(--white);
 }
 
 .dropdown {
@@ -66,10 +87,11 @@ body {
     display: none;
     position: absolute;
     background-color: var(--blue);
-    min-width: 100px;
+    min-width: calc(100% - 12px);
     z-index: 1;
     border-radius: 10px;
     top: 100%;
+    left: 0;
 }
 
 .dropdown-content a {
@@ -77,6 +99,8 @@ body {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
+    text-align: center;
 }
 
 .dropdown-content a:hover {
@@ -85,12 +109,4 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-.next-button:hover {
-    background-color: var(--skye-blue);
-}
-
-.submit-button:hover {
-    background-color: var(--dark-green);
 }

@@ -1,55 +1,59 @@
 package projeto.yonder.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long Id;
-        private String Nome;
-        private String Cpf;
-    
-        @ManyToOne
-        @JoinColumn(name = "emp_id", nullable = true)
-        private Empresa empresa;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String cpf;
 
-        public Long getId() {
-            return Id;
-        }
+    @ManyToOne
+    @JoinColumn(name = "emp_id", nullable = true)
+    private Empresa empresa;
+    @Column(columnDefinition = "TEXT")
+    private String feedback;
 
-        public void setId(Long id) {
-            Id = id;
-        }
+    public Long getId() {
+        return id;
+    }
 
-        public String getNome() {
-            return Nome;
-        }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-        public void setNome(String nome) {
-            Nome = nome;
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        public String getCpf() {
-            return Cpf;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        public void setCpf(String cpf) {
-            Cpf = cpf;
-        }
+    public String getCpf() {
+        return cpf;
+    }
 
-        public Empresa getEmpresa() {
-            return empresa;
-        }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-        public void setEmpresa(Empresa empresa) {
-            this.empresa = empresa;
-        }
+    public Empresa getEmpresa() {
+        return empresa;
+    }
 
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
 }

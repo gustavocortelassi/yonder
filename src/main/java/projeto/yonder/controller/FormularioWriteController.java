@@ -32,8 +32,9 @@ public class FormularioWriteController {
         Usuario usuario = usuarioService.getUsuarioById(id);
         formularioWrite.setUsuario(usuario);
         formularioWrite.setCorrigido(false);
+        formularioWrite.setCorrecao("");
+        formularioWrite.setNotaWriting("");
         formularioWriteService.save(formularioWrite);
-        return "redirect:/correcaowriting/" + usuario.getId();
+        return "redirect:/correcao/" + usuario.getId();
     }
-
 }
