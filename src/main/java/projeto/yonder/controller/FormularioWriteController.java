@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import projeto.yonder.model.FormularioWrite;
+import projeto.yonder.model.Usuario;
 import projeto.yonder.service.FormularioWriteService;
+import projeto.yonder.service.UsuarioService;
 
 @Controller
 public class FormularioWriteController {
@@ -13,38 +15,26 @@ public class FormularioWriteController {
     @Autowired
     private FormularioWriteService formularioWriteService;
 
-    @GetMapping("/prova")
-    public String formularioWrite(Model model) {
-        model.addAttribute("formularioWrite", new FormularioWrite());
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @GetMapping("/writing/{id}")
+    public String formularioWriteParaUsuario(@PathVariable Long id, Model model) {
+        Usuario usuario = usuarioService.getUsuarioById(id);
+        FormularioWrite formularioWrite = new FormularioWrite();
+        formularioWrite.setUsuario(usuario);
+        model.addAttribute("formularioWrite", formularioWrite);
         return "TelaWriting";
     }
 
-    @PostMapping("/prova")
-    public String salvar(@ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
-        formularioWrite.setId(null);
+    @PostMapping("/writing/{id}")
+    public String salvar(@PathVariable Long id, @ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
+        Usuario usuario = usuarioService.getUsuarioById(id);
+        formularioWrite.setUsuario(usuario);
         formularioWrite.setCorrigido(false);
+        formularioWrite.setCorrecao("");
+        formularioWrite.setNotaWriting("");
         formularioWriteService.save(formularioWrite);
-        return "redirect:/prova";
-    }
-
-    @GetMapping("/respostas")
-    public String writeningCorrecao(@RequestParam("id") Long id, Model model) {
-        FormularioWrite formularioWrite = formularioWriteService.findById(id);
-        model.addAttribute("formularioWrite", formularioWrite);
-        return "TelaCandidatoRespostas";
-    }
-
-    @GetMapping("/correcao")
-    public String corrigir(@RequestParam("id") Long id, Model model) {
-        FormularioWrite formularioWrite = formularioWriteService.findById(id);
-        model.addAttribute("formularioWrite", formularioWrite);
-        return "TelaRespostas";
-    }
-
-    @PostMapping("/correcao")
-    public String corrigir(@ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
-        formularioWrite.setCorrigido(true);
-        formularioWriteService.save(formularioWrite);
-        return "redirect:/respostas/writing";
+        return "redirect:/correcao/" + usuario.getId();
     }
 }

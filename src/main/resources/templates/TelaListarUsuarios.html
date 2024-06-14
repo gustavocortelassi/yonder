@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Usuários</title>
-    <link rel="stylesheet" th:href="@{/css/listarusuarios.css}">
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
+    <link rel="stylesheet" href="../static/css/listarusuarios.css" th:href="@{/css/listarusuarios.css}">
 </head>
 <body>
 <div class="container">
-    <img th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+    <img src="../static/img/yonderlogo.png" th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
     <h2>Lista de Usuários</h2>
     <table>
         <thead>
@@ -20,10 +21,10 @@
         </thead>
         <tbody>
         <tr th:each="usuario : ${usuarios}">
-            <td th:text="${usuario.id}">ID</td>
-            <td th:text="${usuario.nome}">Nome</td>
-            <td th:text="${usuario.cpf}">CPF</td>
-            <td th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.id}">ID</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.nome}">Nome</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.cpf}">CPF</td>
+            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
         </tr>
         </tbody>
     </table>

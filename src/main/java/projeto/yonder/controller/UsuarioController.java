@@ -28,12 +28,12 @@ public class UsuarioController {
     @PostMapping("/cadastro")
     public String cadastrarUsuario(@ModelAttribute Usuario usuario, Model model) {
         usuarioService.salvar(usuario);
-        return "redirect:/usuarios";
+        return "redirect:/";
     }
 
     @GetMapping("/listar")
     public String listarUsuarios(Model model) {
-        List<Usuario> usuarios = usuarioService.getAllUsuarios();
+        List<Usuario> usuarios = usuarioService.getTop50Usuarios();
         model.addAttribute("usuarios", usuarios);
         return "TelaListarUsuarios";
     }

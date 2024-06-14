@@ -27,14 +27,17 @@ public class EmpresaController {
 
     @GetMapping("/cadastrarEmpresas")
     public String showCadastroForm() {
-        return "cadastrar-empresas";
+        return "TelaCadastrarEmpresas";
     }
 
     @GetMapping
     public String listarEmpresas(Model model) {
         List<Empresa> empresas = empresaService.getAllEmpresas();
+        if (empresas.size() > 50) {
+            empresas = empresas.subList(0, 50);
+        }
         model.addAttribute("empresas", empresas);
-        return "listar-empresas";
+        return "TelaListarEmpresas";
     }
 
     @PostMapping("/cadastro")
@@ -62,10 +65,15 @@ public class EmpresaController {
         return "gerenciarEmpresas"; //falta criar essa pagina
     }
 
-    @GetMapping("/home")
+    @GetMapping("/usuariosEmpresa")
+    public String usersCarac(Model model) {
+        return "TelaVisaoUsersEmpresa";
+    }
+
+    @GetMapping("/telaDaniel")
     public String home(Model model) {
         List<Empresa> empresas = empresaRepository.findAll();
         model.addAttribute("empresas", empresas);
-        return "home";
+        return "TelaDaniel";
     }
 }
