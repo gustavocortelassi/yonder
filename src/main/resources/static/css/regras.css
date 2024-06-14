@@ -43,3 +43,40 @@ li {
     display: block;
     margin: 0 auto;
 }
+
+.button:hover {
+    background-color: var(--dark-blue);
+}
+
+@media (max-width: 425px) {
+    .container {
+        max-width: 90%;
+        max-height: 100%;
+    }
+    .instrucoes {
+        font-size: var(--fs-24);
+        text-align: center;
+    }
+    .titulo {
+        font-size: var(--fs-24);
+    }
+    li {
+        font-size: var(--fs-18);
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        max-width: 90%;
+        height: 50%;
+    }
+    .instrucoes {
+        font-size: var(--fs-20);
+    }
+    .titulo {
+        font-size: var(--fs-20);
+    }
+    li {
+        font-size: var(--fs-18);
+    }
+}
