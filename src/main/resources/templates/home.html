@@ -1,0 +1,144 @@
+!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Adm Daniel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+        }
+        .overview-title {
+            text-align: center;
+            font-size: 24px;
+            color: #000000;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: #D9D9D9;
+            border-radius: 20px;
+            border: 1px solid #d3d3d3;
+            width: 301px;
+            height: 178px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .card-header {
+            background-color: #5B88A5;
+            color: #FFFFFF;
+            border-radius: 20px;
+            padding: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .card-content {
+            padding: 20px 20px;
+            color: #000000;
+            font-weight: 400;
+        }
+        .admin-panel {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .title-border-top, .title-border-bottom {
+            height: 2px;
+            background-color: #243A69;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .title-border-top {
+            width: 98%;
+            margin-bottom: 10px;
+        }
+        .title-border-bottom {
+            width: 18%;
+            margin-top: -5px;
+        }
+        .admin-panel-title {
+            font-size: 20px;
+            color: #000000;
+            padding: 50px 0 10px;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .admin-button {
+            background-color: #243A69;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 35px;
+            margin-top: 60px;
+            border-radius: 20px;
+            width: 270px;
+            height: 135px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .admin-button:hover {
+            background-color: transparent;
+            border-color: #243A69;
+        }
+        .admin-button:active {
+            background-color: #243A69;
+        }
+    </style>
+</head>
+<body>
+<div class="overview-container">
+    <div class="overview-title">Visão geral</div>
+    <div class="dashboard-container">
+        <div class="card">
+            <div class="card-header" th:text="${empresa.nome}">Nome da empresa</div>
+            <div class="card-content">
+                <p th:text="'Provas realizadas: ' + empresa.provasRealizadas + '/' + empresa.provasTotais">Provas realizadas<br>70/100</p>
+                <p th:text="'Provas corrigidas: ' + empresa.provasCorrigidas + '/' + empresa.provasTotais">Provas corrigidas<br>60/100</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" th:text="${empresa.nome}">Nome da empresa</div>
+            <div class="card-content">
+                <p th:text="'Provas realizadas: ' + empresa.provasRealizadas + '/' + empresa.provasTotais">Provas realizadas<br>60/100</p>
+                <p th:text="'Provas corrigidas: ' + empresa.provasCorrigidas + '/' + empresa.provasTotais">Provas corrigidas<br>60/100</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" th:text="${empresa.nome}">Nome da empresa</div>
+            <div class="card-content">
+                <p th:text="'Provas realizadas: ' + empresa.provasRealizadas + '/' + empresa.provasTotais">Provas realizadas<br>50/120</p>
+                <p th:text="'Provas corrigidas: ' + empresa.provasCorrigidas + '/' + empresa.provasTotais">Provas corrigidas<br>40/120</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" th:text="${empresa.nome}">Nome da empresa</div>
+            <div class="card-content">
+                <p th:text="'Provas realizadas: ' + empresa.provasRealizadas + '/' + empresa.provasTotais">Provas realizadas<br>70/150</p>
+                <p th:text="'Provas corrigidas: ' + empresa.provasCorrigidas + '/' + empresa.provasTotais">Provas corrigidas<br>60/150</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="admin-panel">
+    <div class="title-border-top"></div>
+    <div class="admin-panel-title">PAINEL DO ADMINISTRADOR</div>
+    <div class="title-border-bottom"></div>
+    <button class="admin-button" th:onclick="'window.location.href=\'/gerenciar-empresas\''">Gerenciar Empresas</button>
+    <button class="admin-button" th:onclick="'window.location.href=\'/aprovar-correcoes\''">Aprovar Correções</button>
+    <button class="admin-button" th:onclick="'window.location.href=\'/gerenciar-corretores\''">Gerenciar Corretores</button>
+    <button class="admin-button" th:onclick="'window.location.href=\'/gerenciar-questoes\''">Gerenciar Questões</button>
+</div>
+</body>
+</html>
