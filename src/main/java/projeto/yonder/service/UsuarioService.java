@@ -21,28 +21,23 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    // salva no banco
     public void salvar(Usuario usuario) {
         usuarioRepository.save(usuario);
     }
 
-    // lista
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();
     }
 
-    // lista apenas os 50 por conta do tamanho do banco
     public List<Usuario> getTop50Usuarios() {
         return usuarioRepository.findTop50ByOrderByIdAsc();
     }
 
-    // busca por id
     public Usuario getUsuarioById(Long id) {
         Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
         return optionalUsuario.orElse(null);
     }
 
-    // deleta por id
     public void deletarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }

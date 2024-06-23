@@ -59,9 +59,4 @@ public class CorrecaoController {
         formularioWriteService.save(existingFormularioWrite);
         return "redirect:/correcao/" + id;
     }
-
-    @GetMapping("/aprovar-correcoes")
-    public String aprovarCorrecoes() {
-        return "aprovarCorrecoes"; // falta criar
-    }
 }

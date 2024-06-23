@@ -22,18 +22,20 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("cpf") String cpf,
+                        Model model) {
         Query query = entityManager.createNativeQuery("SELECT * FROM Usuario WHERE Nome = ? AND CPF = ?", Usuario.class);
         query.setParameter(1, username);
-        query.setParameter(2, password);
+        query.setParameter(2, cpf);
 
         try {
             Usuario usuario = (Usuario) query.getSingleResult();
-            return "redirect:/prova";
+            return "redirect:/regras/" + usuario.getId();
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", "Usuário ou senha inválidos");
-            return "TelaWriting";
+            return "TelaLogin";
         }
     }
 }

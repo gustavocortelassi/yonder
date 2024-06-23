@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Regras </title>
+    <title>Preparação para a Prova</title>
     <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
-    <link rel="stylesheet" href="../static/css/regras.css" th:href="@{../static/css/regras.css}">
+    <link rel="stylesheet" href="../static/css/regras.css" th:href="@{/css/regras.css}">
 </head>
 <body>
-    <div class="container"> 
-        <div class="instrucoes">
-            Regras para realização das provas
-        </div>
-        <div class="titulo"> Instruções
-            <div>
-                <ul>
-                    <li> Regra 1 </li>
-                    <li> Regra 2 </li>
-                    <li> Regra 3 </li>
-                    <li> ... </li>
-                    <li> ... </li>
-                </ul>
-            </div>
-        </div>
-        <button class="button" href="" th:href="@{/prova}">Começar</button>
-    </div>
+<div class="container">
+    <h2>Preparação para a Prova</h2>
+    <p>Aqui estão algumas observações sobre a prova:</p>
+    <ul>
+        <li>A prova consiste em responder a uma pergunta aberta sobre um tópico relacionado ao curso de inglês.</li>
+        <li>Você terá 30 minutos para concluir a prova.</li>
+        <li>É importante revisar suas respostas antes de finalizar.</li>
+        <li>Certifique-se de escrever de forma clara e coesa.</li>
+        <li>Boa sorte!</li>
+    </ul>
+    <p>A prova será dividida em três seções:</p>
+    <ol>
+        <li>Prova de múltipla escolha</li>
+        <li>Prova de preenchimento</li>
+        <li>Prova de Writing</li>
+        <li>Prova de Audio</li>
+    </ol>
+    <p>Fique tranquilo, você está preparado para isso!</p>
+    <a href="TelaWriting.html" th:href="@{'/writing/' + ${id}}" class="start-button">Iniciar Prova de Writing</a>
+</div>
 </body>
 </html>

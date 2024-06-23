@@ -1,82 +1,44 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .container {
-    background-color: var(--cyan);
-    color: var(--white);
-    padding: 3em;
-    border-radius: 10px;
-    max-width: 50%;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.instrucoes {
-    border-bottom: 2px solid var(--dark-blue);
-    padding-bottom: 0.5em;
-    margin-bottom: 0.5em;
-    font-size: var(--fs-28);
+h2 {
+    color: var(--dark-blue);
+    margin-bottom: 20px;
 }
 
-.titulo {
-    font-size: var(--fs-28);
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--dark-blue);
 }
 
-li {
-    font-size: var(--fs-20);
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: var(--dark-blue);
 }
 
-.button {
+p {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: var(--blue);
     color: var(--white);
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
     transition: background-color 0.3s ease;
-    align-content: center;
-    padding: 12px 24px;
-    width: auto;
-    height: auto;
-    text-align: center;
-    font-size: var(--fs-20);
-    display: block;
-    margin: 0 auto;
 }
 
-.button:hover {
-    background-color: var(--dark-blue);
-}
-
-@media (max-width: 425px) {
-    .container {
-        max-width: 90%;
-        max-height: 100%;
-    }
-    .instrucoes {
-        font-size: var(--fs-24);
-        text-align: center;
-    }
-    .titulo {
-        font-size: var(--fs-24);
-    }
-    li {
-        font-size: var(--fs-18);
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-        max-width: 90%;
-        height: 50%;
-    }
-    .instrucoes {
-        font-size: var(--fs-20);
-    }
-    .titulo {
-        font-size: var(--fs-20);
-    }
-    li {
-        font-size: var(--fs-18);
-    }
+.start-button:hover {
+    background-color: var(--skye-blue);
 }
