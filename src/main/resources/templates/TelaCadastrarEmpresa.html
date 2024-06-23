@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Empresa</title>
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
+    <link rel="stylesheet" href="../static/css/cadastrarEmpresa.css" th:href="@{/css/cadastrarEmpresa.css}">
+    <script src="../static/script/cadastrarEmpresa.js" th:src="@{/script/cadastrarEmpresa.js}"></script>
+</head>
+<body>
+<div class="container">
+    <img src="../static/img/yonderlogo.png" th:src="@{/img/yonderlogo.png}" alt="Logo" class="logo">
+    <h2>Cadastrar Nova Empresa</h2>
+    <form th:action="@{/empresas/cadastro}" method="post">
+        <div class="form-group">
+            <label for="razaoSocial"></label>
+            <input type="text" id="razaoSocial" name="razaoSocial" placeholder="Razão Social:" required/><br>
+
+            <label for="cnpj"></label>
+            <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ:" required oninput="validateCNPJ(event)" pattern="\d{14}"/><br>
+
+            <label for="cep"></label>
+            <input type="text" id="cep" name="cep" placeholder="CEP:" required oninput="validateCEP(event)" pattern="\d{8}"/><br>
+
+            <label for="logradouro"></label>
+            <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro:" required/><br>
+
+            <label for="bairro"></label>
+            <input type="text" id="bairro" name="bairro" placeholder="Bairro:" required/><br>
+
+            <label for="numero"></label>
+            <input type="number" id="numero" name="numero" placeholder="Número:" required/><br>
+
+            <label for="complemento"></label>
+            <input type="text" id="complemento" name="complemento" placeholder="Complemento:" required/><br>
+
+            <button type="submit" class="next-button">Cadastrar</button>
+        </div>
+    </form>
+    <a href="/empresas" th:href="@{/}" ><button type="button" class="next-button">Voltar</button></a>
+</div>
+</body>
+</html>

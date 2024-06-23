@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Usuários</title>
     <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
-    <link rel="stylesheet" href="../static/css/listarusuarios.css" th:href="@{/css/listarusuarios.css}">
+    <link rel="stylesheet" href="../static/css/listarUsuarios.css" th:href="@{/css/listarUsuarios.css}">
 </head>
 <body>
 <div class="container">
@@ -17,14 +17,16 @@
             <th>Nome</th>
             <th>CPF</th>
             <th>ID da Empresa</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="usuario : ${usuarios}">
-            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.id}">ID</td>
-            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.nome}">Nome</td>
-            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.cpf}">CPF</td>
-            <td onclick="window.location.href='/correcao/{id}'" th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
+            <td th:text="${usuario.id}">ID</td>
+            <td th:text="${usuario.nome}">Nome</td>
+            <td th:text="${usuario.cpf}">CPF</td>
+            <td th:text="${usuario.empresa != null ? usuario.empresa.id : 'N/A'}">ID da Empresa</td>
+            <td><a th:href="@{'/correcao/' + ${usuario.id}}">Corrigir Prova</a></td>
         </tr>
         </tbody>
     </table>

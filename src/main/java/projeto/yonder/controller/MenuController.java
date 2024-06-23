@@ -12,6 +12,8 @@ public class MenuController {
         return "TelaMenu";
     }
 
-    
+    @GetMapping("/menu")
+    public String menuAdm(Model model){
+        return "TelaMenuAdm";
+    }
 }
-
