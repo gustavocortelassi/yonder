@@ -10,10 +10,14 @@ public class Usuario {
     private Long id;
     private String nome;
     private String cpf;
+    private int respostasCorretas;
+    private String classificacao;
+    private double nota;
 
     @ManyToOne
     @JoinColumn(name = "emp_id", nullable = true)
     private Empresa empresa;
+
     @Column(columnDefinition = "TEXT")
     private String feedback;
 
@@ -41,6 +45,22 @@ public class Usuario {
         this.cpf = cpf;
     }
 
+    public int getRespostasCorretas() {
+        return respostasCorretas;
+    }
+
+    public void setRespostasCorretas(int respostasCorretas) {
+        this.respostasCorretas = respostasCorretas;
+    }
+
+    public String getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(String classificacao) {
+        this.classificacao = classificacao;
+    }
+
     public Empresa getEmpresa() {
         return empresa;
     }
@@ -56,4 +76,14 @@ public class Usuario {
     public void setFeedback(String feedback) {
         this.feedback = feedback;
     }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    
 }
