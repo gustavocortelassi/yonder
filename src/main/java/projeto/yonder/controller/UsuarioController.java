@@ -25,9 +25,16 @@ public class UsuarioController {
 
     @GetMapping("/cadastro")
     public String mostrarFormularioCadastro(Model model) {
-        model.addAttribute("usuario", new Usuario());
+        Usuario usuario = new Usuario();
+        usuario.setNotaWriting("");
+        usuario.setNotaListening("");
+        usuario.setNotaReading("");
+
+        model.addAttribute("usuario", usuario);
+
         List<Empresa> empresas = empresaService.getAllEmpresas();
         model.addAttribute("empresas", empresas);
+
         return "TelaCadastrarUsuario";
     }
 

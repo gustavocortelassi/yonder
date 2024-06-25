@@ -16,7 +16,7 @@
         </a>
     </div>
     <div class="writing">
-        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="post">
+        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${writing}" method="post">
             <div class="wrapper">
                 <div class="wrapped">
                     <label for="resposta"></label><textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}" readonly></textarea>

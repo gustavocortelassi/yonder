@@ -4,59 +4,56 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import projeto.yonder.model.FormularioWrite;
-import projeto.yonder.service.FormularioWriteService;
-import projeto.yonder.service.UsuarioService;
+import projeto.yonder.model.Writing;
+import projeto.yonder.service.WritingService;
 
 @Controller
 public class CorrecaoController {
 
     @Autowired
-    private FormularioWriteService formularioWriteService;
+    private WritingService writingService;
 
     @GetMapping("/correcao/{id}")
     public String getCorrecao(@PathVariable Long id, Model model) {
-        FormularioWrite formularioWrite = formularioWriteService.findById(id);
-        String nome = formularioWrite.getUsuario().getNome();
-        String notaWriting = formularioWrite.getNotaWriting();
+        Writing writing = writingService.findById(id);
+        String nome = writing.getUsuario().getNome();
+        String notaWriting = writing.getUsuario().getNotaWriting();
 
-        model.addAttribute("formularioWrite", formularioWrite);
+        model.addAttribute("writing", writing);
         model.addAttribute("id", id);
         model.addAttribute("nome", nome);
         model.addAttribute("notaWriting", notaWriting);
         return "TelaCorrecaoProva";
     }
 
-
     @GetMapping("/correcaowriting/{id}")
     public String getCorrecaoWriting(@PathVariable Long id, Model model) {
-        FormularioWrite formularioWrite = formularioWriteService.findById(id);
-        model.addAttribute("formularioWrite", formularioWrite);
+        Writing writing = writingService.findById(id);
+        String notaWriting = writing.getUsuario().getNotaWriting();
+        model.addAttribute("writing", writing);
         model.addAttribute("id", id);
+        model.addAttribute("notaWriting", notaWriting);
         return "TelaCorrecaoWriting";
+
     }
 
     @PostMapping("/correcaowriting/{id}")
-    public String postCorrecaoWriting(
-            @PathVariable Long id,
-            @ModelAttribute("formularioWrite") FormularioWrite formularioWrite,
-            @RequestParam("notaSelecionada") String notaSelecionada
-    ) {
-        FormularioWrite existingFormularioWrite = formularioWriteService.findById(id);
-        if (existingFormularioWrite != null) {
-            existingFormularioWrite.setCorrecao(formularioWrite.getCorrecao());
-            existingFormularioWrite.setNotaWriting(notaSelecionada);
-            existingFormularioWrite.setCorrigido(true);
-            formularioWriteService.save(existingFormularioWrite);
+    public String postCorrecaoWriting(@PathVariable Long id, @ModelAttribute("writing") Writing writing, @RequestParam("notaSelecionada") String notaSelecionada) {
+        Writing existingWriting = writingService.findById(id);
+        if (existingWriting != null) {
+            existingWriting.setCorrecao(writing.getCorrecao());
+            existingWriting.setCorrigido(true);
+            existingWriting.getUsuario().setNotaWriting(notaSelecionada);
+            writingService.save(existingWriting);
         }
         return "redirect:/correcao/" + id;
     }
 
     @PostMapping("/salvarFeedback/{id}")
-    public String salvarFeedback(@PathVariable Long id, @ModelAttribute("formularioWrite") FormularioWrite formularioWrite) {
-        FormularioWrite existingFormularioWrite = formularioWriteService.findById(id);
-        existingFormularioWrite.getUsuario().setFeedback(formularioWrite.getUsuario().getFeedback());
-        formularioWriteService.save(existingFormularioWrite);
+    public String salvarFeedback(@PathVariable Long id, @ModelAttribute("writing") Writing writing) {
+        Writing existingWriting = writingService.findById(id);
+        existingWriting.getUsuario().setFeedback(writing.getUsuario().getFeedback());
+        writingService.save(existingWriting);
         return "redirect:/correcao/" + id;
     }
 }

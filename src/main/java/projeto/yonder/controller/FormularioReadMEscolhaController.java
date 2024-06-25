@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import projeto.yonder.model.Pergunta;
-import projeto.yonder.model.Respostas;
 import projeto.yonder.repository.PerguntaRepository;
 import projeto.yonder.repository.RespostasRepository;
 
@@ -32,7 +31,7 @@ public class FormularioReadMEscolhaController {
 
         if (pergunta != null) {
             model.addAttribute("pergunta", pergunta);
-            model.addAttribute("respostas", pergunta.getRespostas());
+            model.addAttribute("respostas", pergunta.getResposta());
             model.addAttribute("userId", userId);
             model.addAttribute("proximaPerguntaId", perguntaId);
             model.addAttribute("contador", contador);

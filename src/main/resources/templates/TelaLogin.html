@@ -19,6 +19,7 @@
     <div th:if="${error}" class="error-message">
         <span th:text="${error}"></span>
     </div>
+    <a th:href="@{/empresas/cadastro}"><button type="button" class="next-button">Cadastrar Empresa</button></a>
     <a th:href="@{/usuario/cadastro}"><button type="button" class="next-button">Cadastrar Usuário</button></a>
 </div>
 </body>

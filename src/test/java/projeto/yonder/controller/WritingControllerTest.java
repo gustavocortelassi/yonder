@@ -8,22 +8,22 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import projeto.yonder.model.FormularioWrite;
+import projeto.yonder.model.Writing;
 import projeto.yonder.model.Usuario;
-import projeto.yonder.service.FormularioWriteService;
+import projeto.yonder.service.WritingService;
 import projeto.yonder.service.UsuarioService;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-@WebMvcTest(FormularioWriteController.class)
-public class FormularioWriteControllerTest {
+@WebMvcTest(WritingController.class)
+public class WritingControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private FormularioWriteService formularioWriteService;
+    private WritingService writingService;
 
     @MockBean
     private UsuarioService usuarioService;
@@ -42,6 +42,6 @@ public class FormularioWriteControllerTest {
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/correcao/" + userId));
 
-        Mockito.verify(formularioWriteService, Mockito.times(1)).save(any(FormularioWrite.class));
+        Mockito.verify(writingService, Mockito.times(1)).save(any(Writing.class));
     }
 }

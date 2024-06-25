@@ -18,7 +18,7 @@ public class Pergunta {
     private String Audio;
 
     @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL)
-    private List<Respostas> respostas;
+    private List<Resposta> resposta;
 
     public Pergunta() {
     }
@@ -80,12 +80,12 @@ public class Pergunta {
         Audio = audio;
     }
 
-    public List<Respostas> getRespostas() {
-        return respostas;
+    public List<Resposta> getResposta() {
+        return resposta;
     }
 
-    public void setRespostas(List<Respostas> respostas) {
-        this.respostas = respostas;
+    public void setResposta(List<Resposta> resposta) {
+        this.resposta = resposta;
     }
 
 }

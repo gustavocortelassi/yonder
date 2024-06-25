@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import projeto.yonder.model.FormularioWrite;
+import projeto.yonder.model.Writing;
 
 @Repository
-public interface FormularioWriteRepository extends JpaRepository<FormularioWrite, Long>{
+public interface FormularioWriteRepository extends JpaRepository<Writing, Long>{
     
-    List<FormularioWrite> findAll();
+    List<Writing> findAll();
 }
