@@ -13,37 +13,33 @@
 </div>
 
 <div class="user-status">
-    <span th:text="${nome}">Nome do Candidato</span>
-    <span class="nota-user"><!-- th:text="${formularioWrite.usuario.nota}" -->| Nota</span>
+    <div class="name">
+        <span th:text="${nome}"> Nome do Candidato</span>
+    </div>
 </div>
 
 <div class="score">
     <div class="score-child">
         <span class="text">Listening</span>
         <span class="barra">|</span>
-        <span class="nota">Nota</span>
+        <span class="nota" th:text="${notaListening}">Nota</span>
     </div>
     <div class="score-child">
         <span class="text">Reading</span>
         <span class="barra">|</span>
-        <span class="nota">Nota</span>
+        <span class="nota" th:text="${notaReading}">Nota</span>
     </div>
     <div class="score-child">
         <span class="text">Writing</span>
         <span class="barra">|</span>
         <span class="nota" th:text="${notaWriting}">Nota</span>
     </div>
-    <div class="score-child">
-        <span class="text">Speaking</span>
-        <span class="barra">|</span>
-        <span class="nota">Nota</span>
-    </div>
 </div>
 
 <div class="feedback-box">
     <div class="feedback">
-        <form th:action="@{/salvarFeedback/{id}(id=${id})}" th:object="${formularioWrite}" method="post">
-        <label for="feedback"></label>
+        <form th:action="@{/salvarFeedback/{id}(id=${id})}" th:object="${writing}" method="post">
+            <label for="feedback"></label>
             <textarea cols="50" id="feedback" name="feedback" class="textarea" th:field="*{usuario.feedback}" placeholder="FEEDBACK"></textarea>
             <button type="submit" class="blue-button">Salvar</button>
         </form>
@@ -56,7 +52,7 @@
 
 <div class="writing-box">
     <div class="writing">
-        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${formularioWrite}" method="get">
+        <form th:action="@{/correcaowriting/{id}(id=${id})}" th:object="${writing}" method="get">
             <label for="resposta"></label>
             <textarea cols="50" id="resposta" class="textarea" th:field="*{resposta}" readonly></textarea>
             <button class="blue-button" type="submit">Corrigir</button>

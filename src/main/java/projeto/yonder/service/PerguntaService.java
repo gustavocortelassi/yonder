@@ -23,9 +23,7 @@ public class PerguntaService {
                 .orElseThrow(() -> new RuntimeException("Pergunta não encontrada com o ID: " + perguntaId));
 
         perguntaExistente.setCabecalho(pergunta.getCabecalho());
-        perguntaExistente.setDificuldade(pergunta.getDificuldade());
         perguntaExistente.setTipoProvaId(pergunta.getTipoProvaId());
-        perguntaExistente.setNiveisId(pergunta.getNiveisId());
         perguntaExistente.setAudio(pergunta.getAudio());
         perguntaRepository.save(perguntaExistente);
     }

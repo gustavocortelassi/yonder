@@ -1,11 +1,10 @@
 package projeto.yonder.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
+import org.springframework.data.jpa.repository.Query;
 import projeto.yonder.model.Pergunta;
 
-@Repository
-public interface PerguntaRepository extends JpaRepository<Pergunta, Long>{
-    
+public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
+    @Query(value = "SELECT * FROM pergunta ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    Pergunta ultimoId();
 }

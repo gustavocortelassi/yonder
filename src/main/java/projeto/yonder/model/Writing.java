@@ -3,7 +3,7 @@ package projeto.yonder.model;
 import jakarta.persistence.*;
 
 @Entity
-public class FormularioWrite {
+public class Writing {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +15,10 @@ public class FormularioWrite {
 
     @Column(columnDefinition = "TEXT")
     private String resposta;
+
     @Column(columnDefinition = "TEXT")
     private String correcao;
-    private String notaWriting;
+
     private boolean corrigido;
 
     public Long getId() {
@@ -50,14 +51,6 @@ public class FormularioWrite {
 
     public void setCorrecao(String correcao) {
         this.correcao = correcao;
-    }
-
-    public String getNotaWriting() {
-        return notaWriting;
-    }
-
-    public void setNotaWriting(String notaWriting) {
-        this.notaWriting = notaWriting;
     }
 
     public boolean isCorrigido() {
