@@ -8,8 +8,19 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String cpf;
+
+    private String notaWriting;
+
+    private String notaReading;
+
+    private String notaListening;
+
+    @Column(columnDefinition = "TEXT")
+    private String feedback;
     private int respostasCorretas;
     private String classificacao;
     private double nota;
@@ -18,8 +29,6 @@ public class Usuario {
     @JoinColumn(name = "emp_id", nullable = true)
     private Empresa empresa;
 
-    @Column(columnDefinition = "TEXT")
-    private String feedback;
 
     public Long getId() {
         return id;
@@ -61,12 +70,44 @@ public class Usuario {
         this.classificacao = classificacao;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
+    public int getRespostasCorretas() {
+        return respostasCorretas;
     }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
+    public void setRespostasCorretas(int respostasCorretas) {
+        this.respostasCorretas = respostasCorretas;
+    }
+
+    public String getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(String classificacao) {
+        this.classificacao = classificacao;
+    }
+
+    public String getNotaWriting() {
+        return notaWriting;
+    }
+
+    public void setNotaWriting(String notaWriting) {
+        this.notaWriting = notaWriting;
+    }
+
+    public String getNotaReading() {
+        return notaReading;
+    }
+
+    public void setNotaReading(String notaReading) {
+        this.notaReading = notaReading;
+    }
+
+    public String getNotaListening() {
+        return notaListening;
+    }
+
+    public void setNotaListening(String notaListening) {
+        this.notaListening = notaListening;
     }
 
     public String getFeedback() {
@@ -86,4 +127,12 @@ public class Usuario {
     }
 
     
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 }

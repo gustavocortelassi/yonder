@@ -2,70 +2,72 @@ package projeto.yonder.model;
 
 import jakarta.persistence.*;
 
-
 @Entity
-public class Respostas {
-    
+public class Resposta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
+
     @Column(columnDefinition = "TEXT")
-    private String Titulo;
-    private boolean Correto;
-    private int Ordem;
-    
+    private String titulo;
+
+    private boolean correto;
+
+    private int ordem;
+
     @ManyToOne
     @JoinColumn(name = "pergunta_id")
     private Pergunta pergunta;
-    
-    public Respostas() {
+
+    public Resposta() {
     }
 
-    public Respostas(Long id, String titulo, boolean correto, int ordem) {
-        Id = id;
-        Titulo = titulo;
-        Correto = correto;
-        Ordem = ordem;
+    public Resposta(Long id, String titulo, boolean correto, int ordem) {
+        this.id = id;
+        this.titulo = titulo;
+        this.correto = correto;
+        this.ordem = ordem;
     }
 
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
 
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
 
 
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        this.titulo = titulo;
     }
 
 
     public boolean isCorreto() {
-        return Correto;
+        return correto;
     }
 
 
     public void setCorreto(boolean correto) {
-        Correto = correto;
+        this.correto = correto;
     }
 
 
     public int getOrdem() {
-        return Ordem;
+        return ordem;
     }
 
 
     public void setOrdem(int ordem) {
-        Ordem = ordem;
+        this.ordem = ordem;
     }
 
 
@@ -76,6 +78,6 @@ public class Respostas {
 
     public void setPergunta(Pergunta pergunta) {
         this.pergunta = pergunta;
-    } 
-    
+    }
+
 }

@@ -8,9 +8,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import projeto.yonder.model.FormularioWrite;
+import projeto.yonder.model.Writing;
 import projeto.yonder.model.Usuario;
-import projeto.yonder.service.FormularioWriteService;
+import projeto.yonder.service.WritingService;
 import projeto.yonder.service.UsuarioService;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -23,7 +23,7 @@ public class CorrecaoControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private FormularioWriteService formularioWriteService;
+    private WritingService writingService;
 
     @MockBean
     private UsuarioService usuarioService;
@@ -34,15 +34,14 @@ public class CorrecaoControllerTest {
         Usuario usuario = new Usuario();
         usuario.setId(userId);
         usuario.setNome("João");
-        FormularioWrite formularioWrite = new FormularioWrite();
-        formularioWrite.setUsuario(usuario);
-        formularioWrite.setNotaWriting("10");
-        when(formularioWriteService.findById(userId)).thenReturn(formularioWrite);
+        Writing writing = new Writing();
+        writing.setUsuario(usuario);
+        when(writingService.findById(userId)).thenReturn(writing);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/correcao/{id}", userId))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("TelaCorrecaoProva"))
-                .andExpect(MockMvcResultMatchers.model().attributeExists("formularioWrite"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("writing"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("id"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("nome"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("notaWriting"))
@@ -53,36 +52,36 @@ public class CorrecaoControllerTest {
     @Test
     public void testPostCorrecaoWriting() throws Exception {
         Long userId = 1L;
-        FormularioWrite formularioWrite = new FormularioWrite();
-        formularioWrite.setCorrecao("Nova correcao");
+        Writing writing = new Writing();
+        writing.setCorrecao("Nova correcao");
         String notaSelecionada = "8";
 
-        when(formularioWriteService.findById(userId)).thenReturn(formularioWrite);
+        when(writingService.findById(userId)).thenReturn(writing);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/correcaowriting/{id}", userId)
                         .param("notaSelecionada", notaSelecionada)
-                        .flashAttr("formularioWrite", formularioWrite))
+                        .flashAttr("writing", writing))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/correcao/" + userId));
 
-        Mockito.verify(formularioWriteService, Mockito.times(1)).save(any(FormularioWrite.class));
+        Mockito.verify(writingService, Mockito.times(1)).save(any(Writing.class));
     }
 
     @Test
     public void testSalvarFeedback() throws Exception {
         Long userId = 1L;
-        FormularioWrite formularioWrite = new FormularioWrite();
+        Writing writing = new Writing();
         Usuario usuario = new Usuario();
         usuario.setFeedback("Novo feedback");
-        formularioWrite.setUsuario(usuario);
+        writing.setUsuario(usuario);
 
-        when(formularioWriteService.findById(userId)).thenReturn(formularioWrite);
+        when(writingService.findById(userId)).thenReturn(writing);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/salvarFeedback/{id}", userId)
-                        .flashAttr("formularioWrite", formularioWrite))
+                        .flashAttr("writing", writing))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/correcao/" + userId));
 
-        Mockito.verify(formularioWriteService, Mockito.times(1)).save(any(FormularioWrite.class));
+        Mockito.verify(writingService, Mockito.times(1)).save(any(Writing.class));
     }
 }

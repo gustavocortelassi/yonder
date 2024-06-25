@@ -9,10 +9,12 @@
 </head>
 <body>
 <div class="container">
-    <div id="title" class="statement"></div>
-    <br>
-    <form th:action="@{/writing/{id}(id=${formularioWrite.usuario.id})}" th:object="${formularioWrite}" method="post">
-        <label for="answer"></label><textarea id="answer" class="textarea" th:field="*{resposta}" placeholder="Máximo 500 palavras."></textarea>
+    <div class="question-info">
+        <p class="question-title" th:text="${cabecalho}"></p>
+    </div>
+    <form th:action="@{/writing/{id}(id=${writing.usuario.id})}" th:object="${writing}" method="post">
+        <label for="answer"></label>
+        <textarea id="answer" class="textarea" th:field="*{resposta}" placeholder="Máximo 500 palavras."></textarea>
         <div id="accountant" class="accountant">0/500 Palavras</div>
         <button type="submit" class="next-button">FINALIZAR</button>
     </form>
