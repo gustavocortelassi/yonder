@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import projeto.yonder.model.Empresa;
 import projeto.yonder.model.Usuario;
 import projeto.yonder.service.EmpresaService;
@@ -49,5 +51,14 @@ public class UsuarioController {
         List<Usuario> usuarios = usuarioService.getTop50Usuarios();
         model.addAttribute("usuarios", usuarios);
         return "TelaListarUsuarios";
+    }
+
+    @GetMapping("/buscarUsuario")
+    public String buscarUsuario(@RequestParam(name = "nome", required = false) String nome, Model model) {
+        if (nome != null && !nome.isEmpty()) {
+            Usuario usuario = usuarioService.buscarPorNome(nome);
+            model.addAttribute("usuario", usuario);
+        }
+        return "buscarUsuario"; 
     }
 }

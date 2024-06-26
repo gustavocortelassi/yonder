@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Usuário</title>
+</head>
+<body>
+    <h1>Buscar Usuário</h1>
+    <form action="#" th:action="@{/buscarUsuario}" method="get">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div th:if="${usuario != null}">
+        <h2>Detalhes do Usuário</h2>
+        <p>Nome: <span th:text="${usuario.nome}"></span></p>
+        <p>Nota Writing: <span th:text="${usuario.notaWriting}"></span></p>
+        <p>Nota Reading: <span th:text="${usuario.notaReading}"></span></p>
+        <p>Nota Listening: <span th:text="${usuario.notaListening}"></span></p>
+    </div>
+</body>
+</html>
