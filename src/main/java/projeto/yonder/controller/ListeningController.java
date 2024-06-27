@@ -84,7 +84,6 @@ public class ListeningController {
         if (contador >= TOTAL_PERGUNTAS) {
             return "redirect:/provaListening/" + id + "/resultado";
         }
-
         return "redirect:/provaListening/" + id + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
     }
 

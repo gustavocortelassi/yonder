@@ -56,6 +56,7 @@ $(".vizualizarPergunta").click(function (){
     var cabecalho = $(this).closest('tr').find('td:nth-child(3)').text();
     var dificuldade = $(this).closest('tr').find('td:nth-child(4)').text();
     var niveisId = $(this).closest('tr').find('td:nth-child(5)').text();
+    console .log(niveisId)
     var audio = $(this).closest('tr').find('td:nth-child(6)').text();
 
     if (tipoProvaId === 'Listening') {
@@ -70,6 +71,23 @@ $(".vizualizarPergunta").click(function (){
     } else {
         $('#viewAudio').hide();
     }
+
+    if (niveisId === '1') {
+        niveisId = 'A1';
+    } else if (niveisId === '2') {
+        niveisId = 'A2';
+    } else if (niveisId === '3') {
+        niveisId = 'B1';
+    } else if (niveisId === '4') {
+        niveisId = 'B2';
+    } else if (niveisId === '5') {
+        niveisId = 'C1';
+    }  else if (niveisId === '6') {
+        niveisId = 'C2';
+    } else {
+        niveisId = 'Nível não informado';
+    }
+
     $("#viewId").val(perguntaId);
     $("#viewCabecalho").val(cabecalho);
     $("#viewDificuldade").val(dificuldade);
@@ -83,20 +101,18 @@ $(".vizualizarPergunta").click(function (){
 });
 
 $(document).ready(function() {
-    // Mostrar ou esconder o campo de áudio com base no tipo de prova selecionado
     $('input[name="tipoProvaId"]').on('change', function() {
         if ($(this).val() === 'Listening') {
             $('#audioFileInput').show();
         } else {
             $('#audioFileInput').hide();
-            $('#audioFile').val(''); // Limpar o campo de áudio se não for Listening
+            $('#audioFile').val('');
         }
     });
 
     $('#addForm').on('submit', function(event) {
-        event.preventDefault(); // Prevenir o envio padrão do formulário
+        event.preventDefault();
 
-        // Capturando os valores do formulário
         var formData = {
             tipoProvaId: $('input[name="tipoProvaId"]:checked').val(),
             cabecalho: $('#cabecalhoInput').val(),
@@ -106,7 +122,6 @@ $(document).ready(function() {
             resposta: []
         };
 
-        // Capturando as respostas
         $('.resposta').each(function(index) {
             var respostaInput = $(this).find('input[type="text"]');
             var respostaCorreta = $(this).find('input[type="radio"]').is(':checked');
@@ -118,7 +133,7 @@ $(document).ready(function() {
             });
         });
 
-        console.log('Form Data:', formData); // Adicionar log para verificar os dados do formulário
+        console.log('Form Data:', formData);
 
         $.ajax({
             type: 'POST',
@@ -127,7 +142,7 @@ $(document).ready(function() {
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function(response) {
-                console.log('Success:', response); // Log de sucesso
+                console.log('Success:', response);
                 Swal.fire(
                     'Adicionado!',
                     'A pergunta foi adicionada com sucesso.',
@@ -137,7 +152,7 @@ $(document).ready(function() {
                 });
             },
             error: function(xhr, status, error) {
-                console.log('Error:', xhr, status, error); // Log de erro detalhado
+                console.log('Error:', xhr, status, error);
                 Swal.fire(
                     'Erro!',
                     'Ocorreu um erro ao adicionar a pergunta. Por favor, tente novamente mais tarde.',
@@ -150,22 +165,43 @@ $(document).ready(function() {
     $("#editTipoProva").change(function() {
         var tipoProva = $(this).val();
         if (tipoProva === 'Listening') {
-            $('#editAudio').show(); // Mostra a seção de áudio
+            $('#editAudio').show();
         } else {
-            $('#editAudio').hide(); // Esconde a seção de áudio
+            $('#editAudio').hide();
         }
     });
 
-// Captura o evento de clique nos botões "Editar"
-    // Captura o evento de clique nos botões "Editar"
     $(".editar-pergunta").click(function() {
-        // Obtém os valores existentes da pergunta
-        var perguntaId = $(this).closest('tr').find('td:nth-child(1)').text();
-        var tipoProvaId = $(this).closest('tr').find('td:nth-child(2)').text();
-        var cabecalho = $(this).closest('tr').find('td:nth-child(3)').text();
-        var dificuldade = $(this).closest('tr').find('td:nth-child(4)').text();
-        var niveisId = $(this).closest('tr').find('td:nth-child(5)').text();
-        var audio = $(this).closest('tr').find('td:nth-child(6)').text();
+        var perguntaId = $(this).attr('data');
+        var tipoProvaId = $(this).closest('tr').find('td:nth-child(2)').text().trim();
+        var cabecalho = $(this).closest('tr').find('td:nth-child(3)').text().trim();
+        var dificuldade = $(this).closest('tr').find('td:nth-child(4)').text().trim();
+        var niveisId = $(this).closest('tr').find('td:nth-child(5)').text().trim();
+        var audio = $(this).closest('tr').find('td:nth-child(6)').text().trim();
+
+        switch (niveisId) {
+            case 'A1':
+                niveisId = '1';
+                break;
+            case 'A2':
+                niveisId = '2';
+                break;
+            case 'B1':
+                niveisId = '3';
+                break;
+            case 'B2':
+                niveisId = '4';
+                break;
+            case 'C1':
+                niveisId = '5';
+                break;
+            case 'C2':
+                niveisId = '6';
+                break;
+            default:
+                niveisId = '';
+                break;
+        }
 
         $("#editId").val(perguntaId);
         $("#editCabecalho").val(cabecalho);
@@ -180,24 +216,22 @@ $(document).ready(function() {
             $('#editAudio').hide();
         }
 
-        // Limpa as respostas anteriores
         $("#editRespostasSection").empty();
 
-        // Faz uma requisição para obter os detalhes da pergunta e suas respostas
         $.ajax({
-            url: '/pergunta/' + perguntaId,
+            url: '/pergunta/' + perguntaId + '/respostas',
             type: 'GET',
             success: function(response) {
-                var pergunta = response.pergunta;
-                if (pergunta && pergunta.respostas) {
-                    pergunta.respostas.forEach(function(resposta, index) {
+                var respostas = response.respostas;
+                if (respostas && respostas.length > 0) {
+                    respostas.forEach(function(resposta, index) {
                         var respostaHtml = `
                         <div class="mb-3 resposta">
                             <label for="editResposta${index + 1}" class="form-label">Resposta ${index + 1}:</label>
                             <div class="d-flex align-items-center">
                                 <input type="text" class="form-control" id="editResposta${index + 1}" name="respostas[${index}].titulo" value="${resposta.titulo}">
                                 <div class="form-check ms-2">
-                                    <input class="form-check-input" type="radio" name="respostaCorreta" id="editRespostaCorreta${index + 1}" value="${index}" ${resposta.correto ? 'checked' : ''}>
+                                    <input class="form-check-input" type="radio" name="respostaCorreta" id="editRespostaCorreta${index + 1}" value="${index}" ${resposta.correta ? 'checked' : ''}>
                                     <label class="form-check-label" for="editRespostaCorreta${index + 1}">Correta</label>
                                 </div>
                             </div>
@@ -208,12 +242,12 @@ $(document).ready(function() {
                 }
             },
             error: function(response) {
-                console.error("Erro ao buscar detalhes da pergunta:", response);
+                console.error("Erro ao buscar respostas da pergunta:", response);
             }
         });
-
         $('#editModal').modal('show');
     });
+
 
     $(document).ready(function() {
         $(".editSave").click(function(e) {
@@ -223,7 +257,6 @@ $(document).ready(function() {
         });
     });
 
-// Função para salvar a edição
     function salvarEdicao(perguntaId) {
         var cabecalho = $("#editCabecalho").val();
         var dificuldade = $("#editDificuldade").val();

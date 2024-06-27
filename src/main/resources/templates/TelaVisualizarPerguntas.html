@@ -49,7 +49,17 @@
             <td th:text="${pergunta.tipoProvaId}"></td>
             <td th:text="${pergunta.cabecalho}"></td>
             <td th:text="${pergunta.dificuldade}"></td>
-            <td th:text="${pergunta.niveisId}"></td>
+            <td>
+              <span th:switch="${pergunta.niveisId}">
+                <span th:case="'1'">A1</span>
+                <span th:case="'2'">A2</span>
+                <span th:case="'3'">B1</span>
+                <span th:case="'4'">B2</span>
+                <span th:case="'5'">C1</span>
+                <span th:case="'6'">C2</span>
+                <span th:case="*">Desconhecido</span>
+              </span>
+            </td>
             <td th:text="${pergunta.audio}"></td>
             <td>
               <a class="btn editar-pergunta" th:data="${pergunta.id}" data-bs-toggle="modal" data-bs-target="#editModal">Editar</a>
@@ -60,10 +70,6 @@
           </tr>
           </tbody>
         </table>
-        <nav aria-label="Page navigation">
-          <ul class="pagination justify-content-center">
-          </ul>
-        </nav>
       </div>
     </div>
   </div>
@@ -127,7 +133,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label class="form-label">Nível da Questão:</label>
+            <label class="form-label" >Nível da Questão:</label>
             <select class="form-select" name="niveisId" aria-label="Default select example" required>
               <option selected>Selecione o nível da Questão:</option>
               <option value="1">A1</option>
@@ -244,7 +250,7 @@
           </select>
         </div>
         <div class="mb-3">
-          <label class="form-label">Níveis ID:</label>
+          <label class="form-label" for="editNiveisId">Níveis ID:</label>
           <select class="form-select" id="editNiveisId" name="niveisId">
             <option value="1">A1</option>
             <option value="2">A2</option>

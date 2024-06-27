@@ -30,11 +30,10 @@ public class PerguntaController {
     private RespostasRepository respostasRepository;
 
     @GetMapping("/pergunta")
-    public String showList(Model model, @RequestParam (defaultValue="0") int page) {
-        model.addAttribute("data", perguntaRepository.findAll( PageRequest.of(page, 20, Sort.by(
-                Sort.Order.asc("id")))));
+    public String showList(Model model, @RequestParam(defaultValue="0") int page) {
+        model.addAttribute("data", perguntaRepository.findAll(PageRequest.of(page, 20, Sort.by(Sort.Order.asc("id")))));
         model.addAttribute("currentPage", page);
-        return "TelaVisualizarPerguntas";
+        return "TelaVisualizarPerguntas"; // Nome do template Thymeleaf
     }
 
     @GetMapping("/pergunta/{id}")
@@ -47,6 +46,20 @@ public class PerguntaController {
         response.put("respostas", pergunta.getResposta());
 
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/pergunta/{perguntaId}/respostas")
+    public ResponseEntity<?> getRespostasByPerguntaId(@PathVariable Long perguntaId) {
+        try {
+            Pergunta pergunta = perguntaService.findById(perguntaId);
+            if (pergunta == null) {
+                return ResponseEntity.notFound().build();
+            }
+            List<Resposta> respostas = pergunta.getResposta();
+            return ResponseEntity.ok().body(respostas);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao buscar respostas da pergunta: " + e.getMessage());
+        }
     }
 
     @PostMapping("/savePergunta")
