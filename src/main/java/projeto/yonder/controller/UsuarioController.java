@@ -63,26 +63,9 @@ public class UsuarioController {
         return "TelaListarUsuarios";
     }
 
-    // @GetMapping("/usuarios")
-    // public String listarUsuariosNota(Model model) {
-    // List<Usuario> usuarios = usuarioService.listarTodos();
-    // model.addAttribute("usuarios", usuarios);
-    // return "listarUsuarios";
-    // }
-
-    // @GetMapping("/usuario/{id}")
-    // public String detalhesUsuario(@PathVariable Long id, Model model) {
-    // Usuario usuario = usuarioService.buscarPorId(id);
-    // if (usuario == null) {
-    // return "redirect:/usuarios";
-    // }
-    // model.addAttribute("usuario", usuario);
-    // return "detalhesUsuario";
-    // }
-
     @GetMapping("/login")
     public String showLoginForm() {
-        return "TelaLogin"; // Retorna a página de login
+        return "TelaLogin";
     }
 
     @PostMapping("/login")
@@ -94,7 +77,7 @@ public class UsuarioController {
                 Usuario.class);
         query.setParameter(1, username);
         query.setParameter(2, cpf);
-        query.setMaxResults(1); // Limita o resultado a um único registro
+        query.setMaxResults(1);
 
         try {
             Usuario usuario = (Usuario) query.getSingleResult();
@@ -113,15 +96,15 @@ public class UsuarioController {
     public String detalhesUsuario(@PathVariable Long id, Model model, HttpSession session) {
         Usuario loggedUser = (Usuario) session.getAttribute("loggedUser");
         if (loggedUser == null) {
-            return "redirect:/usuario/login"; // Redireciona para a página de login se não estiver logado
+            return "redirect:/usuario/login";
         }
 
         Usuario usuario = usuarioService.buscarPorId(id);
         if (usuario == null) {
-            return "redirect:/usuario/usuarios"; // Redireciona para a lista de usuários se o ID não for encontrado
+            return "redirect:/usuario/usuarios";
         }
         model.addAttribute("usuario", usuario);
-        return "detalhesUsuario"; // Página que mostra os detalhes do usuário
+        return "detalhesUsuario";
     }
 
 }
