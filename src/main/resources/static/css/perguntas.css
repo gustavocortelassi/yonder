@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif !Important;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+img{
+
+}
+.container {
+    background-color: var(--cyan);
+    padding: 3em;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2em auto;
+}
+
+h2 {
+    color: var(--white);
+}
+
+.form-label{
+    text-align: left !important;
+    width: 100%;
+}
+
+.modal-content{
+    background-color: var(--cyan);
+    padding: 3em;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2em auto;
+    color: #FFFFFF;
+}
+
+
+
+.filter{
+    width: 100%;
+    padding: 0.5em;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: var(--fs-18);
+    cursor: pointer;
+    margin-top: 3em;
+    float: none;
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    margin-bottom: 1em;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid var(--white) !important;
+    color: var(--white) !important;
+}
+
+th {
+    background-color: var(--dark-blue) !important;
+}
+
+td {
+    background-color: var(--blue)!important;
+}
+
+tr:nth-child(even) td {
+    background-color: var(--skye-blue) !important;
+}
+
+tr:hover td {
+    background-color: var(--cyan) !important;
+}
+
+.button {
+    width: 25%;
+    padding: 0.5em;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: var(--fs-18);
+    cursor: pointer;
+    margin-top: 1.5em;
+    float: none;
+    border-radius: 4px;
+    border: 1px solid var(--white);
+}
+
+.btn{
+    background-color: var(--dark-blue);
+    color: var(--white) !important;
+}
+
+.btn:hover{
+    background-color: var(--dark-blue) !important;
+}
+
+button:hover {
+    background-color: var(--skye-blue);
+}
+
+a {
+    color: var(--white);
+}
+.resposta input{
+
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova de Listening</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/listening.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
+<div id="player">
+    <iframe id="youtubePlayer" width="640" height="360" frameborder="0" allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            th:src="@{'https://www.youtube.com/embed/' + ${videoId} +
+                  '?autoplay=0&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;fs=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Flocalhost%3A8080&amp;widgetid=1'}"
+            title="YouTube video player">
+    </iframe>
+    <audio id="audioPlayer" controls autoplay>
+        <source th:src="@{${pergunta.audio}}" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+</div>
+
+<!-- Botão para alternar entre áudio e vídeo -->
+<button id="toggleButton">Alternar entre Áudio e Vídeo</button>
+
+<form th:action="@{/provaListening/{userId}/listening/{proximaPerguntaId}(userId=${userId}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
+    <div th:each="resposta, iterStat : ${respostas}">
+        <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">
+            <span th:text="${iterStat.index + 1} + '. '"></span>
+            <span th:text="${resposta.titulo}">Opção</span>
+        </button>
+    </div>
+    <input type="hidden" name="contador" th:value="${contador}">
+</form>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    var videoId = "${videoId}";
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtubePlayer', {
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // Você pode realizar ações quando o player estiver pronto
+    }
+
+    function onPlayerStateChange(event) {
+        // Aqui você pode monitorar mudanças de estado do player
+    }
+
+    // Exemplo de JavaScript com jQuery para alternar entre vídeo e áudio
+    $(document).ready(function() {
+        $('#toggleButton').click(function() {
+            $('#youtubePlayer').toggle(); // Alternar a visibilidade do iframe do YouTube
+            $('#audioPlayer').toggle(); // Alternar a visibilidade do player de áudio
+        });
+    });
+</script>
+</body>
+</html>

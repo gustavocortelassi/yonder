@@ -1,9 +1,7 @@
 package projeto.yonder.model;
 
 import java.util.List;
-
 import jakarta.persistence.*;
-
 
 @Entity
 public class Pergunta {
@@ -11,6 +9,7 @@ public class Pergunta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+
     private String Cabecalho;
     private Long Dificuldade;
     private String TipoProvaId;
@@ -88,4 +87,8 @@ public class Pergunta {
         this.resposta = resposta;
     }
 
+    public void addResposta(Resposta resposta) {
+        resposta.setPergunta(this);
+        this.resposta.add(resposta);
+    }
 }

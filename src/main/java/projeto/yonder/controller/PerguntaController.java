@@ -1,7 +1,9 @@
 package projeto.yonder.controller;
 
 import projeto.yonder.model.Pergunta;
+import projeto.yonder.model.Resposta;
 import projeto.yonder.repository.PerguntaRepository;
+import projeto.yonder.repository.RespostasRepository;
 import projeto.yonder.service.PerguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,6 +22,8 @@ public class PerguntaController {
     PerguntaRepository perguntaRepository;
     @Autowired
     PerguntaService perguntaService;
+    @Autowired
+    private RespostasRepository respostasRepository;
 
     @GetMapping("/pergunta")
     public String showList(Model model, @RequestParam (defaultValue="0") int page) {
@@ -37,9 +41,20 @@ public class PerguntaController {
     }
 
     @PostMapping("/savePergunta")
-    public String saveAddPergunta (Pergunta pergunta) {
-        perguntaRepository.save(pergunta);
-        return "redirect:/pergunta";
+    public ResponseEntity<String> saveAddPergunta(@RequestBody Pergunta pergunta) {
+        try {
+            // Associa cada resposta à pergunta
+            for (Resposta resposta : pergunta.getResposta()) {
+                resposta.setPergunta(pergunta);
+            }
+
+            // Salva a pergunta (e as respostas em cascata)
+            perguntaRepository.save(pergunta);
+
+            return ResponseEntity.ok().body("{\"message\": \"Pergunta salva com sucesso!\"}");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("{\"error\": \"Erro ao salvar pergunta: " + e.getMessage() + "\"}");
+        }
     }
 
 
