@@ -1,8 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; 
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +6,6 @@ body {
 }
 
 .container {
-    background-color: #fff; 
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1); 
@@ -22,10 +17,8 @@ body {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: var(--skye-blue);
     color: #fff;
-    text-decoration: none;
-    border: 2px solid #007bff;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }

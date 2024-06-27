@@ -32,9 +32,6 @@ public class UsuarioController {
     @Autowired
     private EmpresaService empresaService;
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @GetMapping("/cadastro")
     public String mostrarFormularioCadastro(Model model) {
         Usuario usuario = new Usuario();
@@ -62,49 +59,4 @@ public class UsuarioController {
         model.addAttribute("usuarios", usuarios);
         return "TelaListarUsuarios";
     }
-
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "TelaLogin";
-    }
-
-    @PostMapping("/login")
-    public String login(@RequestParam("username") String username,
-            @RequestParam("cpf") String cpf,
-            Model model,
-            HttpSession session) {
-        Query query = entityManager.createNativeQuery("SELECT * FROM Usuario WHERE Nome = ? AND CPF = ?",
-                Usuario.class);
-        query.setParameter(1, username);
-        query.setParameter(2, cpf);
-        query.setMaxResults(1);
-
-        try {
-            Usuario usuario = (Usuario) query.getSingleResult();
-            session.setAttribute("loggedUser", usuario);
-            return "redirect:/usuario/detalhes/" + usuario.getId();
-        } catch (NoResultException e) {
-            model.addAttribute("error", "Usuário ou senha inválidos");
-            return "TelaLogin";
-        } catch (NonUniqueResultException e) {
-            model.addAttribute("error", "Mais de um usuário encontrado. Entre em contato com o suporte.");
-            return "TelaLogin";
-        }
-    }
-
-    @GetMapping("/detalhes/{id}")
-    public String detalhesUsuario(@PathVariable Long id, Model model, HttpSession session) {
-        Usuario loggedUser = (Usuario) session.getAttribute("loggedUser");
-        if (loggedUser == null) {
-            return "redirect:/usuario/login";
-        }
-
-        Usuario usuario = usuarioService.buscarPorId(id);
-        if (usuario == null) {
-            return "redirect:/usuario/usuarios";
-        }
-        model.addAttribute("usuario", usuario);
-        return "detalhesUsuario";
-    }
-
 }
