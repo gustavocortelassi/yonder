@@ -84,7 +84,7 @@ public class ListeningController {
             return "redirect:/listening/" + userId + "/resultado";
         }
 
-        return "redirect:/listening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
+        return "redirect:/provaListening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
     }
 
     @GetMapping("/resultado")
