@@ -62,14 +62,18 @@ th, td {
     padding: 10px;
     border: 1px solid var(--white) !important;
     color: var(--white) !important;
+    overflow: hidden;
 }
 
 th {
     background-color: var(--dark-blue) !important;
+    overflow: hidden;
 }
 
 td {
     background-color: var(--blue)!important;
+    max-width: 200px;
+    overflow: hidden;
 }
 
 tr:nth-child(even) td {

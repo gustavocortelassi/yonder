@@ -25,8 +25,7 @@
     </button>
     <select id="filterSelect" class="form-select filter" aria-label="Default select example">
       <option selected>Selecione o tipo de prova</option>
-      <option value="1">Questões de Reading normal</option>
-      <option value="2">Questões de Reading de Preenchimento</option>
+      <option value="1">Questões de Reading</option>
       <option value="3">Questões de Listening</option>
       <option value="4">Questões de Writing</option>
     </select>
@@ -61,6 +60,10 @@
           </tr>
           </tbody>
         </table>
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -221,7 +224,6 @@
           <label class="form-label"> Tipo de Prova:</label>
           <select class="form-select" id="editTipoProva" name="tipoProvaId">
             <option value="Reading">Reading</option>
-            <option value="Reading Preenchimento">Reading Preenchimento</option>
             <option value="Listening">Listening</option>
             <option value="Writing">Writing</option>
           </select>
@@ -254,16 +256,20 @@
         </div>
         <div class="mb-3" id="editAudio" style="display: none">
           <label class="form-label">Áudio:</label>
-          <input class="form-control" type="file" name="audio" id="editAudioInput">
-
+          <input class="form-control" type="text" name="audio" id="editAudioInput">
         </div>
+
+        <!-- Seção de Respostas -->
+        <div id="editRespostasSection"></div>
+
         <!-- Botão de Envio -->
-        <button type="submit" class="btn btn-primary editSave"  >Salvar</button>
+        <button type="submit" class="btn btn-primary editSave">Salvar</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -294,6 +300,7 @@
           <label class="form-label">Áudio:</label>
           <textarea class="form-control" id="viewAudioInput" readonly></textarea>
         </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
