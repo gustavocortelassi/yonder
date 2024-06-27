@@ -46,6 +46,6 @@ public class WritingController {
         writing.setCorrigido(false);
         writing.setCorrecao("");
         writingService.save(writing);
-        return "redirect:/detalhes/" + usuario.getId();
+        return "redirect:/provaListening/" + usuario.getId() + "/listening/1";
     }
 }

@@ -2,19 +2,21 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Resultado da Prova de Reading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="../static/css/resultadoReading.css" th:href="@{/css/resultadoReading.css}">
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
 </head>
 <body>
-    <h1>Resultado da Prova de Reading</h1>
-    
-    <p>Nota: <span th:text="${nota}"></span></p>
-    <p>Classificação: <span th:text="${classificacao}"></span></p>
-    <p>Usuário ID: <span th:text="${userId}"></span></p>
-    <p>Tipo de Prova: <span th:text="${tipoProva}"></span></p>
-    
-    <form action="/reading/enviarNota" method="post">
-        <input type="hidden" name="userId" th:value="${userId}">
-        <button type="submit">Enviar Nota</button>
-    </form>
+<div class="container">
+    <h1>Resultado Reading</h1>
+    <div th:if="${nota != null}">
+        <p>Pontuação: <span th:text="${nota}"></span></p>
+    </div>
+    <div th:if="${classificacao != null}">
+        <p>Classificação: <span th:text="${classificacao}"></span></p>
+    </div>
+    <a href="TelaWriting.html" th:href="@{'/writing/' + ${id}}" class="next-button">Prova de Writing</a>
+</div>
 </body>
 </html>

@@ -47,7 +47,7 @@ public class ReadingController {
             model.addAttribute("contador", contador);
         } else {
             model.addAttribute("mensagem", "Não há mais perguntas disponíveis.");
-            return "TelaResultado";
+            return "TelaResultadoReading";
         }
 
         return "TelaReading";
@@ -98,7 +98,7 @@ public class ReadingController {
             model.addAttribute("mensagem", "Usuário não encontrado.");
         }
 
-        return "TelaResultado";
+        return "TelaResultadoReading";
     }
 
     private String calcularClassificacao(int respostasCorretas) {
