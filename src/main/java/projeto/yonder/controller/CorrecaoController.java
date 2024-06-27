@@ -18,11 +18,13 @@ public class CorrecaoController {
         Writing writing = writingService.findById(id);
         String nome = writing.getUsuario().getNome();
         String notaWriting = writing.getUsuario().getNotaWriting();
+        String notaReading = writing.getUsuario().getNotaReading();
 
         model.addAttribute("writing", writing);
         model.addAttribute("id", id);
         model.addAttribute("nome", nome);
         model.addAttribute("notaWriting", notaWriting);
+        model.addAttribute("notaReading", notaReading);
         return "TelaCorrecaoProva";
     }
 
