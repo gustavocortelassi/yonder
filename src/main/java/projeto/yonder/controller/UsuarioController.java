@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,12 +54,20 @@ public class UsuarioController {
         return "TelaListarUsuarios";
     }
 
-    @GetMapping("/buscarUsuario")
-    public String buscarUsuario(@RequestParam(name = "nome", required = false) String nome, Model model) {
-        if (nome != null && !nome.isEmpty()) {
-            Usuario usuario = usuarioService.buscarPorNome(nome);
-            model.addAttribute("usuario", usuario);
+    @GetMapping("/usuarios")
+    public String listarUsuariosNota(Model model) {
+        List<Usuario> usuarios = usuarioService.listarTodos();
+        model.addAttribute("usuarios", usuarios);
+        return "listarUsuarios"; 
+    }
+
+    @GetMapping("/usuario/{id}")
+    public String detalhesUsuario(@PathVariable Long id, Model model) {
+        Usuario usuario = usuarioService.buscarPorId(id);
+        if (usuario == null) {
+            return "redirect:/usuarios"; 
         }
-        return "buscarUsuario"; 
+        model.addAttribute("usuario", usuario);
+        return "detalhesUsuario"; 
     }
 }
