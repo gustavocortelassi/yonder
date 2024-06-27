@@ -42,7 +42,6 @@ public class ListeningController {
             model.addAttribute("proximaPerguntaId", perguntaId);
             model.addAttribute("contador", contador);
 
-            // Extrair o ID do vídeo do YouTube
             String videoId = extrairVideoId(pergunta.getAudio());
             model.addAttribute("videoId", videoId);
         } else {
@@ -82,13 +81,11 @@ public String processarFormulario(@PathVariable("userId") Long userId, @PathVari
     if (perguntaId < TOTAL_PERGUNTAS) {
         return "redirect:/provaListening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
     } else {
-        // Usuário completou todas as perguntas, calcular e salvar nota/classificação
         Usuario usuario = usuarioRepository.findById(userId).orElse(null);
         if (usuario != null) {
             String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
             usuario.setClassificacao(classificacao);
 
-            // Salvar classificação como nota no formato desejado
             usuario.setNotaListening(classificacao);
 
             usuarioRepository.save(usuario);
