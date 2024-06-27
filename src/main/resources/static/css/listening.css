@@ -37,10 +37,10 @@ form.options {
     padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     font-size: var(--fs-18);
-    width: 500%;
+    width: 200%;
     max-width: 500px;
 }
 
@@ -65,3 +65,13 @@ form.options {
     background-color: var(--skye-blue);
 }
 
+#player{
+    text-align: left;
+    width: 80%;
+}
+
+iframe{
+    width: 20%;
+    height: 5%;
+    margin: 20px 0;
+}

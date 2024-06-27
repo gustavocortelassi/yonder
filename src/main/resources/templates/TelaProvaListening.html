@@ -10,36 +10,31 @@
 <body>
 <h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
 <div id="player">
-    <iframe id="youtubePlayer" width="640" height="360" frameborder="0" allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"
+    <iframe id="youtubePlayer" width="640" height="360" frameborder="0"
+
             th:src="@{'https://www.youtube.com/embed/' + ${videoId} +
-                  '?autoplay=0&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;fs=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Flocalhost%3A8080&amp;widgetid=1'}"
+                  '?autoplay=0&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;fs=0&amp;modestbranding=1&amp;enablejsapi=1'}"
             title="YouTube video player">
     </iframe>
-    <audio id="audioPlayer" controls autoplay>
-        <source th:src="@{${pergunta.audio}}" type="audio/mp3">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
 </div>
 
-<!-- Botão para alternar entre áudio e vídeo -->
-<button id="toggleButton">Alternar entre Áudio e Vídeo</button>
-
 <form th:action="@{/provaListening/{userId}/listening/{proximaPerguntaId}(userId=${userId}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
+    <div class="options-container">
     <div th:each="resposta, iterStat : ${respostas}">
         <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">
             <span th:text="${iterStat.index + 1} + '. '"></span>
             <span th:text="${resposta.titulo}">Opção</span>
         </button>
     </div>
+    </div>
     <input type="hidden" name="contador" th:value="${contador}">
 </form>
 
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
     var videoId = "${videoId}";
     var player;
+    var counter = 0;
+    var maxCounter = 2;
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('youtubePlayer', {
@@ -56,15 +51,15 @@
 
     function onPlayerStateChange(event) {
         // Aqui você pode monitorar mudanças de estado do player
+        if (event.data === PlayerState.ENDED) {
+            counter++;
+            console.log(counter);
+            if (counter < maxCounter) {
+                player.playVideo();
+            }
+        }
     }
-
-    // Exemplo de JavaScript com jQuery para alternar entre vídeo e áudio
-    $(document).ready(function() {
-        $('#toggleButton').click(function() {
-            $('#youtubePlayer').toggle(); // Alternar a visibilidade do iframe do YouTube
-            $('#audioPlayer').toggle(); // Alternar a visibilidade do player de áudio
-        });
-    });
 </script>
+<script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
