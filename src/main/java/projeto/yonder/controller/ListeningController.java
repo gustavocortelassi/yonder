@@ -15,6 +15,8 @@ import projeto.yonder.repository.PerguntaRepository;
 import projeto.yonder.repository.RespostasRepository;
 import projeto.yonder.repository.UsuarioRepository;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/provaListening/{id}")
 public class ListeningController {
@@ -28,7 +30,7 @@ public class ListeningController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    private static final int TOTAL_PERGUNTAS = 3;
+    private static final int TOTAL_PERGUNTAS = 10;
 
     @GetMapping("/listening/{perguntaId}")
     public String exibirFormulario(@PathVariable("id") Long id, @PathVariable("perguntaId") Long perguntaId,
@@ -88,34 +90,26 @@ public class ListeningController {
 
     @GetMapping("/resultado")
     public String exibirResultado(@PathVariable("id") Long id, Model model) {
-        Usuario usuario = usuarioRepository.findById(id).orElse(null);
-        if (usuario != null) {
-            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
+        Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
+        if (optionalUsuario.isPresent()) {
+            Usuario usuario = optionalUsuario.get();
+
+            int respostasCorretas = usuario.getRespostasCorretas();
+            String classificacao = calcularClassificacao(respostasCorretas);
+            double pontuacao = calcularPontuacao(respostasCorretas);
+
+            usuario.setNotaListening(classificacao);
+
+            usuarioRepository.save(usuario);
+
+            model.addAttribute("nota", pontuacao);
             model.addAttribute("classificacao", classificacao);
-            model.addAttribute("id", id);
-            model.addAttribute("tipoProva", "Listening");
-            return "TelaResultadoListening";
+
         } else {
             model.addAttribute("mensagem", "Usuário não encontrado.");
-            return "TelaResultadoListening";
         }
-    }
 
-    @PostMapping("/enviarNota")
-    public String enviarNota(@RequestParam("id") Long id) {
-        Usuario usuario = usuarioRepository.findById(id).orElse(null);
-        if (usuario != null) {
-            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
-
-            usuario.setClassificacao(classificacao);
-            usuario.setNotaListening(classificacao);
-            usuarioRepository.save(usuario); 
-
-            return "redirect:/provaListening/" + id + "/resultado";
-        } else {
-            
-            return "redirect:/provaListening/" + id + "/resultado";
-        }
+        return "TelaResultadoListening";
     }
 
     private String calcularClassificacao(int respostasCorretas) {
@@ -132,5 +126,9 @@ public class ListeningController {
         } else {
             return "C2";
         }
+    }
+
+    private double calcularPontuacao(int respostasCorretas) {
+        return (double) respostasCorretas / TOTAL_PERGUNTAS * 10;
     }
 }

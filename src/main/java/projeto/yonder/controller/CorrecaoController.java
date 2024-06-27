@@ -19,12 +19,14 @@ public class CorrecaoController {
         String nome = writing.getUsuario().getNome();
         String notaWriting = writing.getUsuario().getNotaWriting();
         String notaReading = writing.getUsuario().getNotaReading();
+        String notaListening = writing.getUsuario().getNotaListening();
 
         model.addAttribute("writing", writing);
         model.addAttribute("id", id);
         model.addAttribute("nome", nome);
         model.addAttribute("notaWriting", notaWriting);
         model.addAttribute("notaReading", notaReading);
+        model.addAttribute("notaListening", notaListening);
         return "TelaCorrecaoProva";
     }
 

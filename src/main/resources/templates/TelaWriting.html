@@ -15,7 +15,7 @@
     <form th:action="@{/writing/{id}(id=${writing.usuario.id})}" th:object="${writing}" method="post">
         <label for="answer"></label>
         <textarea id="answer" class="textarea" th:field="*{resposta}" placeholder="Máximo 500 palavras."></textarea>
-        <div id="accountant" class="accountant">0/500 Palavras</div>
+        <div id="accountant" class="accountant"></div>
         <button type="submit" class="next-button">FINALIZAR</button>
     </form>
 </div>
