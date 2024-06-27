@@ -45,7 +45,7 @@ public class UsuarioService {
     }
 
     public List<Usuario> listarTodos() {
-        Pageable pageable = PageRequest.of(0, 50);
+        Pageable pageable = PageRequest.of(0, 3);
         return usuarioRepository.findAll(pageable).getContent();
     }
 

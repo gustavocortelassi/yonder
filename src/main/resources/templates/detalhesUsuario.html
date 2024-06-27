@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Usuário</title>
+    <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
+    <link rel="stylesheet" href="../static/css/detalhesUsuarios.css" th:href="@{/css/detalhesUsuarios.css}">
 </head>
 <body>
-    <h1>Notas do Candidato</h1>
-    <div th:if="${usuario != null}">
-        <p>Nome: <span th:text="${usuario.nome}"></span></p>
-        <p>Nota Writing: <span th:text="${usuario.notaWriting}"></span></p>
-        <p>Nota Reading: <span th:text="${usuario.notaReading}"></span></p>
-        <p>Nota Listening: <span th:text="${usuario.notaListening}"></span></p>
+    <div class="container">
+        <h1>Detalhes do Usuário</h1>
+        <div th:if="${usuario != null}">
+            <p>Nome: <span th:text="${usuario.nome}"></span></p>
+            <p>Nota Writing: <span th:text="${usuario.notaWriting}"></span></p>
+            <p>Nota Reading: <span th:text="${usuario.notaReading}"></span></p>
+            <p>Nota Listening: <span th:text="${usuario.notaListening}"></span></p>
+        </div>
+        <a th:href="@{/usuario/usuarios}">Voltar à Lista de Usuários</a>
     </div>
-    <a th:href="@{/usuario/usuarios}">Voltar à Lista de Usuários</a>
 </body>
 </html>
