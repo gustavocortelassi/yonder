@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import projeto.yonder.model.Pergunta;
-import projeto.yonder.model.Respostas;
+import projeto.yonder.model.Resposta;
 import projeto.yonder.model.Usuario;
 import projeto.yonder.repository.PerguntaRepository;
 import projeto.yonder.repository.RespostasRepository;
@@ -51,7 +51,7 @@ public class FormularioReadMEscolhaController {
     @PostMapping("/multEscolha/{perguntaId}")
     public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId, @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
         contador++;
-        Respostas resposta = respostasRepository.findById(respostaId).orElse(null);
+        Resposta resposta = respostasRepository.findById(respostaId).orElse(null);
         Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
 
         if (resposta != null && pergunta != null && resposta.isCorreto()) {

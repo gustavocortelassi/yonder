@@ -21,6 +21,7 @@ public class Usuario {
 
     @Column(columnDefinition = "TEXT")
     private String feedback;
+    
     private int respostasCorretas;
     private String classificacao;
     private double nota;
@@ -52,22 +53,6 @@ public class Usuario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public int getRespostasCorretas() {
-        return respostasCorretas;
-    }
-
-    public void setRespostasCorretas(int respostasCorretas) {
-        this.respostasCorretas = respostasCorretas;
-    }
-
-    public String getClassificacao() {
-        return classificacao;
-    }
-
-    public void setClassificacao(String classificacao) {
-        this.classificacao = classificacao;
     }
 
     public int getRespostasCorretas() {

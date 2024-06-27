@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import projeto.yonder.model.Empresa;
 import projeto.yonder.model.Usuario;
 import projeto.yonder.service.EmpresaService;
@@ -49,5 +52,22 @@ public class UsuarioController {
         List<Usuario> usuarios = usuarioService.getTop50Usuarios();
         model.addAttribute("usuarios", usuarios);
         return "TelaListarUsuarios";
+    }
+
+    @GetMapping("/usuarios")
+    public String listarUsuariosNota(Model model) {
+        List<Usuario> usuarios = usuarioService.listarTodos();
+        model.addAttribute("usuarios", usuarios);
+        return "listarUsuarios"; 
+    }
+
+    @GetMapping("/usuario/{id}")
+    public String detalhesUsuario(@PathVariable Long id, Model model) {
+        Usuario usuario = usuarioService.buscarPorId(id);
+        if (usuario == null) {
+            return "redirect:/usuarios"; 
+        }
+        model.addAttribute("usuario", usuario);
+        return "detalhesUsuario"; 
     }
 }
