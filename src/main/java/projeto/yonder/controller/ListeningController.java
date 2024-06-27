@@ -28,7 +28,7 @@ public class ListeningController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    private static final int TOTAL_PERGUNTAS = 10;
+    private static final int TOTAL_PERGUNTAS = 3;
 
     @GetMapping("/listening/{perguntaId}")
     public String exibirFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId,
@@ -66,25 +66,36 @@ public class ListeningController {
     }
 
     @PostMapping("/listening/{perguntaId}")
-    public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId, @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
-        contador++;
-        Resposta resposta = respostasRepository.findById(respostaId).orElse(null);
-        Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
+public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId, @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
+    contador++;
+    Resposta resposta = respostasRepository.findById(respostaId).orElse(null);
+    Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
 
-        if (resposta != null && pergunta != null && resposta.isCorreto()) {
-            Usuario usuario = usuarioRepository.findById(userId).orElse(null);
-            if (usuario != null) {
-                usuario.setRespostasCorretas(usuario.getRespostasCorretas() + 1);
-                usuarioRepository.save(usuario);
-            }
+    if (resposta != null && pergunta != null && resposta.isCorreto()) {
+        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+        if (usuario != null) {
+            usuario.setRespostasCorretas(usuario.getRespostasCorretas() + 1);
+            usuarioRepository.save(usuario);
         }
-
-        if (contador >= TOTAL_PERGUNTAS) {
-            return "redirect:/listening/" + userId + "/resultado";
-        }
-
-        return "redirect:/listening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
     }
+
+    if (perguntaId < TOTAL_PERGUNTAS) {
+        return "redirect:/provaListening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
+    } else {
+        // Usuário completou todas as perguntas, calcular e salvar nota/classificação
+        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+        if (usuario != null) {
+            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
+            usuario.setClassificacao(classificacao);
+
+            // Salvar classificação como nota no formato desejado
+            usuario.setNotaListening(classificacao);
+
+            usuarioRepository.save(usuario);
+        }
+        return "redirect:/provaListening/" + userId + "/resultado";
+    }
+}
 
     @GetMapping("/resultado")
     public String exibirResultado(@PathVariable("userId") Long userId, Model model) {
@@ -124,6 +135,6 @@ public class ListeningController {
     }
 
     private double calcularNota(int respostasCorretas) {
-        return (double) respostasCorretas / TOTAL_PERGUNTAS * 10; // Nota de 0 a 10
+        return (double) respostasCorretas / TOTAL_PERGUNTAS * 3; 
     }
 }
