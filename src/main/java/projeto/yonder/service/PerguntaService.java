@@ -1,9 +1,12 @@
 package projeto.yonder.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import projeto.yonder.model.Pergunta;
 import projeto.yonder.repository.PerguntaRepository;
+
+import java.util.Optional;
 
 @Service
 public class PerguntaService {
@@ -16,6 +19,13 @@ public class PerguntaService {
     public void excluirPergunta(Long id){
         perguntaRepository.deleteById(id);
     }
+
+    public Pergunta findById(Long id) {
+        Optional<Pergunta> pergunta = perguntaRepository.findById(id);
+        return pergunta.orElse(null);
+    }
+
+
 
     public void editarPergunta(Long perguntaId, Pergunta pergunta) {
 
