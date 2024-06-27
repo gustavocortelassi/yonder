@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova de Listening</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/listening.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h1 th:text="${pergunta.cabecalho}">Pergunta</h1>
+<div id="player">
+    <iframe id="youtubePlayer" width="640" height="360" frameborder="0"
+
+            th:src="@{'https://www.youtube.com/embed/' + ${videoId} +
+                  '?autoplay=0&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;fs=0&amp;modestbranding=1&amp;enablejsapi=1'}"
+            title="YouTube video player">
+    </iframe>
+</div>
+
+<form th:action="@{/provaListening/{userId}/listening/{proximaPerguntaId}(userId=${userId}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
+    <div class="options-container">
+    <div th:each="resposta, iterStat : ${respostas}">
+        <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">
+            <span th:text="${iterStat.index + 1} + '. '"></span>
+            <span th:text="${resposta.titulo}">Opção</span>
+        </button>
+    </div>
+    </div>
+    <input type="hidden" name="contador" th:value="${contador}">
+</form>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="../static/script/listening.js" th:src="@{/script/listening.js}"></script>
+</body>
+</html>
