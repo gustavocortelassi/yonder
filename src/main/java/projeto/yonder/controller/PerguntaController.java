@@ -65,12 +65,12 @@ public class PerguntaController {
     @PostMapping("/savePergunta")
     public ResponseEntity<String> saveAddPergunta(@RequestBody Pergunta pergunta) {
         try {
-            // Associa cada resposta à pergunta
+            
             for (Resposta resposta : pergunta.getResposta()) {
                 resposta.setPergunta(pergunta);
             }
 
-            // Salva a pergunta (e as respostas em cascata)
+            
             perguntaRepository.save(pergunta);
 
             return ResponseEntity.ok().body("{\"message\": \"Pergunta salva com sucesso!\"}");
@@ -102,7 +102,7 @@ public class PerguntaController {
             pergunta.setNiveisId(perguntaDetails.getNiveisId());
             pergunta.setAudio(perguntaDetails.getAudio());
 
-            // Limpar as respostas antigas e adicionar as novas
+            
             pergunta.getResposta().clear();
             for (Resposta resposta : pergunta.getResposta()) {
                 resposta = new Resposta();
@@ -115,7 +115,7 @@ public class PerguntaController {
             Pergunta updatedPergunta = perguntaRepository.save(pergunta);
             return ResponseEntity.ok(updatedPergunta);
         } catch (Exception e) {
-            e.printStackTrace(); // Adicionar log do erro no console do servidor
+            e.printStackTrace(); 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar a pergunta: " + e.getMessage());
         }
     }

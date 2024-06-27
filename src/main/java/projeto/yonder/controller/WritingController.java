@@ -31,7 +31,8 @@ public class WritingController {
         writing.setUsuario(usuario);
 
         Pergunta pergunta = perguntaRepository.ultimoId();
-        String cabecalho = pergunta != null ? pergunta.getCabecalho() : "Sem pergunta disponível";
+        String cabecalho = "\"Vamos todos cantar de coração A cruz de malta é o meu pendão Tu tens um nome do heróico Português Vasco da Gama, a tua fama assim se fez Tua imensa torcida é bem feliz Norte-Sul, norte-sul deste Brasil Tua estrela, na Terra a brilhar Ilumina o mar No atletismo és um braço No remo és imortal No futebol és o traço De união Brasil-Portugal No atletismo és um braço No remo és imortal No futebol és o traço De união Brasil-Portugal Vamos todos cantar de coração A cruz de malta é o meu pendão Tu tens um nome do heróico Português Vasco da Gama, a tua fama assim se fez Tua imensa torcida é bem feliz Norte-Sul, norte-sul deste Brasil Tua estrela, na Terra a brilhar Ilumina o mar No atletismo és um braço No remo és imortal No futebol és o traço De união Brasil-Portugal No atletismo és um braço No remo és imortal No futebol és o traço De união Brasil-Portugal\"\n";
+        // pergunta != null ? pergunta.getCabecalho() : "Sem pergunta disponível";
 
         model.addAttribute("writing", writing);
         model.addAttribute("cabecalho", cabecalho);
@@ -46,6 +47,7 @@ public class WritingController {
         writing.setCorrigido(false);
         writing.setCorrecao("");
         writingService.save(writing);
-        return "redirect:/detalhes/" + usuario.getId();
+        return "redirect:/provaListening/" + id + "/listening/1";
     }
+
 }

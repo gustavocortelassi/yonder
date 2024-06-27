@@ -18,7 +18,7 @@
     </iframe>
 </div>
 
-<form th:action="@{/provaListening/{userId}/listening/{proximaPerguntaId}(userId=${userId}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
+<form th:action="@{/provaListening/{id}/listening/{proximaPerguntaId}(id=${id}, proximaPerguntaId=${proximaPerguntaId})}" method="post" class="options">
     <div class="options-container">
     <div th:each="resposta, iterStat : ${respostas}">
         <button type="submit" class="option-button" name="resposta" th:value="${resposta.id}">

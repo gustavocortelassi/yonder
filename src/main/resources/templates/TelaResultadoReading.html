@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado</title>
-    <link rel="stylesheet" href="../static/css/resultado.css" th:href="@{/css/resultado.css}">
+    <link rel="stylesheet" href="../static/css/resultadoReading.css" th:href="@{/css/resultadoReading.css}">
     <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}">
 </head>
 <body>
 <div class="container">
-    <h1>Resultado</h1>
+    <h1>Resultado Reading</h1>
     <div th:if="${nota != null}">
-        <p>Sua pontuação: <span th:text="${nota}"></span></p>
+        <p>Pontuação: <span th:text="${nota}"></span></p>
     </div>
     <div th:if="${classificacao != null}">
-        <p>Sua classificação: <span th:text="${classificacao}"></span></p>
-    </div>
-    <div th:if="${mensagem != null}">
-        <p><span th:text="${mensagem}"></span></p>
+        <p>Classificação: <span th:text="${classificacao}"></span></p>
     </div>
     <a href="TelaWriting.html" th:href="@{'/writing/' + ${id}}" class="next-button">Prova de Writing</a>
 </div>
