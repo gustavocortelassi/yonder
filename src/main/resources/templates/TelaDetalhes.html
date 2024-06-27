@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="../static/css/detalhes.css" th:href="@{/css/detalhes.css}">
 </head>
 <body>
-    <div class="container">
-        <h1>Detalhes do Usuário</h1>
-        <div th:if="${usuario != null}">
-            <p>Nome: <span th:text="${usuario.nome}"></span></p>
-            <p>Nota Writing: <span th:text="${usuario.notaWriting}"></span></p>
-            <p>Nota Reading: <span th:text="${usuario.notaReading}"></span></p>
-            <p>Nota Listening: <span th:text="${usuario.notaListening}"></span></p>
-        </div>
-        <a th:href="@{/regras/{id}(id=${usuario.id})}" class="button">Ir para a prova</a>
+<div class="container">
+    <h2>Detalhes do Usuário</h2>
+    <div th:if="${usuario != null}">
+        <p>Nome: <span th:text="${usuario.nome}"></span></p>
+        <p>Nota Writing: <span th:text="${usuario.notaWriting}"></span></p>
+        <p>Nota Reading: <span th:text="${usuario.notaReading}"></span></p>
+        <p>Nota Listening: <span th:text="${usuario.notaListening}"></span></p>
     </div>
+    <a th:href="@{/regras/{id}(id=${usuario.id})}" class="next-button">Ir para a prova</a>
+</div>
 </body>
 </html>

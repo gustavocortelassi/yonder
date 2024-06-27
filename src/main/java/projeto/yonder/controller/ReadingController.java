@@ -32,7 +32,7 @@ public class ReadingController {
 
     private static final int TOTAL_PERGUNTAS = 10;
 
-    @GetMapping("/pergunta/{perguntaId}")  // Rota para exibir pergunta
+    @GetMapping("/pergunta/{perguntaId}")
     public String exibirFormulario(@PathVariable("id") Long id,
                                    @PathVariable("perguntaId") Long perguntaId,
                                    @RequestParam(value = "contador", defaultValue = "0") int contador,
@@ -42,7 +42,7 @@ public class ReadingController {
         if (pergunta != null) {
             model.addAttribute("pergunta", pergunta);
             model.addAttribute("respostas", pergunta.getResposta());
-            model.addAttribute("userId", id);  // Passando o ID do usuário para o modelo
+            model.addAttribute("userId", id);
             model.addAttribute("proximaPerguntaId", perguntaId);
             model.addAttribute("contador", contador);
         } else {
@@ -53,7 +53,7 @@ public class ReadingController {
         return "TelaReading";
     }
 
-    @PostMapping("/pergunta/{perguntaId}")  // Rota para processar resposta
+    @PostMapping("/pergunta/{perguntaId}")
     public String processarFormulario(@PathVariable("id") Long id,
                                       @PathVariable("perguntaId") Long perguntaId,
                                       @RequestParam("resposta") Long respostaId,
@@ -71,10 +71,10 @@ public class ReadingController {
         }
 
         if (contador >= TOTAL_PERGUNTAS) {
-            return "redirect:/reading/" + id + "/resultado";  // Redirecionando para o resultado final
+            return "redirect:/reading/" + id + "/resultado";
         }
 
-        return "redirect:/reading/" + id + "/pergunta/" + (perguntaId + 1) + "?contador=" + contador;  // Redirecionando para a próxima pergunta
+        return "redirect:/reading/" + id + "/pergunta/" + (perguntaId + 1) + "?contador=" + contador;
     }
 
     @GetMapping("/resultado")
@@ -82,16 +82,18 @@ public class ReadingController {
         Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
-            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
-            usuario.setClassificacao(classificacao);
 
-            double nota = calcularNota(usuario.getRespostasCorretas());
-            usuario.setNota(nota);
+            int respostasCorretas = usuario.getRespostasCorretas();
+            String classificacao = calcularClassificacao(respostasCorretas);
+            double pontuacao = calcularPontuacao(respostasCorretas);
+
+            usuario.setNotaReading(classificacao);
 
             usuarioRepository.save(usuario);
 
-            model.addAttribute("nota", usuario.getNota());
-            model.addAttribute("classificacao", usuario.getClassificacao());
+            model.addAttribute("nota", pontuacao);
+            model.addAttribute("classificacao", usuario.getNotaReading());
+
         } else {
             model.addAttribute("mensagem", "Usuário não encontrado.");
         }
@@ -115,7 +117,7 @@ public class ReadingController {
         }
     }
 
-    private double calcularNota(int respostasCorretas) {
-        return (double) respostasCorretas / TOTAL_PERGUNTAS * 10; // Nota de 0 a 10
+    private double calcularPontuacao(int respostasCorretas) {
+        return (double) respostasCorretas / TOTAL_PERGUNTAS * 10;
     }
 }
