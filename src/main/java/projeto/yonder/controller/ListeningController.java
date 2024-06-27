@@ -58,7 +58,6 @@ public class ListeningController {
         if (url != null && url.contains("youtube.com")) {
             String[] parts = url.split("v=");
             if (parts.length > 1) {
-                // Assume que o ID do vídeo termina na próxima "&" ou é o final da URL
                 String[] params = parts[1].split("&");
                 videoId = params[0];
             }
