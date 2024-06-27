@@ -32,7 +32,7 @@ public class ListeningController {
 
     @GetMapping("/listening/{perguntaId}")
     public String exibirFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId,
-                                   @RequestParam(value = "contador", defaultValue = "0") int contador, Model model) {
+            @RequestParam(value = "contador", defaultValue = "0") int contador, Model model) {
         Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
 
         if (pergunta != null) {
@@ -46,7 +46,7 @@ public class ListeningController {
             model.addAttribute("videoId", videoId);
         } else {
             model.addAttribute("mensagem", "Não há mais perguntas disponíveis.");
-            return "TelaResultado";
+            return "TelaResultadoListening";
         }
 
         return "TelaProvaListening";
@@ -65,54 +65,57 @@ public class ListeningController {
     }
 
     @PostMapping("/listening/{perguntaId}")
-public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId, @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
-    contador++;
-    Resposta resposta = respostasRepository.findById(respostaId).orElse(null);
-    Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
+    public String processarFormulario(@PathVariable("userId") Long userId, @PathVariable("perguntaId") Long perguntaId,
+            @RequestParam("resposta") Long respostaId, @RequestParam("contador") int contador) {
+        contador++;
+        Resposta resposta = respostasRepository.findById(respostaId).orElse(null);
+        Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
 
-    if (resposta != null && pergunta != null && resposta.isCorreto()) {
-        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
-        if (usuario != null) {
-            usuario.setRespostasCorretas(usuario.getRespostasCorretas() + 1);
-            usuarioRepository.save(usuario);
+        if (resposta != null && pergunta != null && resposta.isCorreto()) {
+            Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+            if (usuario != null) {
+                usuario.setRespostasCorretas(usuario.getRespostasCorretas() + 1);
+                usuarioRepository.save(usuario);
+            }
         }
-    }
 
-    if (perguntaId < TOTAL_PERGUNTAS) {
+        if (contador >= TOTAL_PERGUNTAS) {
+            return "redirect:/provaListening/" + userId + "/resultado";
+        }
+
         return "redirect:/provaListening/" + userId + "/listening/" + (perguntaId + 1) + "?contador=" + contador;
-    } else {
-        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
-        if (usuario != null) {
-            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
-            usuario.setClassificacao(classificacao);
-
-            usuario.setNotaListening(classificacao);
-
-            usuarioRepository.save(usuario);
-        }
-        return "redirect:/provaListening/" + userId + "/resultado";
     }
-}
 
     @GetMapping("/resultado")
     public String exibirResultado(@PathVariable("userId") Long userId, Model model) {
         Usuario usuario = usuarioRepository.findById(userId).orElse(null);
         if (usuario != null) {
             String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
-            usuario.setClassificacao(classificacao);
-
-            double nota = calcularNota(usuario.getRespostasCorretas());
-            usuario.setNota(nota);
-
-            usuarioRepository.save(usuario);
-
-            model.addAttribute("nota", usuario.getNota());
-            model.addAttribute("classificacao", usuario.getClassificacao());
+            model.addAttribute("classificacao", classificacao);
+            model.addAttribute("userId", userId);
+            model.addAttribute("tipoProva", "Listening");
+            return "TelaResultadoListening";
         } else {
             model.addAttribute("mensagem", "Usuário não encontrado.");
+            return "TelaResultadoListening";
         }
+    }
 
-        return "TelaResultado";
+    @PostMapping("/enviarNota")
+    public String enviarNota(@RequestParam("userId") Long userId) {
+        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+        if (usuario != null) {
+            String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
+
+            usuario.setClassificacao(classificacao);
+            usuario.setNotaListening(classificacao);
+            usuarioRepository.save(usuario); 
+
+            return "redirect:/provaListening/" + userId + "/resultado";
+        } else {
+            
+            return "redirect:/provaListening/" + userId + "/resultado"; 
+        }
     }
 
     private String calcularClassificacao(int respostasCorretas) {
@@ -129,9 +132,5 @@ public String processarFormulario(@PathVariable("userId") Long userId, @PathVari
         } else {
             return "C2";
         }
-    }
-
-    private double calcularNota(int respostasCorretas) {
-        return (double) respostasCorretas / TOTAL_PERGUNTAS * 3; 
     }
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Prova de Reading</title>
+</head>
+<body>
+    <h1>Resultado da Prova de Reading</h1>
+    
+    <p>Nota: <span th:text="${nota}"></span></p>
+    <p>Classificação: <span th:text="${classificacao}"></span></p>
+    <p>Usuário ID: <span th:text="${userId}"></span></p>
+    <p>Tipo de Prova: <span th:text="${tipoProva}"></span></p>
+    
+    <form action="/reading/enviarNota" method="post">
+        <input type="hidden" name="userId" th:value="${userId}">
+        <button type="submit">Enviar Nota</button>
+    </form>
+</body>
+</html>

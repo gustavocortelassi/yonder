@@ -3,11 +3,8 @@ package projeto.yonder.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import projeto.yonder.model.Pergunta;
 import projeto.yonder.model.Resposta;
 import projeto.yonder.model.Usuario;
@@ -18,7 +15,7 @@ import projeto.yonder.repository.UsuarioRepository;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/reading/{id}")
+@RequestMapping("/reading/{userId}")
 public class ReadingController {
 
     @Autowired
@@ -32,8 +29,8 @@ public class ReadingController {
 
     private static final int TOTAL_PERGUNTAS = 10;
 
-    @GetMapping("/pergunta/{perguntaId}")  // Rota para exibir pergunta
-    public String exibirFormulario(@PathVariable("id") Long id,
+    @GetMapping("/pergunta/{perguntaId}")  
+    public String exibirFormulario(@PathVariable("userId") Long userId,
                                    @PathVariable("perguntaId") Long perguntaId,
                                    @RequestParam(value = "contador", defaultValue = "0") int contador,
                                    Model model) {
@@ -42,19 +39,19 @@ public class ReadingController {
         if (pergunta != null) {
             model.addAttribute("pergunta", pergunta);
             model.addAttribute("respostas", pergunta.getResposta());
-            model.addAttribute("userId", id);  // Passando o ID do usuário para o modelo
+            model.addAttribute("userId", userId);  
             model.addAttribute("proximaPerguntaId", perguntaId);
             model.addAttribute("contador", contador);
         } else {
             model.addAttribute("mensagem", "Não há mais perguntas disponíveis.");
-            return "TelaResultado";
+            return "TelaResultadoReading";
         }
 
         return "TelaReading";
     }
 
-    @PostMapping("/pergunta/{perguntaId}")  // Rota para processar resposta
-    public String processarFormulario(@PathVariable("id") Long id,
+    @PostMapping("/pergunta/{perguntaId}")  
+    public String processarFormulario(@PathVariable("userId") Long userId,
                                       @PathVariable("perguntaId") Long perguntaId,
                                       @RequestParam("resposta") Long respostaId,
                                       @RequestParam("contador") int contador) {
@@ -63,7 +60,7 @@ public class ReadingController {
         Pergunta pergunta = perguntaRepository.findById(perguntaId).orElse(null);
 
         if (resposta != null && pergunta != null && resposta.isCorreto()) {
-            Usuario usuario = usuarioRepository.findById(id).orElse(null);
+            Usuario usuario = usuarioRepository.findById(userId).orElse(null);
             if (usuario != null) {
                 usuario.setRespostasCorretas(usuario.getRespostasCorretas() + 1);
                 usuarioRepository.save(usuario);
@@ -71,15 +68,15 @@ public class ReadingController {
         }
 
         if (contador >= TOTAL_PERGUNTAS) {
-            return "redirect:/reading/" + id + "/resultado";  // Redirecionando para o resultado final
+            return "redirect:/reading/" + userId + "/resultado";  
         }
 
-        return "redirect:/reading/" + id + "/pergunta/" + (perguntaId + 1) + "?contador=" + contador;  // Redirecionando para a próxima pergunta
+        return "redirect:/reading/" + userId + "/pergunta/" + (perguntaId + 1) + "?contador=" + contador;  
     }
 
     @GetMapping("/resultado")
-    public String exibirResultado(@PathVariable("id") Long id, Model model) {
-        Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
+    public String exibirResultado(@PathVariable("userId") Long userId, Model model) {
+        Optional<Usuario> optionalUsuario = usuarioRepository.findById(userId);
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
             String classificacao = calcularClassificacao(usuario.getRespostasCorretas());
@@ -88,15 +85,28 @@ public class ReadingController {
             double nota = calcularNota(usuario.getRespostasCorretas());
             usuario.setNota(nota);
 
-            usuarioRepository.save(usuario);
+            model.addAttribute("nota", nota);
+            model.addAttribute("classificacao", classificacao);
+            model.addAttribute("userId", userId);  
+            model.addAttribute("tipoProva", "Reading"); 
 
-            model.addAttribute("nota", usuario.getNota());
-            model.addAttribute("classificacao", usuario.getClassificacao());
+            return "TelaResultadoReading";
         } else {
             model.addAttribute("mensagem", "Usuário não encontrado.");
+            return "TelaResultadoReading";
         }
+    }
 
-        return "TelaResultado";
+    @PostMapping("/enviarNota")
+    public String enviarNota(@RequestParam("userId") Long userId) {
+        Usuario usuario = usuarioRepository.findById(userId).orElse(null);
+        if (usuario != null) {
+            usuarioRepository.save(usuario); 
+            return "redirect:/reading/" + userId + "/resultado";
+        } else {
+            
+            return "redirect:/reading/" + userId + "/resultado"; // Redirecionar de volta à página de resultados
+        }
     }
 
     private String calcularClassificacao(int respostasCorretas) {
