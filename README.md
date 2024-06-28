@@ -1,4 +1,4 @@
-**# English Proficiency Leveling System - YONDER
+# English Proficiency Leveling System - YONDER
 
 This project was developed as part of the third semester integrative project for the Yonder Company in Toledo. The system is designed to manage and assess the English proficiency levels of employees. The application leverages Spring MVC for the backend, Thymeleaf for the frontend, and MySQL for the database.
 
